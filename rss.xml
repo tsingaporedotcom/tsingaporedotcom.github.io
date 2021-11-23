@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>T Singapore Blog</title>
+        <link>https://www.tsingapore.com/</link>
+        <description></description>
+        <image>
+            <title>T Singapore Blog</title>
+            <link>https://www.tsingapore.com/</link>
+            <url>https://www.tsingapore.com/assets/images/tsingapore-logo-256x256.jpg</url>
+            <height>128</height>
+            <width>128</width>
+        </image>
+        <ttl>60</ttl>
+        <pubDate>Sat, 24 Jul 2021 20:01:56 +0000</pubDate>
+        <lastBuildDate>Tue, 23 Nov 2021 21:20:06 +0000</lastBuildDate>
+        <language>en</language>
+        <atom:link href="https://www.tsingapore.com/rss.xml" rel="self" type="application/rss+xml"/>
+
+    </channel>
+</rss>
