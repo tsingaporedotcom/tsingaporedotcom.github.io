@@ -2,17 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://www.tsingapore.com/</loc>
-        <lastmod>2021-11-23</lastmod>
+        <lastmod>2021-11-24</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://www.tsingapore.com/article/</loc>
-        <lastmod>2021-11-23</lastmod>
+        <lastmod>2021-11-24</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://www.tsingapore.com/article/kim-kardashian-the-new-york-times-style-magazine-singapore-october-cover-story/</loc>
         <lastmod>2021-11-23</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish/</loc>
+        <lastmod>2021-11-24</lastmod>
         <changefreq>daily</changefreq>
     </url>
 </urlset>
