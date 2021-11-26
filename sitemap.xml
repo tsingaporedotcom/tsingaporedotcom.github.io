@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://www.tsingapore.com/</loc>
-        <lastmod>2021-11-24</lastmod>
+        <lastmod>2021-11-26</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://www.tsingapore.com/article/</loc>
-        <lastmod>2021-11-24</lastmod>
+        <lastmod>2021-11-26</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
@@ -18,6 +18,11 @@
     <url>
         <loc>https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish/</loc>
         <lastmod>2021-11-24</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://www.tsingapore.comarticle/mark-chao-actor-interview</loc>
+        <lastmod>2021-11-26</lastmod>
         <changefreq>daily</changefreq>
     </url>
 </urlset>
