@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://www.tsingapore.com/</loc>
-        <lastmod>2021-12-24</lastmod>
+        <lastmod>2022-01-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://www.tsingapore.com/article/</loc>
-        <lastmod>2021-12-24</lastmod>
+        <lastmod>2022-01-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
@@ -27,7 +27,7 @@
     </url>
     <url>
         <loc>https://www.tsingapore.com/article/the-marshmallow-test/</loc>
-        <lastmod>2021-11-30</lastmod>
+        <lastmod>2021-11-29</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
@@ -48,6 +48,16 @@
     <url>
         <loc>https://www.tsingapore.com/article/new-britney-spears-song-is-in-the-works/</loc>
         <lastmod>2021-12-24</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://www.tsingapore.com/article/the-truth-and-myths-of-the-sanpaku-eyes/</loc>
+        <lastmod>2022-01-12</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://www.tsingapore.com/article/the-history-of-famous-celebrity-irises-and-their-meaning/</loc>
+        <lastmod>2022-01-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
 
