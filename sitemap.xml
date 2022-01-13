@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://www.tsingapore.com/</loc>
-        <lastmod>2022-01-12</lastmod>
+        <lastmod>2022-01-13</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://www.tsingapore.com/article/</loc>
-        <lastmod>2022-01-12</lastmod>
+        <lastmod>2022-01-13</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
@@ -52,12 +52,17 @@
     </url>
     <url>
         <loc>https://www.tsingapore.com/article/the-truth-and-myths-of-the-sanpaku-eyes/</loc>
-        <lastmod>2022-01-12</lastmod>
+        <lastmod>2022-01-11</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://www.tsingapore.com/article/the-history-of-famous-celebrity-irises-and-their-meaning/</loc>
         <lastmod>2022-01-12</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://www.tsingapore.com/article/the-letter-t/</loc>
+        <lastmod>2022-01-13</lastmod>
         <changefreq>daily</changefreq>
     </url>
 
