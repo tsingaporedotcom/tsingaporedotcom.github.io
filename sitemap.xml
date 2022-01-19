@@ -1,74 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    
+    
+    
     <url>
         <loc>https://www.tsingapore.com/</loc>
-        <lastmod>2022-01-14</lastmod>
+        <lastmod>2022-01-17</lastmod>
         <changefreq>daily</changefreq>
     </url>
+    
+    
+    
+    
+    
+    
+    
     <url>
         <loc>https://www.tsingapore.com/article/</loc>
-        <lastmod>2022-01-14</lastmod>
+        <lastmod>2022-01-17</lastmod>
         <changefreq>daily</changefreq>
     </url>
+    
+    
+    
+    
+    
     <url>
         <loc>https://www.tsingapore.com/article/kim-kardashian-the-new-york-times-style-magazine-singapore-october-cover-story/</loc>
         <lastmod>2021-11-23</lastmod>
         <changefreq>daily</changefreq>
     </url>
-    <url>
-        <loc>https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish/</loc>
-        <lastmod>2021-11-24</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
+    
+    
+    
+    
+    
     <url>
         <loc>https://www.tsingapore.com/article/mark-chao-actor-interview/</loc>
         <lastmod>2021-11-26</lastmod>
         <changefreq>daily</changefreq>
     </url>
+    
+    
+    
+    
+    
     <url>
-        <loc>https://www.tsingapore.com/article/the-marshmallow-test/</loc>
-        <lastmod>2021-11-29</lastmod>
+        <loc>https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore/</loc>
+        <lastmod>2022-01-19</lastmod>
         <changefreq>daily</changefreq>
     </url>
-    <url>
-        <loc>https://www.tsingapore.com/article/tiffany-co-high-jewellery-colors-of-nature/</loc>
-        <lastmod>2021-12-21</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://www.tsingapore.com/article/what-are-sanpaku-eyes/</loc>
-        <lastmod>2021-12-22</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://www.tsingapore.com/article/spring-brings-more-colour-to-eyeshadow-palettes/</loc>
-        <lastmod>2021-12-23</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
+    
+    
+    
+    
+    
     <url>
         <loc>https://www.tsingapore.com/article/new-britney-spears-song-is-in-the-works/</loc>
         <lastmod>2021-12-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
-    <url>
-        <loc>https://www.tsingapore.com/article/the-truth-and-myths-of-the-sanpaku-eyes/</loc>
-        <lastmod>2022-01-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://www.tsingapore.com/article/the-history-of-famous-celebrity-irises-and-their-meaning/</loc>
-        <lastmod>2022-01-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://www.tsingapore.com/article/the-letter-t/</loc>
-        <lastmod>2022-01-13</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
+    
+    
+    
+    
+    
     <url>
         <loc>https://www.tsingapore.com/article/pear-scent-fragrance-louis-vuitton-coeur-battant-jo-malone/</loc>
         <lastmod>2022-01-14</lastmod>
         <changefreq>daily</changefreq>
     </url>
-
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish/</loc>
+        <lastmod>2021-11-24</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://www.tsingapore.com/article/spring-brings-more-colour-to-eyeshadow-palettes/</loc>
+        <lastmod>2021-12-23</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://www.tsingapore.com/article/the-history-of-famous-celebrity-irises-and-their-meaning/</loc>
+        <lastmod>2022-01-12</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://www.tsingapore.com/article/the-letter-t/</loc>
+        <lastmod>2022-01-13</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://www.tsingapore.com/article/the-marshmallow-test/</loc>
+        <lastmod>2021-11-30</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://www.tsingapore.com/article/the-truth-and-myths-of-the-sanpaku-eyes/</loc>
+        <lastmod>2022-01-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://www.tsingapore.com/article/tiffany-co-high-jewellery-colors-of-nature/</loc>
+        <lastmod>2021-12-21</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://www.tsingapore.com/article/what-are-sanpaku-eyes/</loc>
+        <lastmod>2021-11-24</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    
+    
+    
+    
+    
+    
+    
+    
+    
 </urlset>
