@@ -85,8 +85,7 @@
             h2,
             h3,
             h4,
-            strong,
-            .site-navigation {
+            strong {
               font-weight: 700;
             }
             body {
@@ -102,31 +101,6 @@
             .important-span,
             .important-span a {
               color: #007aff;
-            }
-            /*** site-header / footer*/
-            .site-header-outer {
-              border-bottom: 1px solid #C7DFF3;
-            }
-            .site-footer-outer {
-                border-top: 1px solid #C7DFF3;
-                background-color: #f8f9fa;
-            }
-            .site-header,
-            .site-footer {
-              width: 100%;
-              margin: 0 auto;
-              display: flex;
-              position: relative;
-              justify-content: space-between;
-              align-items: center;
-            }
-            .site-header a,
-            .site-footer a {
-              text-decoration: none;
-            }
-            .site-navigation nav ul {
-              list-style: none;
-              display: flex;
             }
             
             /*** images */
@@ -166,11 +140,11 @@
             .top-post-item .thumbnail {
               width: 80px;
               height: 80px;
-              opacity: 0.85;
+              opacity: 1.0;
             }
             
             .top-post-item .thumbnail:hover {
-              opacity: 1.0;
+              opacity: 0.85;
             }
             
             .top-post-item.featured-post .category {
@@ -242,6 +216,261 @@
                 border-left: 6px solid #007aff;
             }
             
+              .site-header-outer {
+              border-bottom: 1px solid #C7DFF3;
+            }
+            .site-header {
+              width: 100%;
+              margin: 0 auto;
+              display: flex;
+              position: relative;
+              justify-content: space-between;
+              align-items: center;
+            }
+            .site-header a {
+              text-decoration: none;
+            }
+            .site-header {
+              padding: 12px 6px;
+              font-size: 15px;
+              line-height: 17px;
+            }
+            .site-navigation {
+              font-weight: 700;
+            }
+            .site-navigation nav li {
+              padding-left: 10px;
+            }
+            .site-navigation nav ul {
+              list-style: none;
+              display: flex;
+            }
+            @media (min-width: 800px) {
+                .site-header {
+                  margin: 0 auto;
+                  max-width: 824px;
+                }
+            }
+            @media (min-width: 1280px) {
+                .site-header {
+                  max-width: 1280px;
+                  font-size: 16px;
+                  line-height: 18px;
+                  padding: 12px;
+                }
+                .site-navigation {
+                  font-size: 16px;
+                  font-weight: bold;
+                  line-height: 19px;
+                }
+                .site-navigation nav li {
+                  padding-left: 16px;
+                }
+            }
+            @media (min-width: 1366px) {
+                .site-header {
+                  max-width: 1366px;
+                }
+            }
+              .site-footer-outer {
+                border-top: 1px solid #C7DFF3;
+                background-color: #f8f9fa;
+            }
+            .site-footer {
+                width: 100%;
+                margin: 0 auto;
+                display: flex;
+                position: relative;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .site-footer {
+                padding: 32px 6px 12px;
+                font-size: 12px;
+            }
+            .site-footer a {
+                text-decoration: none;
+            }
+            @media (min-width: 800px) {
+                .site-footer {
+                  margin: 0 auto;
+                  max-width: 824px;
+                }
+            }
+            @media (min-width: 1280px) {
+                .site-footer {
+                  max-width: 1280px;
+                  padding: 60px 12px 24px 12px;
+                  font-size: 14px;
+                  line-height: 18px;
+                }
+            }
+            @media (min-width: 1366px) {
+                .site-footer {
+                  max-width: 1366px;
+                }
+            }
+              .index-item-outer-medium .index-item {
+              flex-direction: column;
+            }
+            
+            .index-item-outer-medium {
+              width: 100%;
+            }
+            
+            .index-item-outer-medium .index-item {
+              margin: 8px;
+            }
+            
+            .index-item-outer-medium .index-item .thumbnail {
+              width: 100%;
+              height: 200px;
+            }
+            
+            .index-item-outer-medium .thumbnail img {
+              border-radius: 2px 2px 0 0;
+            }
+            
+            .index-item {
+              display: flex;
+              border-radius: 2px;
+              border: 1px solid #C7DFF3;
+            }
+            
+            .index-item .meta2 {
+              padding: 10px;
+            }
+            
+            .index-item .meta2 * {
+              margin: 0 0 8px 0;
+            }
+            
+            .index-item .meta2 .title {
+              height: 40px;
+              font-size: 17px;
+              line-height: 20px;
+            }
+            
+            .index-item .meta2 .category, .index-item .meta2 .category a {
+              font-size: 13px;
+              line-height: 16px;
+              color: #007aff;
+              text-transform: uppercase;
+            }
+            
+            .index-item-outer-medium .meta2 .excerpt {
+              font-size: 15px;
+              line-height: 20px;
+              max-height: 80px;
+              height: 80px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: inline-block;
+              margin: 0;
+            }
+            
+            .thumbnail img {
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+            }
+            
+            .td {
+              text-decoration: none;
+            }
+            
+            @media (min-width: 740px) {
+            
+              .index-item-outer-medium {
+                width: 50%;
+              }
+              .index-item .thumbnail {
+                transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+              }
+            
+              .index-item:hover .thumbnail {
+                filter: brightness(85%);
+              }
+            }
+            
+            @media (min-width: 1020px) {
+            .index-item .meta2 .title {
+              height: 60px;
+            }
+            }
+            
+            @media (min-width: 1366px) {}
+            
+              .index-item-outer-wide .index-item {
+              flex-direction: column;
+            }
+            
+            .index-item-outer-wide {
+              width: 100%;
+            }
+            
+            .index-item-outer-wide .index-item {
+              margin: 8px;
+            }
+            
+            .index-item-outer-wide .thumbnail {
+              width: 100%;
+              height: 180px;
+            }
+            
+            .index-item-outer-wide .thumbnail img {
+              border-radius: 2px 0 0 2px;
+            }
+            
+            .index-item-outer-wide .meta2 {
+              width: 100%;
+            }
+            
+            .index-item-outer-wide .meta2 .excerpt {
+              font-size: 15px;
+              line-height: 20px;
+              height: 60px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: inline-block;
+              margin: 0;
+            }
+            
+            .index-item-outer-wide .index-item .meta2 .title {
+              height: 40px;
+              font-size: 17px;
+              line-height: 20px;
+            }
+            
+            .index-item .meta2 .title a:hover {
+              color: #555555;
+            }
+            
+            @media (min-width: 740px) {
+            }
+            
+            @media (min-width: 1366px) {}
+            
+              .index-page {
+              width: 100%;
+              display: flex;
+              flex-flow: wrap;
+              padding: 0 12px;
+            }
+            .main-index-page {
+                padding: 12px 6px;
+            }
+            @media (min-width: 800px) {
+                .main-index-page-outer {
+                  margin: 0 auto;
+                  max-width: 824px;
+                }
+            }
+            @media (min-width: 1280px) {
+            }
+            @media (min-width: 1366px) {
+            }
+            
               /*** fonts */
             h1 {
               font-size: 28px;
@@ -266,20 +495,6 @@
             h2, h3, h4 {
               margin-bottom: 22px;
               margin-top: 44px;
-            }
-            /*** site header */
-            .site-header {
-              padding: 12px 6px;
-              font-size: 15px;
-              line-height: 17px;
-            }
-            .site-navigation nav li {
-              padding-left: 10px;
-            }
-            /*** site footer */
-            .site-footer {
-              padding: 32px 6px 12px;
-              font-size: 12px;
             }
             figcaption {
               margin-top: 4px;
@@ -477,7 +692,7 @@
             .full-width-figure {
               margin: 0 0 16px 0;
             }
-            .main-content-outer, .site-header, .site-footer {
+            .main-content-outer {
               margin: 0 auto;
               max-width: 824px;
             }
@@ -514,23 +729,6 @@
               margin-top: 32px;
               margin-bottom: 32px;
             }
-            
-            /*** site header */
-            .site-header {
-              max-width: 1280px;
-              font-size: 16px;
-              line-height: 18px;
-              padding: 12px;
-            }
-            .site-navigation {
-              font-size: 16px;
-              font-weight: bold;
-              line-height: 19px;
-            }
-            .site-navigation nav li {
-              padding-left: 16px;
-            }
-            
             /*** main content */
             .main-content-outer {
               max-width: 1280px;
@@ -672,20 +870,9 @@
             .simple-img figcaption {
               font-size: 12px;
             }
-            
-            /*** site footer */
-            .site-footer {
-              max-width: 1280px;
-              padding: 60px 12px 24px 12px;
-              font-size: 14px;
-              line-height: 18px;
-            }
               }
               @media (min-width: 1366px) {
                 /*** site header */
-            .site-header {
-              max-width: 1366px;
-            }
             
             /*** main content */
             .main-content-outer {
@@ -738,11 +925,6 @@
               margin: 0;
               color: #818181;
             }
-            
-            /*** site footer */
-            .site-footer {
-              max-width: 1366px;
-            }
               }
         </style>
         <script type="application/ld+json">
@@ -778,297 +960,329 @@
     </head>
     
     <body>
-        <div class="body-inner">
-            <div class="site-header-outer">
-                <header class="site-header">
-                    <nav class="site-logo"> <a href="https://www.tsingapore.com/">
+        <div class="site-header-outer">
+            <header class="site-header">
+                <nav> <a href="https://www.tsingapore.com/">
                 <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span><span style="font-weight: 700" class="logo-line">|</span>
             </a>
 
+                </nav>
+                <div class="site-navigation">
+                    <nav>
+                        <ul>
+                            <li> <a href="https://www.tsingapore.com/culture/"><span>culture</span></a>
+
+                            </li>
+                            <li> <a href="https://www.tsingapore.com/fashion/"><span>fashion</span></a>
+
+                            </li>
+                            <li> <a href="https://www.tsingapore.com/beauty/"><span>beauty</span></a>
+
+                            </li>
+                        </ul>
                     </nav>
-                    <div class="site-navigation">
-                        <nav>
-                            <ul>
-                                <li> <a href="https://www.tsingapore.com/culture/"><span>culture</span></a>
+                </div>
+            </header>
+        </div>
+        <div class="main-index-page-outer">
+            <main class="main-index-page">
+                <div class="post-body-inner">
+                    <div class="index-page">
+                        <div class="index-item-outer-wide">
+                            <div class="index-item">
+                                <div class="thumbnail"> <a class="td" href="https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore//">
+                <img alt="" src="/assets/pictures/wonders-of-the-world-2022-800.jpg" />
+            </a>
 
-                                </li>
-                                <li> <a href="https://www.tsingapore.com/fashion/"><span>fashion</span></a>
+                                </div>
+                                <div class="meta2">
+                                     <h3 class="category">
+                <a class="td" href="https://www.tsingapore.com/culture/">
+                    <span>Culture</span>
+                </a>
+            </h3>
 
-                                </li>
-                                <li> <a href="https://www.tsingapore.com/beauty/"><span>beauty</span></a>
+                                     <h4 class="title">
+                <a class="td" href="https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore//">
+                    <span>The New Brickman LEGO Exhibition In Singapore</span>
+                </a>
+            </h4>
 
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </header>
-            </div>
-            <div class="main-content-outer">
-                <nav class="toc"></nav>
-                <main class="main-content">
-                    <article>
-                        <div class="page-header-outer">
-                            <header class="page-header">
-                                 <h1 id="t-singapore">T Singapore</h1>
-
-                            </header>
-                        </div>
-                        <div class="post-body-outer">
-                            <div class="post-body">
-                                <div class="post-body-inner">
-                                    <div>
-                                        <p></p>
-                                        <nav class="index-post-items"> <a class="index-post-item-link" href="https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore/">
-    <div class="index-post-item">
-        <div class="thumbnail">
-            <img alt="" src="/assets/pictures/wonders-of-the-world-2022-800.jpg"/>
-        </div>
-        <div class="meta">
-            <h3 class="category">Culture</h3>
-            <h4 class="title"   >The New Brickman LEGO Exhibition In Singapore</h4>
-            <p  class="excerpt" >The world's largest LEGO exhibition is coming to Singapore! With more than 1.5 million LEGOs, the show features a small-size copy of the most iconic landmarks.</p>
-            <div class="bs">
-                <div class="author-photo">
-                    <img alt="The picture of Clara Ortiz"
-                         src="/assets/images/clara_ortiz_64x64.jpg"
-                         srcset="/assets/images/clara_ortiz_128x128.jpg 2x">
-                </div>
-                <div class="info">
-                    <span class="author-name">Clara Ortiz</span>
-                    <span class="published-date">Jan 19th, 2022</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</a>
- <a class="index-post-item-link" href="https://www.tsingapore.com/article/top-10-gofundme-alternatives/">
-    <div class="index-post-item">
-        <div class="thumbnail">
-            <img alt="A woman's hand is giving money" src="/assets/pictures/giving-money-800.jpg"/>
-        </div>
-        <div class="meta">
-            <h3 class="category">Culture</h3>
-            <h4 class="title"   >Top 10 GoFundMe Alternatives</h4>
-            <p  class="excerpt" >In this article, we will explore the best GoFundMe alternatives for everybody.</p>
-            <div class="bs">
-                <div class="author-photo">
-                    <img alt="The picture of Clara Ortiz"
-                         src="/assets/images/clara_ortiz_64x64.jpg"
-                         srcset="/assets/images/clara_ortiz_128x128.jpg 2x">
-                </div>
-                <div class="info">
-                    <span class="author-name">Clara Ortiz</span>
-                    <span class="published-date">Feb 8th, 2022</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</a>
- <a class="index-post-item-link" href="https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish/">
-    <div class="index-post-item">
-        <div class="thumbnail">
-            <img alt="Billie Eilish eyes" src="/assets/pictures/billie-eilish-eyes-800.jpg"/>
-        </div>
-        <div class="meta">
-            <h3 class="category">Beauty</h3>
-            <h4 class="title"   >Sanpaku, a Different Face Reading Method</h4>
-            <p  class="excerpt" >The Japanese term sanpaku means 'three whites', generally referred to as 'sanpaku eyes'. In which the white parts of the eyes are revealed, either above or below the iris.</p>
-            <div class="bs">
-                <div class="author-photo">
-                    <img alt="The picture of Clara Ortiz"
-                         src="/assets/images/clara_ortiz_64x64.jpg"
-                         srcset="/assets/images/clara_ortiz_128x128.jpg 2x">
-                </div>
-                <div class="info">
-                    <span class="author-name">Clara Ortiz</span>
-                    <span class="published-date">Nov 24th, 2021</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</a>
- <a class="index-post-item-link" href="https://www.tsingapore.com/article/the-marshmallow-test/">
-    <div class="index-post-item">
-        <div class="thumbnail">
-            <img alt="White ceramic mug on book, filled with marshmallow." src="/assets/pictures/hot-chocolate-with-marshmallow-800.jpg"/>
-        </div>
-        <div class="meta">
-            <h3 class="category">Culture</h3>
-            <h4 class="title"   >Who Could Resist Eating A Marshmallow?</h4>
-            <p  class="excerpt" >The marshmallow test is an experiment to measure a children's ability to delay gratification. With unexpected correlation with the child's life success.</p>
-            <div class="bs">
-                <div class="author-photo">
-                    <img alt="The picture of Clara Ortiz"
-                         src="/assets/images/clara_ortiz_64x64.jpg"
-                         srcset="/assets/images/clara_ortiz_128x128.jpg 2x">
-                </div>
-                <div class="info">
-                    <span class="author-name">Clara Ortiz</span>
-                    <span class="published-date">Nov 30th, 2021</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</a>
- <a class="index-post-item-link" href="https://www.tsingapore.com/article/lauren-tsai-model-artist-netflix-terrace-house-reality-interview-fashion/">
-    <div class="index-post-item">
-        <div class="thumbnail">
-            <img alt="Lauren Tsai is smiling to the camera" src="/assets/pictures/lauren-tsai-800.jpg"/>
-        </div>
-        <div class="meta">
-            <h3 class="category">Culture</h3>
-            <h4 class="title"   >Lauren Tsai, Model, Artist and Actress of Netflix's Terrace House</h4>
-            <p  class="excerpt" >Meet Lauren Tsai is a model, artist, and actress in Tokyo. She spends her days with many artistic endeavors, and recently starred in Netflix's Terrace House.</p>
-            <div class="bs">
-                <div class="author-photo">
-                    <img alt="The picture of Clara Ortiz"
-                         src="/assets/images/clara_ortiz_64x64.jpg"
-                         srcset="/assets/images/clara_ortiz_128x128.jpg 2x">
-                </div>
-                <div class="info">
-                    <span class="author-name">Clara Ortiz</span>
-                    <span class="published-date">Jan 24th, 2022</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</a>
- <a class="index-post-item-link" href="https://www.tsingapore.com/article/discontinued-icons-audemars-piguet-royal-oak-15202st/">
-    <div class="index-post-item">
-        <div class="thumbnail">
-            <img alt="Audemars Piguet Royal Oak Jumbo" src="/assets/pictures/audemars-piguet-royal-oak-jumbo-800.jpg"/>
-        </div>
-        <div class="meta">
-            <h3 class="category">Fashion</h3>
-            <h4 class="title"   >Audemars Piguet Royal Oak 15202ST The Discontinued Icon</h4>
-            <p  class="excerpt" >Audemars Piguet Royal Oak Watch is a luxury watch that was introduced in 1972. The watch is known for its iconic design and its high-quality craftsmanship.</p>
-            <div class="bs">
-                <div class="author-photo">
-                    <img alt="The picture of Clara Ortiz"
-                         src="/assets/images/clara_ortiz_64x64.jpg"
-                         srcset="/assets/images/clara_ortiz_128x128.jpg 2x">
-                </div>
-                <div class="info">
-                    <span class="author-name">Clara Ortiz</span>
-                    <span class="published-date">Jan 23rd, 2022</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</a>
- <a class="index-post-item-link" href="https://www.tsingapore.com/article/how-to-cleanse-recharge-your-crystals/">
-    <div class="index-post-item">
-        <div class="thumbnail">
-            <img alt="Macro photography of black ceramic Gautama Buddha miniature" src="/assets/pictures/crystal-consciousness-800.jpg"/>
-        </div>
-        <div class="meta">
-            <h3 class="category">Culture</h3>
-            <h4 class="title"   >Clean and recharge your crystals with these simple steps</h4>
-            <p  class="excerpt" >Crystals are often used for spiritual growth, but can also be used to cleanse and recharge. Follow these simple steps to cleanse your crystals.</p>
-            <div class="bs">
-                <div class="author-photo">
-                    <img alt="The picture of Clara Ortiz"
-                         src="/assets/images/clara_ortiz_64x64.jpg"
-                         srcset="/assets/images/clara_ortiz_128x128.jpg 2x">
-                </div>
-                <div class="info">
-                    <span class="author-name">Clara Ortiz</span>
-                    <span class="published-date">Jan 26th, 2022</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</a>
- <a class="index-post-item-link" href="https://www.tsingapore.com/article/singapore-food-waste-uglyfood-treatsure-insectta/">
-    <div class="index-post-item">
-        <div class="thumbnail">
-            <img alt="A few half rotten apples on the ground" src="/assets/pictures/spoiled-apples-800.jpg"/>
-        </div>
-        <div class="meta">
-            <h3 class="category">Culture</h3>
-            <h4 class="title"   >Three Singapore Start-Ups Fighting the Ugly Side of Food Waste</h4>
-            <p  class="excerpt" >New start-ups in Singapore are fighting food waste with a range of solutions. They're part of a movement to reduce the 1.3 billion tons of waste each year.</p>
-            <div class="bs">
-                <div class="author-photo">
-                    <img alt="The picture of Clara Ortiz"
-                         src="/assets/images/clara_ortiz_64x64.jpg"
-                         srcset="/assets/images/clara_ortiz_128x128.jpg 2x">
-                </div>
-                <div class="info">
-                    <span class="author-name">Clara Ortiz</span>
-                    <span class="published-date">Jan 25th, 2022</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</a>
- <a class="index-post-item-link" href="https://www.tsingapore.com/article/aura-photograph-new-age-selfie/">
-    <div class="index-post-item">
-        <div class="thumbnail">
-            <img alt="Yellow and black coated wire" src="/assets/pictures/yellow-and-black-coated-wire-800.jpg"/>
-        </div>
-        <div class="meta">
-            <h3 class="category">Culture</h3>
-            <h4 class="title"   >The New Age Selfie Is Having Your Aura Photographed</h4>
-            <p  class="excerpt" >Aura photography is a new trend in self-care that many are turning to for its relaxing properties.</p>
-            <div class="bs">
-                <div class="author-photo">
-                    <img alt="The picture of Clara Ortiz"
-                         src="/assets/images/clara_ortiz_64x64.jpg"
-                         srcset="/assets/images/clara_ortiz_128x128.jpg 2x">
-                </div>
-                <div class="info">
-                    <span class="author-name">Clara Ortiz</span>
-                    <span class="published-date">Jan 26th, 2022</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</a>
- <a class="index-post-item-link" href="https://www.tsingapore.com/article/taha-bouqdib-maranda-barnes-husband-wife-duo-built-twg-tea-interview/">
-    <div class="index-post-item">
-        <div class="thumbnail">
-            <img alt="Green tea plantation from birds eye view" src="/assets/pictures/tea-plantation-from-birds-eye-view-800.jpg"/>
-        </div>
-        <div class="meta">
-            <h3 class="category">Culture</h3>
-            <h4 class="title"   >TWG: Taha Bouqdib's Breakfast Tea - The Complete Story of a Local Legend</h4>
-            <p  class="excerpt" >TWG Taha Bouqdib's Breakfast Tea is a Middle Eastern blend of tea and spices that will fill your morning with the aroma of the Mediterranean.</p>
-            <div class="bs">
-                <div class="author-photo">
-                    <img alt="The picture of Clara Ortiz"
-                         src="/assets/images/clara_ortiz_64x64.jpg"
-                         srcset="/assets/images/clara_ortiz_128x128.jpg 2x">
-                </div>
-                <div class="info">
-                    <span class="author-name">Clara Ortiz</span>
-                    <span class="published-date">Jan 22nd, 2022</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</a>
-
-                                        </nav>
-                                    </div>
+                                    <p class="excerpt">The world's largest LEGO exhibition is coming to Singapore! With more
+                                        than 1.5 million LEGOs, the show features a small-size copy of the most
+                                        iconic landmarks.</p>
                                 </div>
                             </div>
                         </div>
-                    </article>
-                </main>
-            </div>
-            <aside class="site-footer-outer">
-                <footer class="site-footer">
-                    <div class="footer-logo"> <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span>
-                        <span
-                        style="font-weight: 700" class="logo-line">|</span>
-                    </div>
-                    <div class="footer-copyright"> <span><a href="https://www.tsingapore.com/sitemap.xml">sitemap</a></span> | <span><a href="mailto:info@tsingapore.com">email</a></span>
+                        <div class="index-item-outer-medium">
+                            <div class="index-item">
+                                <div class="thumbnail"> <a class="td" href="https://www.tsingapore.com/article/top-10-gofundme-alternatives//">
+                <img alt="A woman's hand is giving money" src="/assets/pictures/giving-money-800.jpg" />
+            </a>
 
+                                </div>
+                                <div class="meta2">
+                                     <h3 class="category">
+                <a class="td" href="https://www.tsingapore.com/culture/">
+                    <span>Culture</span>
+                </a>
+            </h3>
+
+                                     <h4 class="title">
+                <a class="td" href="https://www.tsingapore.com/article/top-10-gofundme-alternatives//">
+                    <span>Top 10 GoFundMe Alternatives</span>
+                </a>
+            </h4>
+
+                                    <p class="excerpt">In this article, we will explore the best GoFundMe alternatives for everybody.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="index-item-outer-medium">
+                            <div class="index-item">
+                                <div class="thumbnail"> <a class="td" href="https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish//">
+                <img alt="Billie Eilish eyes" src="/assets/pictures/billie-eilish-eyes-800.jpg" />
+            </a>
+
+                                </div>
+                                <div class="meta2">
+                                     <h3 class="category">
+                <a class="td" href="https://www.tsingapore.com/beauty/">
+                    <span>Beauty</span>
+                </a>
+            </h3>
+
+                                     <h4 class="title">
+                <a class="td" href="https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish//">
+                    <span>Sanpaku, a Different Face Reading Method</span>
+                </a>
+            </h4>
+
+                                    <p class="excerpt">The Japanese term sanpaku means 'three whites', generally referred to
+                                        as 'sanpaku eyes'. In which the white parts of the eyes are revealed, either
+                                        above or below the iris.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="index-item-outer-wide">
+                            <div class="index-item">
+                                <div class="thumbnail"> <a class="td" href="https://www.tsingapore.com/article/the-marshmallow-test//">
+                <img alt="White ceramic mug on book, filled with marshmallow." src="/assets/pictures/hot-chocolate-with-marshmallow-800.jpg" />
+            </a>
+
+                                </div>
+                                <div class="meta2">
+                                     <h3 class="category">
+                <a class="td" href="https://www.tsingapore.com/culture/">
+                    <span>Culture</span>
+                </a>
+            </h3>
+
+                                     <h4 class="title">
+                <a class="td" href="https://www.tsingapore.com/article/the-marshmallow-test//">
+                    <span>Who Could Resist Eating A Marshmallow?</span>
+                </a>
+            </h4>
+
+                                    <p class="excerpt">The marshmallow test is an experiment to measure a children's ability
+                                        to delay gratification. With unexpected correlation with the child's life
+                                        success.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="index-item-outer-medium">
+                            <div class="index-item">
+                                <div class="thumbnail"> <a class="td" href="https://www.tsingapore.com/article/lauren-tsai-model-artist-netflix-terrace-house-reality-interview-fashion//">
+                <img alt="Lauren Tsai is smiling to the camera" src="/assets/pictures/lauren-tsai-800.jpg" />
+            </a>
+
+                                </div>
+                                <div class="meta2">
+                                     <h3 class="category">
+                <a class="td" href="https://www.tsingapore.com/culture/">
+                    <span>Culture</span>
+                </a>
+            </h3>
+
+                                     <h4 class="title">
+                <a class="td" href="https://www.tsingapore.com/article/lauren-tsai-model-artist-netflix-terrace-house-reality-interview-fashion//">
+                    <span>Lauren Tsai, Model, Artist and Actress of Netflix's Terrace House</span>
+                </a>
+            </h4>
+
+                                    <p class="excerpt">Meet Lauren Tsai is a model, artist, and actress in Tokyo. She spends
+                                        her days with many artistic endeavors, and recently starred in Netflix's
+                                        Terrace House.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="index-item-outer-medium">
+                            <div class="index-item">
+                                <div class="thumbnail"> <a class="td" href="https://www.tsingapore.com/article/discontinued-icons-audemars-piguet-royal-oak-15202st//">
+                <img alt="Audemars Piguet Royal Oak Jumbo" src="/assets/pictures/audemars-piguet-royal-oak-jumbo-800.jpg" />
+            </a>
+
+                                </div>
+                                <div class="meta2">
+                                     <h3 class="category">
+                <a class="td" href="https://www.tsingapore.com/fashion/">
+                    <span>Fashion</span>
+                </a>
+            </h3>
+
+                                     <h4 class="title">
+                <a class="td" href="https://www.tsingapore.com/article/discontinued-icons-audemars-piguet-royal-oak-15202st//">
+                    <span>Audemars Piguet Royal Oak 15202ST The Discontinued Icon</span>
+                </a>
+            </h4>
+
+                                    <p class="excerpt">Audemars Piguet Royal Oak Watch is a luxury watch that was introduced
+                                        in 1972. The watch is known for its iconic design and its high-quality
+                                        craftsmanship.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="index-item-outer-wide">
+                            <div class="index-item">
+                                <div class="thumbnail"> <a class="td" href="https://www.tsingapore.com/article/how-to-cleanse-recharge-your-crystals//">
+                <img alt="Macro photography of black ceramic Gautama Buddha miniature" src="/assets/pictures/crystal-consciousness-800.jpg" />
+            </a>
+
+                                </div>
+                                <div class="meta2">
+                                     <h3 class="category">
+                <a class="td" href="https://www.tsingapore.com/culture/">
+                    <span>Culture</span>
+                </a>
+            </h3>
+
+                                     <h4 class="title">
+                <a class="td" href="https://www.tsingapore.com/article/how-to-cleanse-recharge-your-crystals//">
+                    <span>Clean and recharge your crystals with these simple steps</span>
+                </a>
+            </h4>
+
+                                    <p class="excerpt">Crystals are often used for spiritual growth, but can also be used to
+                                        cleanse and recharge. Follow these simple steps to cleanse your crystals.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="index-item-outer-medium">
+                            <div class="index-item">
+                                <div class="thumbnail"> <a class="td" href="https://www.tsingapore.com/article/singapore-food-waste-uglyfood-treatsure-insectta//">
+                <img alt="A few half rotten apples on the ground" src="/assets/pictures/spoiled-apples-800.jpg" />
+            </a>
+
+                                </div>
+                                <div class="meta2">
+                                     <h3 class="category">
+                <a class="td" href="https://www.tsingapore.com/culture/">
+                    <span>Culture</span>
+                </a>
+            </h3>
+
+                                     <h4 class="title">
+                <a class="td" href="https://www.tsingapore.com/article/singapore-food-waste-uglyfood-treatsure-insectta//">
+                    <span>Three Singapore Start-Ups Fighting the Ugly Side of Food Waste</span>
+                </a>
+            </h4>
+
+                                    <p class="excerpt">New start-ups in Singapore are fighting food waste with a range of solutions.
+                                        They're part of a movement to reduce the 1.3 billion tons of waste each
+                                        year.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="index-item-outer-medium">
+                            <div class="index-item">
+                                <div class="thumbnail"> <a class="td" href="https://www.tsingapore.com/article/aura-photograph-new-age-selfie//">
+                <img alt="Yellow and black coated wire" src="/assets/pictures/yellow-and-black-coated-wire-800.jpg" />
+            </a>
+
+                                </div>
+                                <div class="meta2">
+                                     <h3 class="category">
+                <a class="td" href="https://www.tsingapore.com/culture/">
+                    <span>Culture</span>
+                </a>
+            </h3>
+
+                                     <h4 class="title">
+                <a class="td" href="https://www.tsingapore.com/article/aura-photograph-new-age-selfie//">
+                    <span>The New Age Selfie Is Having Your Aura Photographed</span>
+                </a>
+            </h4>
+
+                                    <p class="excerpt">Aura photography is a new trend in self-care that many are turning to
+                                        for its relaxing properties.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="index-item-outer-medium">
+                            <div class="index-item">
+                                <div class="thumbnail"> <a class="td" href="https://www.tsingapore.com/article/taha-bouqdib-maranda-barnes-husband-wife-duo-built-twg-tea-interview//">
+                <img alt="Green tea plantation from birds eye view" src="/assets/pictures/tea-plantation-from-birds-eye-view-800.jpg" />
+            </a>
+
+                                </div>
+                                <div class="meta2">
+                                     <h3 class="category">
+                <a class="td" href="https://www.tsingapore.com/culture/">
+                    <span>Culture</span>
+                </a>
+            </h3>
+
+                                     <h4 class="title">
+                <a class="td" href="https://www.tsingapore.com/article/taha-bouqdib-maranda-barnes-husband-wife-duo-built-twg-tea-interview//">
+                    <span>TWG: Taha Bouqdib's Breakfast Tea - The Complete Story of a Local Legend</span>
+                </a>
+            </h4>
+
+                                    <p class="excerpt">TWG Taha Bouqdib's Breakfast Tea is a Middle Eastern blend of tea and
+                                        spices that will fill your morning with the aroma of the Mediterranean.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="index-item-outer-medium">
+                            <div class="index-item">
+                                <div class="thumbnail"> <a class="td" href="https://www.tsingapore.com/article/iwc-goes-green-with-timbertex//">
+                <img alt="A person's hand with a watch" src="/assets/pictures/iwc-timbertexstrap-a-800.jpg" />
+            </a>
+
+                                </div>
+                                <div class="meta2">
+                                     <h3 class="category">
+                <a class="td" href="https://www.tsingapore.com/fashion/">
+                    <span>Fashion</span>
+                </a>
+            </h3>
+
+                                     <h4 class="title">
+                <a class="td" href="https://www.tsingapore.com/article/iwc-goes-green-with-timbertex//">
+                    <span>TimberTex, The Sustainable Strap Developed by IWC</span>
+                </a>
+            </h4>
+
+                                    <p class="excerpt">TimberTex is a sustainable strap developed by IWC to satisfy the needs
+                                        of those who want to wear the watch and simultaneously care for the environment.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </footer>
-            </aside>
+                </div>
+            </main>
         </div>
+        <aside class="site-footer-outer">
+            <footer class="site-footer">
+                <div> <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span>
+                    <span
+                    style="font-weight: 700" class="logo-line">|</span>
+                </div>
+                <div> <span><a href="https://www.tsingapore.com/sitemap.xml">sitemap</a></span> | <span><a href="mailto:info@tsingapore.com">email</a></span>
+
+                </div>
+            </footer>
+        </aside>
         <script defer src="https://www.tsingapore.com/assets/js/main.js"></script>
     </body>
 
