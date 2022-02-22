@@ -85,8 +85,7 @@
             h2,
             h3,
             h4,
-            strong,
-            .site-navigation {
+            strong {
               font-weight: 700;
             }
             body {
@@ -102,31 +101,6 @@
             .important-span,
             .important-span a {
               color: #007aff;
-            }
-            /*** site-header / footer*/
-            .site-header-outer {
-              border-bottom: 1px solid #C7DFF3;
-            }
-            .site-footer-outer {
-                border-top: 1px solid #C7DFF3;
-                background-color: #f8f9fa;
-            }
-            .site-header,
-            .site-footer {
-              width: 100%;
-              margin: 0 auto;
-              display: flex;
-              position: relative;
-              justify-content: space-between;
-              align-items: center;
-            }
-            .site-header a,
-            .site-footer a {
-              text-decoration: none;
-            }
-            .site-navigation nav ul {
-              list-style: none;
-              display: flex;
             }
             
             /*** images */
@@ -166,11 +140,11 @@
             .top-post-item .thumbnail {
               width: 80px;
               height: 80px;
-              opacity: 0.85;
+              opacity: 1.0;
             }
             
             .top-post-item .thumbnail:hover {
-              opacity: 1.0;
+              opacity: 0.85;
             }
             
             .top-post-item.featured-post .category {
@@ -242,6 +216,261 @@
                 border-left: 6px solid #007aff;
             }
             
+              .site-header-outer {
+              border-bottom: 1px solid #C7DFF3;
+            }
+            .site-header {
+              width: 100%;
+              margin: 0 auto;
+              display: flex;
+              position: relative;
+              justify-content: space-between;
+              align-items: center;
+            }
+            .site-header a {
+              text-decoration: none;
+            }
+            .site-header {
+              padding: 12px 6px;
+              font-size: 15px;
+              line-height: 17px;
+            }
+            .site-navigation {
+              font-weight: 700;
+            }
+            .site-navigation nav li {
+              padding-left: 10px;
+            }
+            .site-navigation nav ul {
+              list-style: none;
+              display: flex;
+            }
+            @media (min-width: 800px) {
+                .site-header {
+                  margin: 0 auto;
+                  max-width: 824px;
+                }
+            }
+            @media (min-width: 1280px) {
+                .site-header {
+                  max-width: 1280px;
+                  font-size: 16px;
+                  line-height: 18px;
+                  padding: 12px;
+                }
+                .site-navigation {
+                  font-size: 16px;
+                  font-weight: bold;
+                  line-height: 19px;
+                }
+                .site-navigation nav li {
+                  padding-left: 16px;
+                }
+            }
+            @media (min-width: 1366px) {
+                .site-header {
+                  max-width: 1366px;
+                }
+            }
+              .site-footer-outer {
+                border-top: 1px solid #C7DFF3;
+                background-color: #f8f9fa;
+            }
+            .site-footer {
+                width: 100%;
+                margin: 0 auto;
+                display: flex;
+                position: relative;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .site-footer {
+                padding: 32px 6px 12px;
+                font-size: 12px;
+            }
+            .site-footer a {
+                text-decoration: none;
+            }
+            @media (min-width: 800px) {
+                .site-footer {
+                  margin: 0 auto;
+                  max-width: 824px;
+                }
+            }
+            @media (min-width: 1280px) {
+                .site-footer {
+                  max-width: 1280px;
+                  padding: 60px 12px 24px 12px;
+                  font-size: 14px;
+                  line-height: 18px;
+                }
+            }
+            @media (min-width: 1366px) {
+                .site-footer {
+                  max-width: 1366px;
+                }
+            }
+              .index-item-outer-medium .index-item {
+              flex-direction: column;
+            }
+            
+            .index-item-outer-medium {
+              width: 100%;
+            }
+            
+            .index-item-outer-medium .index-item {
+              margin: 8px;
+            }
+            
+            .index-item-outer-medium .index-item .thumbnail {
+              width: 100%;
+              height: 200px;
+            }
+            
+            .index-item-outer-medium .thumbnail img {
+              border-radius: 2px 2px 0 0;
+            }
+            
+            .index-item {
+              display: flex;
+              border-radius: 2px;
+              border: 1px solid #C7DFF3;
+            }
+            
+            .index-item .meta2 {
+              padding: 10px;
+            }
+            
+            .index-item .meta2 * {
+              margin: 0 0 8px 0;
+            }
+            
+            .index-item .meta2 .title {
+              height: 40px;
+              font-size: 17px;
+              line-height: 20px;
+            }
+            
+            .index-item .meta2 .category, .index-item .meta2 .category a {
+              font-size: 13px;
+              line-height: 16px;
+              color: #007aff;
+              text-transform: uppercase;
+            }
+            
+            .index-item-outer-medium .meta2 .excerpt {
+              font-size: 15px;
+              line-height: 20px;
+              max-height: 80px;
+              height: 80px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: inline-block;
+              margin: 0;
+            }
+            
+            .thumbnail img {
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+            }
+            
+            .td {
+              text-decoration: none;
+            }
+            
+            @media (min-width: 740px) {
+            
+              .index-item-outer-medium {
+                width: 50%;
+              }
+              .index-item .thumbnail {
+                transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+              }
+            
+              .index-item:hover .thumbnail {
+                filter: brightness(85%);
+              }
+            }
+            
+            @media (min-width: 1020px) {
+            .index-item .meta2 .title {
+              height: 60px;
+            }
+            }
+            
+            @media (min-width: 1366px) {}
+            
+              .index-item-outer-wide .index-item {
+              flex-direction: column;
+            }
+            
+            .index-item-outer-wide {
+              width: 100%;
+            }
+            
+            .index-item-outer-wide .index-item {
+              margin: 8px;
+            }
+            
+            .index-item-outer-wide .thumbnail {
+              width: 100%;
+              height: 180px;
+            }
+            
+            .index-item-outer-wide .thumbnail img {
+              border-radius: 2px 0 0 2px;
+            }
+            
+            .index-item-outer-wide .meta2 {
+              width: 100%;
+            }
+            
+            .index-item-outer-wide .meta2 .excerpt {
+              font-size: 15px;
+              line-height: 20px;
+              height: 60px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: inline-block;
+              margin: 0;
+            }
+            
+            .index-item-outer-wide .index-item .meta2 .title {
+              height: 40px;
+              font-size: 17px;
+              line-height: 20px;
+            }
+            
+            .index-item .meta2 .title a:hover {
+              color: #555555;
+            }
+            
+            @media (min-width: 740px) {
+            }
+            
+            @media (min-width: 1366px) {}
+            
+              .index-page {
+              width: 100%;
+              display: flex;
+              flex-flow: wrap;
+              padding: 0 12px;
+            }
+            .main-index-page {
+                padding: 12px 6px;
+            }
+            @media (min-width: 800px) {
+                .main-index-page-outer {
+                  margin: 0 auto;
+                  max-width: 824px;
+                }
+            }
+            @media (min-width: 1280px) {
+            }
+            @media (min-width: 1366px) {
+            }
+            
               /*** fonts */
             h1 {
               font-size: 28px;
@@ -266,20 +495,6 @@
             h2, h3, h4 {
               margin-bottom: 22px;
               margin-top: 44px;
-            }
-            /*** site header */
-            .site-header {
-              padding: 12px 6px;
-              font-size: 15px;
-              line-height: 17px;
-            }
-            .site-navigation nav li {
-              padding-left: 10px;
-            }
-            /*** site footer */
-            .site-footer {
-              padding: 32px 6px 12px;
-              font-size: 12px;
             }
             figcaption {
               margin-top: 4px;
@@ -477,7 +692,7 @@
             .full-width-figure {
               margin: 0 0 16px 0;
             }
-            .main-content-outer, .site-header, .site-footer {
+            .main-content-outer {
               margin: 0 auto;
               max-width: 824px;
             }
@@ -514,23 +729,6 @@
               margin-top: 32px;
               margin-bottom: 32px;
             }
-            
-            /*** site header */
-            .site-header {
-              max-width: 1280px;
-              font-size: 16px;
-              line-height: 18px;
-              padding: 12px;
-            }
-            .site-navigation {
-              font-size: 16px;
-              font-weight: bold;
-              line-height: 19px;
-            }
-            .site-navigation nav li {
-              padding-left: 16px;
-            }
-            
             /*** main content */
             .main-content-outer {
               max-width: 1280px;
@@ -672,20 +870,9 @@
             .simple-img figcaption {
               font-size: 12px;
             }
-            
-            /*** site footer */
-            .site-footer {
-              max-width: 1280px;
-              padding: 60px 12px 24px 12px;
-              font-size: 14px;
-              line-height: 18px;
-            }
               }
               @media (min-width: 1366px) {
                 /*** site header */
-            .site-header {
-              max-width: 1366px;
-            }
             
             /*** main content */
             .main-content-outer {
@@ -738,11 +925,6 @@
               margin: 0;
               color: #818181;
             }
-            
-            /*** site footer */
-            .site-footer {
-              max-width: 1366px;
-            }
               }
         </style>
         <script type="application/ld+json">
@@ -781,7 +963,7 @@
         <div class="body-inner">
             <div class="site-header-outer">
                 <header class="site-header">
-                    <nav class="site-logo"> <a href="https://www.tsingapore.com/">
+                    <nav> <a href="https://www.tsingapore.com/">
                 <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span><span style="font-weight: 700" class="logo-line">|</span>
             </a>
 
@@ -1082,11 +1264,11 @@
             </div>
             <aside class="site-footer-outer">
                 <footer class="site-footer">
-                    <div class="footer-logo"> <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span>
+                    <div> <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span>
                         <span
                         style="font-weight: 700" class="logo-line">|</span>
                     </div>
-                    <div class="footer-copyright"> <span><a href="https://www.tsingapore.com/sitemap.xml">sitemap</a></span> | <span><a href="mailto:info@tsingapore.com">email</a></span>
+                    <div> <span><a href="https://www.tsingapore.com/sitemap.xml">sitemap</a></span> | <span><a href="mailto:info@tsingapore.com">email</a></span>
 
                     </div>
                 </footer>
