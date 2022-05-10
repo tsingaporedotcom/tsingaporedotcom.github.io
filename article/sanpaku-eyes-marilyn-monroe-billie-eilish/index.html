@@ -92,7 +92,7 @@
                 }
                 a {
                   color: #000000;
-                  text-decoration: underline dashed #007aff;
+                  text-decoration: underline solid #007aff;
                 }
                 /*** generic custom stuff */
                 .logo-line,
@@ -118,12 +118,23 @@
                 }
                 
                 /*** post items */
+                .post-items {
+                  padding: 12px 6px;
+                }
                 .post-items a {
                   text-decoration: none;
                 }
+                .post-items h3 {
+                  font-size: 14px;
+                  line-height: 16px;
+                  color: #333333;
+                  font-weight: bold;
+                  margin-top: unset;
+                  margin-bottom: 6px;
+                }
                 .post-items h4 {
                   margin-top: 0px;
-                  margin-bottom: 0px;
+                  margin-bottom: 4px;
                 }
                 .top-post-item {
                   display: flex;
@@ -135,6 +146,12 @@
                   text-decoration: none;
                 }
                 
+                .top-post-item .description .tp-meta {
+                  font-size: 12px;
+                  line-height: 14px;
+                  margin: 0;
+                  color: #818181;
+                }
                 .top-post-item .thumbnail {
                   width: 80px;
                   height: 80px;
@@ -242,6 +259,14 @@
                 .site-navigation nav ul {
                   list-style: none;
                   display: flex;
+                }
+                .site-navigation nav li:nth-child(n+3) {
+                    display: none;
+                }
+                @media (min-width: 420px) {
+                    .site-navigation nav li:nth-child(n+3) {
+                      display: unset;
+                    }
                 }
                 @media (min-width: 800px) {
                     .site-header {
@@ -468,6 +493,50 @@
                 }
                 @media (min-width: 1366px) {
                 }
+                  .more-to-read-items {
+                    padding: 12px 6px;
+                    border-top: 1px solid #C7DFF3;
+                }
+                .more-to-read-items a {
+                    text-decoration: none;
+                }
+                .more-to-read-item-outer {
+                    border-top: 1px solid #C7DFF3;
+                    padding: 12px;
+                }
+                .more-to-read-items h3 {
+                     margin-top: 12px;
+                 }
+                .more-to-read-items h4 {
+                     font-size: 13px;
+                     line-height: 18px;
+                     margin: 0;
+                 }
+                @media (min-width: 800px) {
+                    .more-to-read-items-inner{
+                        display: flex;
+                        flex-flow: wrap;
+                    }
+                    .more-to-read-item-outer {
+                        width: 50%;
+                    }
+                }
+                @media (min-width: 1280px) {
+                    .more-to-read-item-outer {
+                        width: 33.3333%;
+                    }
+                    .more-to-read-items {
+                        width: 100%;
+                        padding: 12px;
+                    }
+                    .more-to-read-items h3 {
+                         margin-top: 24px;
+                         font-size: 18px;
+                         line-height: 22px;
+                     }
+                }
+                @media (min-width: 1366px) {
+                }
                 
                   /*** fonts */
                 h1 {
@@ -647,6 +716,11 @@
                   margin: 0 12px;
                 }
                 /*** meta */
+                .tp-meta {
+                   display: flex;
+                   flex-wrap: wrap;
+                   align-items: center;
+                 }
                 .meta {
                   margin-top: 32px;
                   margin-bottom: 16px;
@@ -758,6 +832,8 @@
                 
                 /*** post items */
                 .toc {
+                  background-color: white;
+                  border-radius: 12px;
                   display: unset;
                   position: sticky;
                   top: 44px;
@@ -818,16 +894,11 @@
                   padding: 12px;
                   padding-left: 24px;
                 }
+                .post-items h4 {
+                  margin-bottom: 0px;
+                }
                 .top-post-item {
                   padding: 0;
-                }
-                .post-items h3 {
-                  font-size: 14px;
-                  line-height: 16px;
-                  color: #333333;
-                  font-weight: bold;
-                  margin-top: unset;
-                  margin-bottom: 6px;
                 }
                 .post-item-outer {
                   padding: 12px 0;
@@ -847,12 +918,6 @@
                   line-height: 15px;
                   height: 45px;
                   text-overflow: ellipsis;
-                }
-                .top-post-item .description .meta {
-                  font-size: 12px;
-                  line-height: 14px;
-                  margin: 0;
-                  color: #818181;
                 }
                 
                 /*** images */
@@ -917,7 +982,7 @@
                   height: 48px;
                   text-overflow: ellipsis;
                 }
-                .top-post-item .description .meta {
+                .top-post-item .description .tp-meta {
                   font-size: 12px;
                   line-height: 14px;
                   margin: 0;
@@ -1026,283 +1091,312 @@
     </head>
     
     <body>
-        <div class="body-inner">
-            <div class="site-header-outer">
-                <header class="site-header">
-                    <div> <a href="https://www.tsingapore.com/">
+        <div class="site-header-outer">
+            <header class="site-header">
+                <div> <a href="https://www.tsingapore.com/">
                 <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span><span style="font-weight: 700" class="logo-line">|</span>
             </a>
 
-                    </div>
-                    <div class="site-navigation">
-                        <nav>
-                            <ul>
-                                <li> <a href="https://www.tsingapore.com/culture/"><span>culture</span></a>
+                </div>
+                <div class="site-navigation">
+                    <nav>
+                        <ul>
+                            <li> <a href="https://www.tsingapore.com/culture/"><span>culture</span></a>
 
-                                </li>
-                                <li> <a href="https://www.tsingapore.com/fashion/"><span>fashion</span></a>
+                            </li>
+                            <li> <a href="https://www.tsingapore.com/fashion/"><span>fashion</span></a>
 
-                                </li>
-                                <li> <a href="https://www.tsingapore.com/beauty/"><span>beauty</span></a>
+                            </li>
+                            <li> <a href="https://www.tsingapore.com/beauty/"><span>beauty</span></a>
 
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </header>
-            </div>
-            <div class="main-content-outer">
-                <aside class="toc">
-                     <h3>Table of contents</h3>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        </div>
+        <div class="main-content-outer">
+            <aside class="toc">
+                 <h3>Table of contents</h3>
 
-                    <ul>
-                        <li class="h1"><a href="#sanpaku,-a-different-face-reading-method">Sanpaku, a Different Face Reading Method</a>
-                        </li>
-                        <li class="h2"><a href="#how-rare-are-sanpaku-eyes">How Rare Are Sanpaku Eyes?</a>
-                        </li>
-                        <li class="h2"><a href="#famous-people-with-sanpoku-eyes">Famous People with Sanpoku Eyes</a>
-                        </li>
-                        <li class="h2"><a href="#could-there-be-other-causes-for-sanpaku-eyes">Could There be Other Causes for Sanpaku Eyes?</a>
-                        </li>
-                        <li class="h2"><a href="#is-sanpaku-pseudoscience-or-not">Is Sanpaku Pseudoscience or Not?</a>
-                        </li>
-                        <li class="h2"><a href="#types-of-sanpaku-eyes">Types of Sanpaku Eyes</a>
-                        </li>
-                        <li class="h2"><a href="#how-are-sanpaku-eyes-different-from-normal-eyes">How Are Sanpaku Eyes Different From Normal Eyes?</a>
-                        </li>
-                        <li class="h2"><a href="#are-sanpaku-eyes-health-threats">Are Sanpaku Eyes Health Threats?</a>
-                        </li>
-                        <li class="h2"><a href="#what-does-sanpaku-eyes-suggest">What Does Sanpaku Eyes Suggest?</a>
-                        </li>
-                    </ul>
-                </aside>
-                <script>
-                    window.addEventListener('DOMContentLoaded', () => {
-                      const observer = new IntersectionObserver(entries => {
-                        entries.forEach(entry => {
-                          const id = entry.target.getAttribute('id');
-                          console.log('hello', id);
-                          const elements = document.querySelector(`.toc ul li a[href="#${id}"]`);
-                          console.log('elements', elements);
-                          if (elements) {
-                              if (entry.intersectionRatio > 0) {
-                                elements.parentElement.classList.add('selected');
-                              } else {
-                                elements.parentElement.classList.remove('selected');
-                              }
+                <ul>
+                    <li class="h1"><a href="#sanpaku,-a-different-face-reading-method">Sanpaku, a Different Face Reading Method</a>
+                    </li>
+                    <li class="h2"><a href="#how-rare-are-sanpaku-eyes">How Rare Are Sanpaku Eyes?</a>
+                    </li>
+                    <li class="h2"><a href="#famous-people-with-sanpoku-eyes">Famous People with Sanpoku Eyes</a>
+                    </li>
+                    <li class="h2"><a href="#could-there-be-other-causes-for-sanpaku-eyes">Could There be Other Causes for Sanpaku Eyes?</a>
+                    </li>
+                    <li class="h2"><a href="#is-sanpaku-pseudoscience-or-not">Is Sanpaku Pseudoscience or Not?</a>
+                    </li>
+                    <li class="h2"><a href="#types-of-sanpaku-eyes">Types of Sanpaku Eyes</a>
+                    </li>
+                    <li class="h2"><a href="#how-are-sanpaku-eyes-different-from-normal-eyes">How Are Sanpaku Eyes Different From Normal Eyes?</a>
+                    </li>
+                    <li class="h2"><a href="#are-sanpaku-eyes-health-threats">Are Sanpaku Eyes Health Threats?</a>
+                    </li>
+                    <li class="h2"><a href="#what-does-sanpaku-eyes-suggest">What Does Sanpaku Eyes Suggest?</a>
+                    </li>
+                </ul>
+            </aside>
+            <script>
+                window.addEventListener('DOMContentLoaded', () => {
+                  const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                      const id = entry.target.getAttribute('id');
+                      console.log('hello', id);
+                      const elements = document.querySelector(`.toc ul li a[href="#${id}"]`);
+                      console.log('elements', elements);
+                      if (elements) {
+                          if (entry.intersectionRatio > 0) {
+                            elements.parentElement.classList.add('selected');
+                          } else {
+                            elements.parentElement.classList.remove('selected');
                           }
-                        });
-                      });
-                    
-                      const articles = document.querySelectorAll('article[id]');
-                      if(articles) {
-                        articles.forEach((section) => { observer.observe(section); });
-                      }
-                    
-                      const h1s = document.querySelectorAll('h1[id]');
-                      if(h1s) {
-                        h1s.forEach((section) => { observer.observe(section); });
-                      }
-                      const h2s = document.querySelectorAll('h2[id]');
-                      if(h2s) {
-                        h2s.forEach((section) => { observer.observe(section); });
-                      }
-                      const h3s = document.querySelectorAll('h3[id]');
-                      if(h3s) {
-                        h3s.forEach((section) => { observer.observe(section); });
                       }
                     });
-                </script>
-                <main class="main-content">
-                    <article>
-                        <div class="page-header-outer">
-                            <header class="page-header">
-                                 <h1 id="sanpaku,-a-different-face-reading-method">Sanpaku, a Different Face Reading Method</h1>
+                  });
+                
+                  const articles = document.querySelectorAll('article[id]');
+                  if(articles) {
+                    articles.forEach((section) => { observer.observe(section); });
+                  }
+                
+                  const h1s = document.querySelectorAll('h1[id]');
+                  if(h1s) {
+                    h1s.forEach((section) => { observer.observe(section); });
+                  }
+                  const h2s = document.querySelectorAll('h2[id]');
+                  if(h2s) {
+                    h2s.forEach((section) => { observer.observe(section); });
+                  }
+                  const h3s = document.querySelectorAll('h3[id]');
+                  if(h3s) {
+                    h3s.forEach((section) => { observer.observe(section); });
+                  }
+                });
+            </script>
+            <main class="main-content">
+                <article>
+                    <div class="page-header-outer">
+                        <header class="page-header">
+                             <h1 id="sanpaku,-a-different-face-reading-method">Sanpaku, a Different Face Reading Method</h1>
 
-                                <aside class="meta">
-                                    <div class="author-photo">
-                                        <img alt="The picture of Clara Ortiz" src="https://www.tsingapore.com/assets/images/clara_ortiz_64x64.jpg"
-                                        srcset="https://www.tsingapore.com/assets/images/clara_ortiz_128x128.jpg 2x">
-                                    </div>
-                                    <div class="info"> <span class="author-name">Clara Ortiz</span>
+                            <aside class="meta">
+                                <div class="author-photo">
+                                    <img alt="The picture of Clara Ortiz" src="https://www.tsingapore.com/assets/images/clara_ortiz_64x64.jpg"
+                                    srcset="https://www.tsingapore.com/assets/images/clara_ortiz_128x128.jpg 2x">
+                                </div>
+                                <div class="info"> <span class="author-name">Clara Ortiz</span>
  <span class="published-date">Nov 24th, 2021</span>
 
-                                    </div>
-                                </aside>
-                            </header>
-                        </div>
-                        <div class="post-body-outer">
-                            <div class="post-body">
-                                <div class="post-body-inner">
-                                    <p>Have you heard about <strong>sanpaku eyes</strong>? Sanpaku is a Japanese
-                                        word that means “three whites.” This expression refers to people who can
-                                        see the <strong>white of their eyes at the top or bottom of their iris</strong> even
-                                        when they are looking straight ahead.</p>
-                                    <div id="featured-img">
-                                        <aside>
-                                            <figure class="full-width-figure  featured">
-                                                <picture>
-                                                    <source type="image/webp" srcset="
+                                </div>
+                            </aside>
+                        </header>
+                    </div>
+                    <div class="post-body-outer">
+                        <div class="post-body">
+                            <div class="post-body-inner">
+                                <p>Have you heard about <strong>sanpaku eyes</strong>? Sanpaku is a Japanese
+                                    word that means “three whites.” This expression refers to people who can
+                                    see the <strong>white of their eyes at the top or bottom of their iris</strong> even
+                                    when they are looking straight ahead.</p>
+                                <div id="featured-img">
+                                    <aside>
+                                        <figure class="full-width-figure  featured">
+                                            <picture>
+                                                <source type="image/webp" srcset="
               /assets/pictures/billie-eilish-eyes-800.webp 800w,
               /assets/pictures/billie-eilish-eyes-1200.webp 1200w,
               /assets/pictures/billie-eilish-eyes-1600.webp 1600w" sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                    <source type="image/jpeg" srcset="
+                                                <source type="image/jpeg" srcset="
               /assets/pictures/billie-eilish-eyes-800.jpg 800w,
               /assets/pictures/billie-eilish-eyes-1200.jpg 1200w,
               /assets/pictures/billie-eilish-eyes-1600.jpg 1600w" sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                    <img src="/assets/pictures/billie-eilish-eyes-800.jpg" alt="Billie Eilish eyes"
-                                                    />
-                                                </picture>
-                                                <figcaption>Picture by Glenn Francis, <a href="https://www.pacificprodigital.com" rel="nofollow">www.pacificprodigital.com</a>
-                                                </figcaption>
-                                            </figure>
-                                        </aside>
-                                    </div>
-                                    <p>This characteristic can be present in both or only one of the person’s
-                                        eyes. Apparently, it’s just a regular feature of someone, but there’s a <strong>lot of superstition surrounding sanpaku eyes</strong> among
-                                        the Japanese.</p>
-                                    <p>And having such eyes can have a negative <strong>impact on a person’s destiny</strong>.
-                                        This is also thought to indicate a physical and mental imbalance <strong>in traditional Japanese medicine</strong>.
-                                        If you stop watching anime, you’ll notice that most of them have the lower
-                                        part with the most visible sclera or just a little black ball in the middle
-                                        with the rest white. One Punch Man characters Naruto and Saitama are two
-                                        examples.</p>
-                                    
-<h2 id="how-rare-are-sanpaku-eyes">How Rare Are Sanpaku Eyes?</h2>
-
-                                    <p>There <strong>isn’t any solid research or data available</strong> on how
-                                        rare or common sanpaku eyes are. But they don’t seem to be exceptionally
-                                        rare.</p>
-                                    
-<h2 id="famous-people-with-sanpoku-eyes">Famous People with Sanpoku Eyes</h2>
-
-                                    <p>Former US President <strong>John F. Kennedy, Princess Diana and Marilyn Monroe</strong> all
-                                        had notable cases of yin sanpaku (a condition in which the whites of the
-                                        eyes may be seen below the iris).</p>
-                                    <aside>
-                                        <figure class="full-width-figure ">
-                                            <picture>
-                                                <source type="image/webp" srcset="
-              /assets/pictures/marylin-monroe-in-dont-bother-to-knock-800.webp 800w,
-              /assets/pictures/marylin-monroe-in-dont-bother-to-knock-1200.webp 1200w,
-              /assets/pictures/marylin-monroe-in-dont-bother-to-knock-1600.webp 1600w"
-                                                sizes="
-              (max-width: 800px) 100vw,
-              800px" />
-                                                <source type="image/jpeg" srcset="
-              /assets/pictures/marylin-monroe-in-dont-bother-to-knock-800.jpg 800w,
-              /assets/pictures/marylin-monroe-in-dont-bother-to-knock-1200.jpg 1200w,
-              /assets/pictures/marylin-monroe-in-dont-bother-to-knock-1600.jpg 1600w"
-                                                sizes="
-              (max-width: 800px) 100vw,
-              800px" />
-                                                <img src="/assets/pictures/marylin-monroe-in-dont-bother-to-knock-800.jpg"
-                                                alt="Marilyn Monroe is looking to the camera" />
+                                                <img src="/assets/pictures/billie-eilish-eyes-800.jpg" alt="Billie Eilish eyes"
+                                                />
                                             </picture>
-                                            <figcaption>From <a href="https://commons.wikimedia.org/wiki/File:Monroe_in_Don%27t_Bother_to_Knock_(1952).jpg"
-                                                rel="nofollow">Wikimedia Commons</a>
+                                            <figcaption>Picture by Glenn Francis, <a href="https://www.pacificprodigital.com" rel="nofollow">www.pacificprodigital.com</a>
                                             </figcaption>
                                         </figure>
                                     </aside>
-                                    <p>On the other hand, cult leader Charles Manson’s pictures are always showing
-                                        him with <strong>huge white eyeballs</strong>.</p>
-                                    
+                                </div>
+                                <p>This characteristic can be present in both or only one of the person’s
+                                    eyes. Apparently, it’s just a regular feature of someone, but there’s a <strong>lot of superstition surrounding sanpaku eyes</strong> among
+                                    the Japanese.</p>
+                                <p>And having such eyes can have a negative <strong>impact on a person’s destiny</strong>.
+                                    This is also thought to indicate a physical and mental imbalance <strong>in traditional Japanese medicine</strong>.
+                                    If you stop watching anime, you’ll notice that most of them have the lower
+                                    part with the most visible sclera or just a little black ball in the middle
+                                    with the rest white. One Punch Man characters Naruto and Saitama are two
+                                    examples.</p>
+                                
+<h2 id="how-rare-are-sanpaku-eyes">How Rare Are Sanpaku Eyes?</h2>
+
+                                <p>There <strong>isn’t any solid research or data available</strong> on how
+                                    rare or common sanpaku eyes are. But they don’t seem to be exceptionally
+                                    rare.</p>
+                                
+<h2 id="famous-people-with-sanpoku-eyes">Famous People with Sanpoku Eyes</h2>
+
+                                <p>Former US President <strong>John F. Kennedy, Princess Diana and Marilyn Monroe</strong> all
+                                    had notable cases of yin sanpaku (a condition in which the whites of the
+                                    eyes may be seen below the iris).</p>
+                                <aside>
+                                    <figure class="full-width-figure ">
+                                        <picture>
+                                            <source type="image/webp" srcset="
+              /assets/pictures/marylin-monroe-in-dont-bother-to-knock-800.webp 800w,
+              /assets/pictures/marylin-monroe-in-dont-bother-to-knock-1200.webp 1200w,
+              /assets/pictures/marylin-monroe-in-dont-bother-to-knock-1600.webp 1600w"
+                                            sizes="
+              (max-width: 800px) 100vw,
+              800px" />
+                                            <source type="image/jpeg" srcset="
+              /assets/pictures/marylin-monroe-in-dont-bother-to-knock-800.jpg 800w,
+              /assets/pictures/marylin-monroe-in-dont-bother-to-knock-1200.jpg 1200w,
+              /assets/pictures/marylin-monroe-in-dont-bother-to-knock-1600.jpg 1600w"
+                                            sizes="
+              (max-width: 800px) 100vw,
+              800px" />
+                                            <img src="/assets/pictures/marylin-monroe-in-dont-bother-to-knock-800.jpg"
+                                            alt="Marilyn Monroe is looking to the camera" />
+                                        </picture>
+                                        <figcaption>From <a href="https://commons.wikimedia.org/wiki/File:Monroe_in_Don%27t_Bother_to_Knock_(1952).jpg"
+                                            rel="nofollow">Wikimedia Commons</a>
+                                        </figcaption>
+                                    </figure>
+                                </aside>
+                                <p>On the other hand, cult leader Charles Manson’s pictures are always showing
+                                    him with <strong>huge white eyeballs</strong>.</p>
+                                
 <h2 id="could-there-be-other-causes-for-sanpaku-eyes">Could There be Other Causes for Sanpaku Eyes?</h2>
 
-                                    <p>Obviously, there are various reasons why a person’s eye shape may appear
-                                        a certain way, and your eyes may appear differently from one moment, picture,
-                                        and/or angle to the next. For example, the <strong>shape of the skin around someone’s eye</strong> may
-                                        change over time due to age and loss of elasticity, causing drooping and
-                                        highlighting the sclera. Or, as a result of cosmetic surgery, the shape
-                                        of someone’s eye may be distorted, causing the eyelids to be pulled in
-                                        such a way that different parts of the eye become more visible.</p>
+                                <p>Obviously, there are various reasons why a person’s eye shape may appear
+                                    a certain way, and your eyes may appear differently from one moment, picture,
+                                    and/or angle to the next. For example, the <strong>shape of the skin around someone’s eye</strong> may
+                                    change over time due to age and loss of elasticity, causing drooping and
+                                    highlighting the sclera. Or, as a result of cosmetic surgery, the shape
+                                    of someone’s eye may be distorted, causing the eyelids to be pulled in
+                                    such a way that different parts of the eye become more visible.</p>
+                                <h2
+                                id="is-sanpaku-pseudoscience-or-not">Is Sanpaku Pseudoscience or Not?</h2>
+                                    <p>Whether or not the notion is true, the eyes appear to <strong>have their own story to tell</strong>.
+                                        Disorders such as <strong>chronic inflammation</strong>, according to Dr
+                                        Lim, the medical director of the <a href="https://www.drnatashalim.com/">Natasha Lim Eye Centre</a>,
+                                        can affect the colour of the iris.</p>
+                                    <p>It is entirely up to you to believe the traditions or the theory. Though
+                                        we’re guessing you’re now even more eager to <strong>learn how to tell if you have sanpaku eyes</strong>.</p>
                                     <h2
-                                    id="is-sanpaku-pseudoscience-or-not">Is Sanpaku Pseudoscience or Not?</h2>
-                                        <p>Whether or not the notion is true, the eyes appear to <strong>have their own story to tell</strong>.
-                                            Disorders such as <strong>chronic inflammation</strong>, according to Dr
-                                            Lim, the medical director of the <a href="https://www.drnatashalim.com/">Natasha Lim Eye Centre</a>,
-                                            can affect the colour of the iris.</p>
-                                        <p>It is entirely up to you to believe the traditions or the theory. Though
-                                            we’re guessing you’re now even more eager to <strong>learn how to tell if you have sanpaku eyes</strong>.</p>
-                                        <h2
-                                        id="types-of-sanpaku-eyes">Types of Sanpaku Eyes</h2>
-                                            <p>Several <strong>types of Sanpaku eyes have different meanings</strong>.
-                                                However, it is majorly divided into two.</p>
-                                            
+                                    id="types-of-sanpaku-eyes">Types of Sanpaku Eyes</h2>
+                                        <p>Several <strong>types of Sanpaku eyes have different meanings</strong>.
+                                            However, it is majorly divided into two.</p>
+                                        
 <h3 id="yin-sanpaku">Yin Sanpaku</h3>
 
-                                            <p>Yin Sanpaku eyes are eyes with white visible <strong>below the iris</strong>.</p>
-                                            <p>Yin Sanpaku is generally considered a negative sign. Usually associated
-                                                with <strong>alcoholics and drug</strong> addicts.</p>
-                                            
+                                        <p>Yin Sanpaku eyes are eyes with white visible <strong>below the iris</strong>.</p>
+                                        <p>Yin Sanpaku is generally considered a negative sign. Usually associated
+                                            with <strong>alcoholics and drug</strong> addicts.</p>
+                                        
 <h3 id="yang-sanpaku">Yang Sanpaku</h3>
 
-                                            <p>Yang Sanpaku eyes are eyes with white visible <strong>above the iris</strong>;
-                                                the opposite of Yin Sanpaku.</p>
-                                            <p>People with Yang Sanpaku are tend to be more <strong>violent</strong>,
-                                                or even psychopaths.</p>
-                                            
+                                        <p>Yang Sanpaku eyes are eyes with white visible <strong>above the iris</strong>;
+                                            the opposite of Yin Sanpaku.</p>
+                                        <p>People with Yang Sanpaku are tend to be more <strong>violent</strong>,
+                                            or even psychopaths.</p>
+                                        
 <h2 id="how-are-sanpaku-eyes-different-from-normal-eyes">How Are Sanpaku Eyes Different From Normal Eyes?</h2>
 
-                                            <p>In a few ways, these eyes differ from regular eyes. Because the sclera
-                                                is visible, you can quickly see the white portion of their eyes. Furthermore,
-                                                because these eyes do not have a crease, they appear <strong>more distant and older</strong>.
-                                                You’ve probably seen Sanpaku eyes if you’ve watched an anime or read a
-                                                manga.</p>
-                                            <p>They are frequently described as “<strong>having squinted eyes</strong>”
-                                                or “having <strong>eyelids that meet at the bridge of their noses</strong>.”
-                                                They are similar to a <strong>surprised expression</strong> in that they
-                                                make the person appear surprised. Everyone seems to have figured out that
-                                                Sanpaku eyes simply make people appear surprised even when they are not.
-                                                It also shows someone who is deceitful. For example, many characters in
-                                                manga and anime have this eye type. Even if they are just fictional characters,
-                                                we tend to associate anyone with <strong>these eyes with villainy</strong>.</p>
-                                            <h2
-                                            id="are-sanpaku-eyes-health-threats">Are Sanpaku Eyes Health Threats?</h2>
-                                                <p>Sanpaku eyes are a significant <strong>source of consternation for people</strong>.
-                                                    It is scientifically known as a <strong><a href="https://pubmed.ncbi.nlm.nih.gov/33393972/">bilateral deviation</a></strong>,
-                                                    which was observed in a young girl and caused by fatigue.</p>
-                                                <p>Many people believe that having a small white space indicates that your
-                                                    eyesight is particularly poor; however, this <strong>is not the case</strong>.
-                                                    The reality is that our eyes are all the time moving; they rarely remain
-                                                    completely still, so white space is always visible in the inner corner.</p>
-                                                <p>Some people have more white space than others, but this does not imply
-                                                    that their vision is poorer. In reality, there is <strong>no link between these white spaces and your vision</strong>.
-                                                    Research has linked <a href="https://www.healthline.com/health/mental-health/psychopath-eyes">unusual pupil activity</a>,
-                                                    such as <strong>Sanpaku, to a degree of psychopathy</strong> in another development.
-                                                    However, it is unclear whether the study covers all emotions or is limited
-                                                    to negative emotions. In addition, the appearance of Sanpaku eyes has been
-                                                    widely observed in people suffering from a variety of common health conditions. <strong>Chronic fatigue syndrome</strong>,
-                                                    diabetes, depression, anorexia, and other illnesses that cause malnourishment
-                                                    are examples.</p>
-                                                
+                                        <p>In a few ways, these eyes differ from regular eyes. Because the sclera
+                                            is visible, you can quickly see the white portion of their eyes. Furthermore,
+                                            because these eyes do not have a crease, they appear <strong>more distant and older</strong>.
+                                            You’ve probably seen Sanpaku eyes if you’ve watched an anime or read a
+                                            manga.</p>
+                                        <p>They are frequently described as “<strong>having squinted eyes</strong>”
+                                            or “having <strong>eyelids that meet at the bridge of their noses</strong>.”
+                                            They are similar to a <strong>surprised expression</strong> in that they
+                                            make the person appear surprised. Everyone seems to have figured out that
+                                            Sanpaku eyes simply make people appear surprised even when they are not.
+                                            It also shows someone who is deceitful. For example, many characters in
+                                            manga and anime have this eye type. Even if they are just fictional characters,
+                                            we tend to associate anyone with <strong>these eyes with villainy</strong>.</p>
+                                        <h2
+                                        id="are-sanpaku-eyes-health-threats">Are Sanpaku Eyes Health Threats?</h2>
+                                            <p>Sanpaku eyes are a significant <strong>source of consternation for people</strong>.
+                                                It is scientifically known as a <strong><a href="https://pubmed.ncbi.nlm.nih.gov/33393972/">bilateral deviation</a></strong>,
+                                                which was observed in a young girl and caused by fatigue.</p>
+                                            <p>Many people believe that having a small white space indicates that your
+                                                eyesight is particularly poor; however, this <strong>is not the case</strong>.
+                                                The reality is that our eyes are all the time moving; they rarely remain
+                                                completely still, so white space is always visible in the inner corner.</p>
+                                            <p>Some people have more white space than others, but this does not imply
+                                                that their vision is poorer. In reality, there is <strong>no link between these white spaces and your vision</strong>.
+                                                Research has linked <a href="https://www.healthline.com/health/mental-health/psychopath-eyes">unusual pupil activity</a>,
+                                                such as <strong>Sanpaku, to a degree of psychopathy</strong> in another development.
+                                                However, it is unclear whether the study covers all emotions or is limited
+                                                to negative emotions. In addition, the appearance of Sanpaku eyes has been
+                                                widely observed in people suffering from a variety of common health conditions. <strong>Chronic fatigue syndrome</strong>,
+                                                diabetes, depression, anorexia, and other illnesses that cause malnourishment
+                                                are examples.</p>
+                                            
 <h2 id="what-does-sanpaku-eyes-suggest">What Does Sanpaku Eyes Suggest?</h2>
 
-                                                <p>This eye condition characterized by a noticeable space between your nose
-                                                    and upper eyelids is a negative visual characteristic in Japan. Criminals
-                                                    were once marked with a <a href="https://en.wikipedia.org/wiki/Sanpaku">Sanpaku</a> eye
-                                                    to <strong>denote their crime</strong>. In Japan, it was used to indicate
-                                                    a criminal.</p>
-                                                <p>It can be seen painted on the brows of criminals in Edo-era Japanese art.
-                                                    Certain types of Sanpaku eyes are <strong>associated with “evil” or “good”</strong> personalities.
-                                                    This type of eye shape has been the subject of famous art pieces, and you
-                                                    may have assumed it was just a coincidence, which isn’t always the case.
-                                                    More researchers are discovering that the Sanpaku eyes are essential features
-                                                    for judging personality perception. For example, it has been found that
-                                                    the <strong>eyes give off impressions of emotions and sexual characteristics</strong>.</p>
-                                </div>
+                                            <p>This eye condition characterized by a noticeable space between your nose
+                                                and upper eyelids is a negative visual characteristic in Japan. Criminals
+                                                were once marked with a <a href="https://en.wikipedia.org/wiki/Sanpaku">Sanpaku</a> eye
+                                                to <strong>denote their crime</strong>. In Japan, it was used to indicate
+                                                a criminal.</p>
+                                            <p>It can be seen painted on the brows of criminals in Edo-era Japanese art.
+                                                Certain types of Sanpaku eyes are <strong>associated with “evil” or “good”</strong> personalities.
+                                                This type of eye shape has been the subject of famous art pieces, and you
+                                                may have assumed it was just a coincidence, which isn’t always the case.
+                                                More researchers are discovering that the Sanpaku eyes are essential features
+                                                for judging personality perception. For example, it has been found that
+                                                the <strong>eyes give off impressions of emotions and sexual characteristics</strong>.</p>
                             </div>
                         </div>
-                    </article>
-                </main>
-                <nav class="post-items">
-                     <h3>Top posts</h3>
+                    </div>
+                </article>
+            </main>
+            <nav class="post-items">
+                 <h3>Top posts</h3>
 
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/5-ways-to-celebrate-womens-history-month/">
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/crypto-trading-in-singapore/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="A gold coin like Bitcoin"
+                         srcset="/assets/pictures/bitcoin-physical-coin-80x80.jpg,
+                                /assets/pictures/bitcoin-physical-coin-160x160.jpg 2x"
+                         src="/assets/pictures/bitcoin-physical-coin-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">FINANCE</h3>
+                        <h4 class="title">Crypto Trading in Singapore</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">10 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/5-ways-to-celebrate-womens-history-month/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt=""
@@ -1325,14 +1419,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">10 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">430 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt=""
@@ -1355,14 +1449,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">346 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">780 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/top-10-gofundme-alternatives/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/top-10-gofundme-alternatives/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A woman's hand is giving money"
@@ -1385,14 +1479,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">206 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">640 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/bag-charm-from-hermes/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/bag-charm-from-hermes/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Photo of a Hermes Kellydoll bag."
@@ -1415,44 +1509,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">94 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">528 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/things-to-look-for-in-a-good-online-casino/">
-                <div class="top-post-item featured-post">
-                    <img width="80" height="80" class="thumbnail"
-                         alt="Close-up photo of playing cards"
-                         srcset="/assets/pictures/playing-cards-80x80.jpg,
-                                /assets/pictures/playing-cards-160x160.jpg 2x"
-                         src="/assets/pictures/playing-cards-80x80.jpg"
-                         loading="lazy"
-                    />
-                    <div class="description">
-                        <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Things To Look For In A Good Online Casino</h4>
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                <span class="meta">101 views - 5 min read</span>
-
-                                            </div>
                 </div>
-            </a>
-
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-marshmallow-test/">
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-marshmallow-test/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="White ceramic mug on book, filled with marshmallow."
@@ -1475,25 +1539,28 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">696 views - 5 min read</span>
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,130 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/how-to-cleanse-recharge-your-crystals/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/things-to-look-for-in-a-good-online-casino/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
-                         alt="Macro photography of black ceramic Gautama Buddha miniature"
-                         srcset="/assets/pictures/crystal-consciousness-80x80.jpg,
-                                /assets/pictures/crystal-consciousness-160x160.jpg 2x"
-                         src="/assets/pictures/crystal-consciousness-80x80.jpg"
+                         alt="Close-up photo of playing cards"
+                         srcset="/assets/pictures/playing-cards-80x80.jpg,
+                                /assets/pictures/playing-cards-160x160.jpg 2x"
+                         src="/assets/pictures/playing-cards-80x80.jpg"
                          loading="lazy"
                     />
                     <div class="description">
                         <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Clean and recharge your crystals with these simple steps</h4>
+                        <h4 class="title">Things To Look For In A Good Online Casino</h4>
 
 
 
@@ -1505,44 +1572,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">297 views - 5 min read</span>
-
-                                            </div>
-                </div>
-            </a>
-
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/lauren-tsai-model-artist-netflix-terrace-house-reality-interview-fashion/">
-                <div class="top-post-item featured-post">
-                    <img width="80" height="80" class="thumbnail"
-                         alt="Lauren Tsai is smiling to the camera"
-                         srcset="/assets/pictures/lauren-tsai-80x80.jpg,
-                                /assets/pictures/lauren-tsai-160x160.jpg 2x"
-                         src="/assets/pictures/lauren-tsai-80x80.jpg"
-                         loading="lazy"
-                    />
-                    <div class="description">
-                        <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Lauren Tsai, Model, Artist and Actress of Netflix's Terrace House</h4>
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                <span class="meta">311 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">535 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/discontinued-icons-audemars-piguet-royal-oak-15202st/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/discontinued-icons-audemars-piguet-royal-oak-15202st/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Audemars Piguet Royal Oak Jumbo"
@@ -1565,14 +1602,44 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">318 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">752 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singapore-food-waste-uglyfood-treatsure-insectta/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/how-to-cleanse-recharge-your-crystals/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Macro photography of black ceramic Gautama Buddha miniature"
+                         srcset="/assets/pictures/crystal-consciousness-80x80.jpg,
+                                /assets/pictures/crystal-consciousness-160x160.jpg 2x"
+                         src="/assets/pictures/crystal-consciousness-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Clean and recharge your crystals with these simple steps</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">731 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singapore-food-waste-uglyfood-treatsure-insectta/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A few half rotten apples on the ground"
@@ -1595,14 +1662,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">304 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">738 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/aura-photograph-new-age-selfie/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/aura-photograph-new-age-selfie/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Yellow and black coated wire"
@@ -1625,14 +1692,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">297 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">731 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/taha-bouqdib-maranda-barnes-husband-wife-duo-built-twg-tea-interview/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/taha-bouqdib-maranda-barnes-husband-wife-duo-built-twg-tea-interview/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Green tea plantation from birds eye view"
@@ -1655,14 +1722,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">325 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">759 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/iwc-goes-green-with-timbertex/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/iwc-goes-green-with-timbertex/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A person's hand with a watch"
@@ -1685,27 +1752,255 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">332 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                </nav>
-            </div>
-            <aside class="site-footer-outer">
-                <footer class="site-footer">
-                    <div> <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span>
-                        <span
-                        style="font-weight: 700" class="logo-line">|</span>
-                    </div>
-                    <div> <span><a href="https://www.tsingapore.com/sitemap.xml">sitemap</a></span> | <span><a href="mailto:info@tsingapore.com">email</a></span>
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singpost-guardians-singapore-lost-mail/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Letter forced into the post box"
+                         srcset="/assets/pictures/letter-forced-into-the-post-box-80x80.jpg,
+                                /assets/pictures/letter-forced-into-the-post-box-160x160.jpg 2x"
+                         src="/assets/pictures/letter-forced-into-the-post-box-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">STORY</h3>
+                        <h4 class="title">Who Look After Singapore's Undelivered Mail</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-met-operas-musicians-are-struggling/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Photography of people sitting on theater during nighttime"
+                         srcset="/assets/pictures/half-empty-new-york-opera-80x80.jpg,
+                                /assets/pictures/half-empty-new-york-opera-160x160.jpg 2x"
+                         src="/assets/pictures/half-empty-new-york-opera-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Met Opera Musicians Who Have Been Working Without Pay Since April</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/omega-2021-novelties-collection/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Omega seamaster 300 watch on a bronze box"
+                         srcset="/assets/pictures/omega-seamaster-300-80x80.jpg,
+                                /assets/pictures/omega-seamaster-300-160x160.jpg 2x"
+                         src="/assets/pictures/omega-seamaster-300-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">FASHION</h3>
+                        <h4 class="title">Omega Commemorates the Year 2021 with a Bronze Seamaster</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">773 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/mark-chao-actor-interview/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Mark Chao is receiving an award"
+                         srcset="/assets/pictures/mark-chao-80x80.jpg,
+                                /assets/pictures/mark-chao-160x160.jpg 2x"
+                         src="/assets/pictures/mark-chao-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Let's Meet Mark Chao</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,158 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/maisie-williams-pasha-de-cartier-the-new-mutant-xmen-tiktok-interview/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Maisie Williams speaking at the 2019 San Diego Comic Con"
+                         srcset="/assets/pictures/maisie-williams-80x80.jpg,
+                                /assets/pictures/maisie-williams-160x160.jpg 2x"
+                         src="/assets/pictures/maisie-williams-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Maisie Williams On TikTok, and Saving Dolphins</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">710 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-britney-spears-song-is-in-the-works/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Britney Spears singing"
+                         srcset="/assets/pictures/britney-spears-singing-80x80.jpg,
+                                /assets/pictures/britney-spears-singing-160x160.jpg 2x"
+                         src="/assets/pictures/britney-spears-singing-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">GOSSIP</h3>
+                        <h4 class="title">New Britney Spears Song Is In The Works</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">941 views - 4 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+            </nav>
+            <nav class="more-to-read-items">
+                 <h3>More To Read</h3>
+
+                <div class="more-to-read-items-inner">
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/tiffany-co-high-jewellery-colors-of-nature/">
+                <h4 class="title">Tiffany & Co.'s Colors Of Nature High Jewellery Collection</h4>
+            </a>
 
                     </div>
-                </footer>
-            </aside>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-truth-and-myths-of-the-sanpaku-eyes/">
+                <h4 class="title">The Truth and Myths of the Sanpaku Eyes</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/kim-kardashian-the-new-york-times-style-magazine-singapore-october-cover-story/">
+                <h4 class="title">Keeping Up With Kim Kardashian</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/pear-scent-fragrance-louis-vuitton-coeur-battant-jo-malone/">
+                <h4 class="title">The Underrated Fruity Scent of Pear</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/spring-brings-more-colour-to-eyeshadow-palettes/">
+                <h4 class="title">Eyeshadow Palettes Get More Color in the Spring</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-history-of-famous-celebrity-irises-and-their-meaning/">
+                <h4 class="title">The History of Famous Celebrity Irises and Their Meaning</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-letter-t/">
+                <h4 class="title">The Letter T</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/what-are-sanpaku-eyes/">
+                <h4 class="title">What Are Sanpaku Eyes?</h4>
+            </a>
+
+                    </div>
+                </div>
+            </nav>
         </div>
+        <aside class="site-footer-outer">
+            <footer class="site-footer">
+                <div> <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span>
+                    <span
+                    style="font-weight: 700" class="logo-line">|</span>
+                </div>
+                <div> <span><a href="https://www.tsingapore.com/sitemap.xml">sitemap</a></span> | <span><a href="mailto:info@tsingapore.com">email</a></span>
+
+                </div>
+            </footer>
+        </aside>
         <script defer src="https://www.tsingapore.com/assets/js/main.js"></script>
     </body>
 

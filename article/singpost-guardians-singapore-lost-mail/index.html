@@ -92,7 +92,7 @@
             }
             a {
               color: #000000;
-              text-decoration: underline dashed #007aff;
+              text-decoration: underline solid #007aff;
             }
             /*** generic custom stuff */
             .logo-line,
@@ -118,12 +118,23 @@
             }
             
             /*** post items */
+            .post-items {
+              padding: 12px 6px;
+            }
             .post-items a {
               text-decoration: none;
             }
+            .post-items h3 {
+              font-size: 14px;
+              line-height: 16px;
+              color: #333333;
+              font-weight: bold;
+              margin-top: unset;
+              margin-bottom: 6px;
+            }
             .post-items h4 {
               margin-top: 0px;
-              margin-bottom: 0px;
+              margin-bottom: 4px;
             }
             .top-post-item {
               display: flex;
@@ -135,6 +146,12 @@
               text-decoration: none;
             }
             
+            .top-post-item .description .tp-meta {
+              font-size: 12px;
+              line-height: 14px;
+              margin: 0;
+              color: #818181;
+            }
             .top-post-item .thumbnail {
               width: 80px;
               height: 80px;
@@ -242,6 +259,14 @@
             .site-navigation nav ul {
               list-style: none;
               display: flex;
+            }
+            .site-navigation nav li:nth-child(n+3) {
+                display: none;
+            }
+            @media (min-width: 420px) {
+                .site-navigation nav li:nth-child(n+3) {
+                  display: unset;
+                }
             }
             @media (min-width: 800px) {
                 .site-header {
@@ -468,6 +493,50 @@
             }
             @media (min-width: 1366px) {
             }
+              .more-to-read-items {
+                padding: 12px 6px;
+                border-top: 1px solid #C7DFF3;
+            }
+            .more-to-read-items a {
+                text-decoration: none;
+            }
+            .more-to-read-item-outer {
+                border-top: 1px solid #C7DFF3;
+                padding: 12px;
+            }
+            .more-to-read-items h3 {
+                 margin-top: 12px;
+             }
+            .more-to-read-items h4 {
+                 font-size: 13px;
+                 line-height: 18px;
+                 margin: 0;
+             }
+            @media (min-width: 800px) {
+                .more-to-read-items-inner{
+                    display: flex;
+                    flex-flow: wrap;
+                }
+                .more-to-read-item-outer {
+                    width: 50%;
+                }
+            }
+            @media (min-width: 1280px) {
+                .more-to-read-item-outer {
+                    width: 33.3333%;
+                }
+                .more-to-read-items {
+                    width: 100%;
+                    padding: 12px;
+                }
+                .more-to-read-items h3 {
+                     margin-top: 24px;
+                     font-size: 18px;
+                     line-height: 22px;
+                 }
+            }
+            @media (min-width: 1366px) {
+            }
             
               /*** fonts */
             h1 {
@@ -647,6 +716,11 @@
               margin: 0 12px;
             }
             /*** meta */
+            .tp-meta {
+               display: flex;
+               flex-wrap: wrap;
+               align-items: center;
+             }
             .meta {
               margin-top: 32px;
               margin-bottom: 16px;
@@ -758,6 +832,8 @@
             
             /*** post items */
             .toc {
+              background-color: white;
+              border-radius: 12px;
               display: unset;
               position: sticky;
               top: 44px;
@@ -818,16 +894,11 @@
               padding: 12px;
               padding-left: 24px;
             }
+            .post-items h4 {
+              margin-bottom: 0px;
+            }
             .top-post-item {
               padding: 0;
-            }
-            .post-items h3 {
-              font-size: 14px;
-              line-height: 16px;
-              color: #333333;
-              font-weight: bold;
-              margin-top: unset;
-              margin-bottom: 6px;
             }
             .post-item-outer {
               padding: 12px 0;
@@ -847,12 +918,6 @@
               line-height: 15px;
               height: 45px;
               text-overflow: ellipsis;
-            }
-            .top-post-item .description .meta {
-              font-size: 12px;
-              line-height: 14px;
-              margin: 0;
-              color: #818181;
             }
             
             /*** images */
@@ -917,7 +982,7 @@
               height: 48px;
               text-overflow: ellipsis;
             }
-            .top-post-item .description .meta {
+            .top-post-item .description .tp-meta {
               font-size: 12px;
               line-height: 14px;
               margin: 0;
@@ -1026,201 +1091,230 @@
     </head>
     
     <body>
-        <div class="body-inner">
-            <div class="site-header-outer">
-                <header class="site-header">
-                    <div> <a href="https://www.tsingapore.com/">
+        <div class="site-header-outer">
+            <header class="site-header">
+                <div> <a href="https://www.tsingapore.com/">
                 <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span><span style="font-weight: 700" class="logo-line">|</span>
             </a>
 
-                    </div>
-                    <div class="site-navigation">
-                        <nav>
-                            <ul>
-                                <li> <a href="https://www.tsingapore.com/culture/"><span>culture</span></a>
+                </div>
+                <div class="site-navigation">
+                    <nav>
+                        <ul>
+                            <li> <a href="https://www.tsingapore.com/culture/"><span>culture</span></a>
 
-                                </li>
-                                <li> <a href="https://www.tsingapore.com/fashion/"><span>fashion</span></a>
+                            </li>
+                            <li> <a href="https://www.tsingapore.com/fashion/"><span>fashion</span></a>
 
-                                </li>
-                                <li> <a href="https://www.tsingapore.com/beauty/"><span>beauty</span></a>
+                            </li>
+                            <li> <a href="https://www.tsingapore.com/beauty/"><span>beauty</span></a>
 
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </header>
-            </div>
-            <div class="main-content-outer">
-                <nav class="toc"></nav>
-                <main class="main-content">
-                    <article>
-                        <div class="page-header-outer">
-                            <header class="page-header">
-                                 <h1 id="who-look-after-singapore's-undelivered-mail">Who Look After Singapore's Undelivered Mail</h1>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        </div>
+        <div class="main-content-outer">
+            <nav class="toc"></nav>
+            <main class="main-content">
+                <article>
+                    <div class="page-header-outer">
+                        <header class="page-header">
+                             <h1 id="who-look-after-singapore's-undelivered-mail">Who Look After Singapore's Undelivered Mail</h1>
 
-                                <aside class="meta">
-                                    <div class="author-photo">
-                                        <img alt="The picture of Clara Ortiz" src="https://www.tsingapore.com/assets/images/clara_ortiz_64x64.jpg"
-                                        srcset="https://www.tsingapore.com/assets/images/clara_ortiz_128x128.jpg 2x">
-                                    </div>
-                                    <div class="info"> <span class="author-name">Clara Ortiz</span>
+                            <aside class="meta">
+                                <div class="author-photo">
+                                    <img alt="The picture of Clara Ortiz" src="https://www.tsingapore.com/assets/images/clara_ortiz_64x64.jpg"
+                                    srcset="https://www.tsingapore.com/assets/images/clara_ortiz_128x128.jpg 2x">
+                                </div>
+                                <div class="info"> <span class="author-name">Clara Ortiz</span>
  <span class="published-date">Jan 21st, 2022</span>
 
-                                    </div>
-                                </aside>
-                            </header>
-                        </div>
-                        <div class="post-body-outer">
-                            <div class="post-body">
-                                <div class="post-body-inner">
-                                    <p>Mail that has not yet been delivered is handled by a six-person staff.
-                                        Here’s a little peek at what they do on a typical day.</p>
-                                    <div id="featured-img">
-                                        <aside>
-                                            <figure class="full-width-figure  featured">
-                                                <picture>
-                                                    <source type="image/webp" srcset="
+                                </div>
+                            </aside>
+                        </header>
+                    </div>
+                    <div class="post-body-outer">
+                        <div class="post-body">
+                            <div class="post-body-inner">
+                                <p>Mail that has not yet been delivered is handled by a six-person staff.
+                                    Here’s a little peek at what they do on a typical day.</p>
+                                <div id="featured-img">
+                                    <aside>
+                                        <figure class="full-width-figure  featured">
+                                            <picture>
+                                                <source type="image/webp" srcset="
               /assets/pictures/letter-forced-into-the-post-box-800.webp 800w,
               /assets/pictures/letter-forced-into-the-post-box-1200.webp 1200w,
               /assets/pictures/letter-forced-into-the-post-box-1600.webp 1600w"
-                                                    sizes="
+                                                sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                    <source type="image/jpeg" srcset="
+                                                <source type="image/jpeg" srcset="
               /assets/pictures/letter-forced-into-the-post-box-800.jpg 800w,
               /assets/pictures/letter-forced-into-the-post-box-1200.jpg 1200w,
               /assets/pictures/letter-forced-into-the-post-box-1600.jpg 1600w"
-                                                    sizes="
+                                                sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                    <img src="/assets/pictures/letter-forced-into-the-post-box-800.jpg" alt="Letter forced into the post box"
-                                                    />
-                                                </picture>
-                                                <figcaption>Photo by <a href="https://unsplash.com/@possessedphotography" rel="nofollow">Possessed Photography</a> on
-                                                    <a
-                                                    href="https://unsplash.com/" rel="nofollow">Unsplash</a>
-                                                </figcaption>
-                                            </figure>
-                                        </aside>
-                                    </div>
-                                    <p>The Singpost building is located on Singapore’s east coast. Wait for an
-                                        escort, pass through three additional safe doors, and you’ll find yourself
-                                        before a grey door in the middle of the lobby.</p>
-                                    <p>A sign on the wall proclaims the presence of a department tasked with
-                                        returning letters.</p>
-                                    <p>Thousands of enigmatic letters and things are hidden away inside this
-                                        mysterious box with no names, addresses, or stamps. In any case, they must
-                                        be the property of somebody out there. Or perhaps there’s a heartfelt letter
-                                        that holds a special place in the recipient’s heart. Somebody may even
-                                        come hunting for their missing letter one day. As a result of these “maybes”
-                                        and “potentialities,” the Return Letters Unit was created.</p>
-                                    <p>This Returns section receives an average of 4,000 lost goods each day.
-                                        In all, up to three hundred missing letters will be found and brought back
-                                        to their owners. Only three or four parcels are returned each day, which
-                                        reduces the success rate.</p>
-                                    <p>It’s unclear what happens to the letters and shipments that haven’t been
-                                        returned.</p>
-                                    <p>Using the Logimat vertical storage technique, they are meticulously arranged.
-                                        Thousands of mail and gifts are crammed into 29 trays of the enormous grey
-                                        machine.</p>
-                                    
+                                                <img src="/assets/pictures/letter-forced-into-the-post-box-800.jpg" alt="Letter forced into the post box"
+                                                />
+                                            </picture>
+                                            <figcaption>Photo by <a href="https://unsplash.com/@possessedphotography" rel="nofollow">Possessed Photography</a> on
+                                                <a
+                                                href="https://unsplash.com/" rel="nofollow">Unsplash</a>
+                                            </figcaption>
+                                        </figure>
+                                    </aside>
+                                </div>
+                                <p>The Singpost building is located on Singapore’s east coast. Wait for an
+                                    escort, pass through three additional safe doors, and you’ll find yourself
+                                    before a grey door in the middle of the lobby.</p>
+                                <p>A sign on the wall proclaims the presence of a department tasked with
+                                    returning letters.</p>
+                                <p>Thousands of enigmatic letters and things are hidden away inside this
+                                    mysterious box with no names, addresses, or stamps. In any case, they must
+                                    be the property of somebody out there. Or perhaps there’s a heartfelt letter
+                                    that holds a special place in the recipient’s heart. Somebody may even
+                                    come hunting for their missing letter one day. As a result of these “maybes”
+                                    and “potentialities,” the Return Letters Unit was created.</p>
+                                <p>This Returns section receives an average of 4,000 lost goods each day.
+                                    In all, up to three hundred missing letters will be found and brought back
+                                    to their owners. Only three or four parcels are returned each day, which
+                                    reduces the success rate.</p>
+                                <p>It’s unclear what happens to the letters and shipments that haven’t been
+                                    returned.</p>
+                                <p>Using the Logimat vertical storage technique, they are meticulously arranged.
+                                    Thousands of mail and gifts are crammed into 29 trays of the enormous grey
+                                    machine.</p>
+                                
 <h2 id="returned-goods">Returned Goods</h2>
 
-                                    <p>Postal officer Jumali bin Tangat receives an email from consumers who
-                                        phone the general hotline to inquire about the whereabouts of their misplaced
-                                        mail. Once he locates it, he begins his hunt in the haystack.</p>
-                                    <p>However, they are highly unusual events. People often neglect to check
-                                        their mail and letters. It takes three months to keep regular mail and
-                                        six months to keep registered mail. The letters are disposed of once their
-                                        usefulness has expired. In addition, “letters are forwarded to suppliers
-                                        for destruction,” Ong Eng Chiew, operations manager, said. No one is permitted
-                                        to open the letters for the sake of privacy.</p>
-                                    <p>However, the gates to the parcels have been unlocked. Charitable organizations
-                                        get donations of clothing, shoes, and watches. The rest of the goods are
-                                        disposed of in a landfill.</p>
-                                    <p>The Returns department also handles products that can’t be shipped, such
-                                        as comic books and teddy bears. As Ong chuckles, “vegetables, underpants,
-                                        cash - with the address inscribed on it” come to mind. Of course, there
-                                        are fidget spinners.</p>
-                                    <p>“However, it failed to work last night when we received an empty Tiger
-                                        Beer bottle with the address stuck on. We’re not able to send it at this
-                                        time. RLU is the only option, so we leave it there. “He bursts out laughing,
-                                        his voice breaking with delight. There’s a chance it will do harm to others
-                                        in the process.</p>
-                                    <p>There are many things you may lose your keys to your automobile, your
-                                        teeth, your La Prairie creams, your contraband products, your wallet, and
-                                        your birth certificate or another kind of identification. “We get wallets
-                                        daily.”</p>
-                                    <p>Someone slipped money into the postbox by accident once. As Tangat, 62,
-                                        recalls, “Seven thousand dollars, the individual, phoned really quickly!”
-                                        Singpost’s Returns department sprung into action as soon as the owner contacted
-                                        to report the problem. They contacted the postal carrier, who pointed out
-                                        the mailbag as a potential target. The cash was found in the bag that arrived
-                                        at the Returns unit.</p>
-                                    <p>Wedding bands are another item that is frequently misplaced. They intended
-                                        to use the post boxes to send letters, but they dropped them by accident.
-                                        Tangat goes on as well. A Japanese manufacturer sent Tangat a styrofoam
-                                        package with ice on another occasion. The insulating box was put to the
-                                        test. “Checking to see whether the ice melts. Only for testing. We send
-                                        them back… That’s a fascinating story, I must admit.”</p>
-                                    <p>Ong adds, “We sometimes have bananas,” to the conversation.</p>
-                                    <p>“They even post bananas!” Tangat exclaims in surprise as the crew laughs.</p>
-                                    <h2
-                                    id="letters-that-have-been-lost-forever">Letters that have been lost forever</h2>
-                                        <p>Aside from ridiculous things, mail carriers frequently encounter illogical
-                                            addresses, such as Santa Claus, the North Pole, or even God. In the wake
-                                            of North Korea’s recent nuclear missile tests, a letter addressed to Kim
-                                            Jong-Un, North Korea, was published recently. “We have no idea where it
-                                            ends up. It everything ends up here, “Ong just shrugs his shoulders.</p>
-                                        <p>Ong, Tangat, and the rest of the crew are stumped on how to get such letters
-                                            out there. “In the run-up to Christmas, we’ve seen children submitting
-                                            letters to Santa Claus. We delivered their correspondence to Finland even
-                                            if they didn’t include an address. There’s a place of business there “Ong’s
-                                            work continues. There are, in reality, several legitimate Santa Claus offices
-                                            in Alaska, Lapland, and Finland.</p>
-                                        
+                                <p>Postal officer Jumali bin Tangat receives an email from consumers who
+                                    phone the general hotline to inquire about the whereabouts of their misplaced
+                                    mail. Once he locates it, he begins his hunt in the haystack.</p>
+                                <p>However, they are highly unusual events. People often neglect to check
+                                    their mail and letters. It takes three months to keep regular mail and
+                                    six months to keep registered mail. The letters are disposed of once their
+                                    usefulness has expired. In addition, “letters are forwarded to suppliers
+                                    for destruction,” Ong Eng Chiew, operations manager, said. No one is permitted
+                                    to open the letters for the sake of privacy.</p>
+                                <p>However, the gates to the parcels have been unlocked. Charitable organizations
+                                    get donations of clothing, shoes, and watches. The rest of the goods are
+                                    disposed of in a landfill.</p>
+                                <p>The Returns department also handles products that can’t be shipped, such
+                                    as comic books and teddy bears. As Ong chuckles, “vegetables, underpants,
+                                    cash - with the address inscribed on it” come to mind. Of course, there
+                                    are fidget spinners.</p>
+                                <p>“However, it failed to work last night when we received an empty Tiger
+                                    Beer bottle with the address stuck on. We’re not able to send it at this
+                                    time. RLU is the only option, so we leave it there. “He bursts out laughing,
+                                    his voice breaking with delight. There’s a chance it will do harm to others
+                                    in the process.</p>
+                                <p>There are many things you may lose your keys to your automobile, your
+                                    teeth, your La Prairie creams, your contraband products, your wallet, and
+                                    your birth certificate or another kind of identification. “We get wallets
+                                    daily.”</p>
+                                <p>Someone slipped money into the postbox by accident once. As Tangat, 62,
+                                    recalls, “Seven thousand dollars, the individual, phoned really quickly!”
+                                    Singpost’s Returns department sprung into action as soon as the owner contacted
+                                    to report the problem. They contacted the postal carrier, who pointed out
+                                    the mailbag as a potential target. The cash was found in the bag that arrived
+                                    at the Returns unit.</p>
+                                <p>Wedding bands are another item that is frequently misplaced. They intended
+                                    to use the post boxes to send letters, but they dropped them by accident.
+                                    Tangat goes on as well. A Japanese manufacturer sent Tangat a styrofoam
+                                    package with ice on another occasion. The insulating box was put to the
+                                    test. “Checking to see whether the ice melts. Only for testing. We send
+                                    them back… That’s a fascinating story, I must admit.”</p>
+                                <p>Ong adds, “We sometimes have bananas,” to the conversation.</p>
+                                <p>“They even post bananas!” Tangat exclaims in surprise as the crew laughs.</p>
+                                <h2
+                                id="letters-that-have-been-lost-forever">Letters that have been lost forever</h2>
+                                    <p>Aside from ridiculous things, mail carriers frequently encounter illogical
+                                        addresses, such as Santa Claus, the North Pole, or even God. In the wake
+                                        of North Korea’s recent nuclear missile tests, a letter addressed to Kim
+                                        Jong-Un, North Korea, was published recently. “We have no idea where it
+                                        ends up. It everything ends up here, “Ong just shrugs his shoulders.</p>
+                                    <p>Ong, Tangat, and the rest of the crew are stumped on how to get such letters
+                                        out there. “In the run-up to Christmas, we’ve seen children submitting
+                                        letters to Santa Claus. We delivered their correspondence to Finland even
+                                        if they didn’t include an address. There’s a place of business there “Ong’s
+                                        work continues. There are, in reality, several legitimate Santa Claus offices
+                                        in Alaska, Lapland, and Finland.</p>
+                                    
 <h2 id="a-mistaken-interpretation">A Mistaken Interpretation</h2>
 
-                                        <p>Numerous languages are at your disposal when you use a global address.
-                                            Greeting cards containing Tamil, Malay, and Chinese addresses are sent
-                                            to Singapore’s Returns team, which processes them. Tangat and his coworkers
-                                            assist with translating the Malay and Tamil lines. 73-year-old Swee Heng
-                                            Chye receives the Chinese letters as a present.</p>
-                                        <p>“The majority of the addresses are not legitimate ones. The street names
-                                            are referred to by their vernacular nickname among the older generation,
-                                            “Ong elaborates. Waterloo Street is the literal translation of Hokkien
-                                            names like Si Bei Lor.</p>
-                                        <p>Swee (shown above) appeared to be working slowly through his translation
-                                            when we stopped by. He’ll be swamped with work from October through January
-                                            as the season warms up.</p>
-                                        <p>Mohammed Johari bin Salim, assistant operations manager, chuckles, “October
-                                            onwards is peak season.” In December, things are expected to be the busiest.
-                                            The Returns Department will receive around 2,000 mailbags of misplaced
-                                            mail. E-commerce has made it easy for people to buy gifts. “They buy goods
-                                            from other countries over the internet. Especially in light of the impending
-                                            rise of e-commerce. We continue to get extra items, such as accessories
-                                            and presents, and are forced to work longer hours to get them all cleared
-                                            out.”</p>
-                                        <p>There are no worries from the Returns team. There is never a dull moment
-                                            in their line of business. When Salim adds, “It’s an intriguing profession,
-                                            and that’s why I can remain for so long!” Tangat chuckles. If they start
-                                            throwing stuff away, we’ll find out what’s inside!</p>
-                                        <p>Unboxing videos abound on the internet. Unbox Therapy is the name of an
-                                            entire YouTube channel devoted to unboxing. When it comes down to it, nothing
-                                            beats the simple joy of unwrapping a package. Awe-inspiring, to say the
-                                            least. The Returns crew unboxes gifts for a job, can you imagine? Because
-                                            they’re so upbeat, it’s no surprise. “You want to join?” Tangat asks with
-                                            a grin.</p>
-                                </div>
+                                    <p>Numerous languages are at your disposal when you use a global address.
+                                        Greeting cards containing Tamil, Malay, and Chinese addresses are sent
+                                        to Singapore’s Returns team, which processes them. Tangat and his coworkers
+                                        assist with translating the Malay and Tamil lines. 73-year-old Swee Heng
+                                        Chye receives the Chinese letters as a present.</p>
+                                    <p>“The majority of the addresses are not legitimate ones. The street names
+                                        are referred to by their vernacular nickname among the older generation,
+                                        “Ong elaborates. Waterloo Street is the literal translation of Hokkien
+                                        names like Si Bei Lor.</p>
+                                    <p>Swee (shown above) appeared to be working slowly through his translation
+                                        when we stopped by. He’ll be swamped with work from October through January
+                                        as the season warms up.</p>
+                                    <p>Mohammed Johari bin Salim, assistant operations manager, chuckles, “October
+                                        onwards is peak season.” In December, things are expected to be the busiest.
+                                        The Returns Department will receive around 2,000 mailbags of misplaced
+                                        mail. E-commerce has made it easy for people to buy gifts. “They buy goods
+                                        from other countries over the internet. Especially in light of the impending
+                                        rise of e-commerce. We continue to get extra items, such as accessories
+                                        and presents, and are forced to work longer hours to get them all cleared
+                                        out.”</p>
+                                    <p>There are no worries from the Returns team. There is never a dull moment
+                                        in their line of business. When Salim adds, “It’s an intriguing profession,
+                                        and that’s why I can remain for so long!” Tangat chuckles. If they start
+                                        throwing stuff away, we’ll find out what’s inside!</p>
+                                    <p>Unboxing videos abound on the internet. Unbox Therapy is the name of an
+                                        entire YouTube channel devoted to unboxing. When it comes down to it, nothing
+                                        beats the simple joy of unwrapping a package. Awe-inspiring, to say the
+                                        least. The Returns crew unboxes gifts for a job, can you imagine? Because
+                                        they’re so upbeat, it’s no surprise. “You want to join?” Tangat asks with
+                                        a grin.</p>
                             </div>
                         </div>
-                    </article>
-                </main>
-                <nav class="post-items">
-                     <h3>Top posts</h3>
+                    </div>
+                </article>
+            </main>
+            <nav class="post-items">
+                 <h3>Top posts</h3>
 
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/5-ways-to-celebrate-womens-history-month/">
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/crypto-trading-in-singapore/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="A gold coin like Bitcoin"
+                         srcset="/assets/pictures/bitcoin-physical-coin-80x80.jpg,
+                                /assets/pictures/bitcoin-physical-coin-160x160.jpg 2x"
+                         src="/assets/pictures/bitcoin-physical-coin-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">FINANCE</h3>
+                        <h4 class="title">Crypto Trading in Singapore</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">10 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/5-ways-to-celebrate-womens-history-month/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt=""
@@ -1243,14 +1337,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">10 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">430 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt=""
@@ -1273,14 +1367,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">346 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">780 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/top-10-gofundme-alternatives/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/top-10-gofundme-alternatives/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A woman's hand is giving money"
@@ -1303,14 +1397,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">206 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">640 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/bag-charm-from-hermes/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/bag-charm-from-hermes/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Photo of a Hermes Kellydoll bag."
@@ -1333,14 +1427,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">94 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">528 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Billie Eilish eyes"
@@ -1363,44 +1457,17 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">738 views - 5 min read</span>
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,172 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/things-to-look-for-in-a-good-online-casino/">
-                <div class="top-post-item featured-post">
-                    <img width="80" height="80" class="thumbnail"
-                         alt="Close-up photo of playing cards"
-                         srcset="/assets/pictures/playing-cards-80x80.jpg,
-                                /assets/pictures/playing-cards-160x160.jpg 2x"
-                         src="/assets/pictures/playing-cards-80x80.jpg"
-                         loading="lazy"
-                    />
-                    <div class="description">
-                        <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Things To Look For In A Good Online Casino</h4>
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                <span class="meta">101 views - 5 min read</span>
-
-                                            </div>
                 </div>
-            </a>
-
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-marshmallow-test/">
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-marshmallow-test/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="White ceramic mug on book, filled with marshmallow."
@@ -1423,25 +1490,28 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">696 views - 5 min read</span>
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,130 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/how-to-cleanse-recharge-your-crystals/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/things-to-look-for-in-a-good-online-casino/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
-                         alt="Macro photography of black ceramic Gautama Buddha miniature"
-                         srcset="/assets/pictures/crystal-consciousness-80x80.jpg,
-                                /assets/pictures/crystal-consciousness-160x160.jpg 2x"
-                         src="/assets/pictures/crystal-consciousness-80x80.jpg"
+                         alt="Close-up photo of playing cards"
+                         srcset="/assets/pictures/playing-cards-80x80.jpg,
+                                /assets/pictures/playing-cards-160x160.jpg 2x"
+                         src="/assets/pictures/playing-cards-80x80.jpg"
                          loading="lazy"
                     />
                     <div class="description">
                         <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Clean and recharge your crystals with these simple steps</h4>
+                        <h4 class="title">Things To Look For In A Good Online Casino</h4>
 
 
 
@@ -1453,44 +1523,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">297 views - 5 min read</span>
-
-                                            </div>
-                </div>
-            </a>
-
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/lauren-tsai-model-artist-netflix-terrace-house-reality-interview-fashion/">
-                <div class="top-post-item featured-post">
-                    <img width="80" height="80" class="thumbnail"
-                         alt="Lauren Tsai is smiling to the camera"
-                         srcset="/assets/pictures/lauren-tsai-80x80.jpg,
-                                /assets/pictures/lauren-tsai-160x160.jpg 2x"
-                         src="/assets/pictures/lauren-tsai-80x80.jpg"
-                         loading="lazy"
-                    />
-                    <div class="description">
-                        <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Lauren Tsai, Model, Artist and Actress of Netflix's Terrace House</h4>
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                <span class="meta">311 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">535 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/discontinued-icons-audemars-piguet-royal-oak-15202st/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/discontinued-icons-audemars-piguet-royal-oak-15202st/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Audemars Piguet Royal Oak Jumbo"
@@ -1513,14 +1553,44 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">318 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">752 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singapore-food-waste-uglyfood-treatsure-insectta/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/how-to-cleanse-recharge-your-crystals/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Macro photography of black ceramic Gautama Buddha miniature"
+                         srcset="/assets/pictures/crystal-consciousness-80x80.jpg,
+                                /assets/pictures/crystal-consciousness-160x160.jpg 2x"
+                         src="/assets/pictures/crystal-consciousness-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Clean and recharge your crystals with these simple steps</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">731 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singapore-food-waste-uglyfood-treatsure-insectta/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A few half rotten apples on the ground"
@@ -1543,14 +1613,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">304 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">738 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/aura-photograph-new-age-selfie/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/aura-photograph-new-age-selfie/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Yellow and black coated wire"
@@ -1573,14 +1643,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">297 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">731 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/taha-bouqdib-maranda-barnes-husband-wife-duo-built-twg-tea-interview/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/taha-bouqdib-maranda-barnes-husband-wife-duo-built-twg-tea-interview/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Green tea plantation from birds eye view"
@@ -1603,14 +1673,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">325 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">759 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/iwc-goes-green-with-timbertex/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/iwc-goes-green-with-timbertex/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A person's hand with a watch"
@@ -1633,27 +1703,225 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">332 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                </nav>
-            </div>
-            <aside class="site-footer-outer">
-                <footer class="site-footer">
-                    <div> <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span>
-                        <span
-                        style="font-weight: 700" class="logo-line">|</span>
-                    </div>
-                    <div> <span><a href="https://www.tsingapore.com/sitemap.xml">sitemap</a></span> | <span><a href="mailto:info@tsingapore.com">email</a></span>
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-met-operas-musicians-are-struggling/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Photography of people sitting on theater during nighttime"
+                         srcset="/assets/pictures/half-empty-new-york-opera-80x80.jpg,
+                                /assets/pictures/half-empty-new-york-opera-160x160.jpg 2x"
+                         src="/assets/pictures/half-empty-new-york-opera-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Met Opera Musicians Who Have Been Working Without Pay Since April</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/omega-2021-novelties-collection/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Omega seamaster 300 watch on a bronze box"
+                         srcset="/assets/pictures/omega-seamaster-300-80x80.jpg,
+                                /assets/pictures/omega-seamaster-300-160x160.jpg 2x"
+                         src="/assets/pictures/omega-seamaster-300-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">FASHION</h3>
+                        <h4 class="title">Omega Commemorates the Year 2021 with a Bronze Seamaster</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">773 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/mark-chao-actor-interview/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Mark Chao is receiving an award"
+                         srcset="/assets/pictures/mark-chao-80x80.jpg,
+                                /assets/pictures/mark-chao-160x160.jpg 2x"
+                         src="/assets/pictures/mark-chao-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Let's Meet Mark Chao</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,158 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/maisie-williams-pasha-de-cartier-the-new-mutant-xmen-tiktok-interview/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Maisie Williams speaking at the 2019 San Diego Comic Con"
+                         srcset="/assets/pictures/maisie-williams-80x80.jpg,
+                                /assets/pictures/maisie-williams-160x160.jpg 2x"
+                         src="/assets/pictures/maisie-williams-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Maisie Williams On TikTok, and Saving Dolphins</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">710 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-britney-spears-song-is-in-the-works/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Britney Spears singing"
+                         srcset="/assets/pictures/britney-spears-singing-80x80.jpg,
+                                /assets/pictures/britney-spears-singing-160x160.jpg 2x"
+                         src="/assets/pictures/britney-spears-singing-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">GOSSIP</h3>
+                        <h4 class="title">New Britney Spears Song Is In The Works</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">941 views - 4 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+            </nav>
+            <nav class="more-to-read-items">
+                 <h3>More To Read</h3>
+
+                <div class="more-to-read-items-inner">
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/tiffany-co-high-jewellery-colors-of-nature/">
+                <h4 class="title">Tiffany & Co.'s Colors Of Nature High Jewellery Collection</h4>
+            </a>
 
                     </div>
-                </footer>
-            </aside>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-truth-and-myths-of-the-sanpaku-eyes/">
+                <h4 class="title">The Truth and Myths of the Sanpaku Eyes</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/kim-kardashian-the-new-york-times-style-magazine-singapore-october-cover-story/">
+                <h4 class="title">Keeping Up With Kim Kardashian</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/pear-scent-fragrance-louis-vuitton-coeur-battant-jo-malone/">
+                <h4 class="title">The Underrated Fruity Scent of Pear</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/spring-brings-more-colour-to-eyeshadow-palettes/">
+                <h4 class="title">Eyeshadow Palettes Get More Color in the Spring</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-history-of-famous-celebrity-irises-and-their-meaning/">
+                <h4 class="title">The History of Famous Celebrity Irises and Their Meaning</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-letter-t/">
+                <h4 class="title">The Letter T</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/what-are-sanpaku-eyes/">
+                <h4 class="title">What Are Sanpaku Eyes?</h4>
+            </a>
+
+                    </div>
+                </div>
+            </nav>
         </div>
+        <aside class="site-footer-outer">
+            <footer class="site-footer">
+                <div> <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span>
+                    <span
+                    style="font-weight: 700" class="logo-line">|</span>
+                </div>
+                <div> <span><a href="https://www.tsingapore.com/sitemap.xml">sitemap</a></span> | <span><a href="mailto:info@tsingapore.com">email</a></span>
+
+                </div>
+            </footer>
+        </aside>
         <script defer src="https://www.tsingapore.com/assets/js/main.js"></script>
     </body>
 

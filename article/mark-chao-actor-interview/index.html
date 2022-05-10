@@ -92,7 +92,7 @@
             }
             a {
               color: #000000;
-              text-decoration: underline dashed #007aff;
+              text-decoration: underline solid #007aff;
             }
             /*** generic custom stuff */
             .logo-line,
@@ -118,12 +118,23 @@
             }
             
             /*** post items */
+            .post-items {
+              padding: 12px 6px;
+            }
             .post-items a {
               text-decoration: none;
             }
+            .post-items h3 {
+              font-size: 14px;
+              line-height: 16px;
+              color: #333333;
+              font-weight: bold;
+              margin-top: unset;
+              margin-bottom: 6px;
+            }
             .post-items h4 {
               margin-top: 0px;
-              margin-bottom: 0px;
+              margin-bottom: 4px;
             }
             .top-post-item {
               display: flex;
@@ -135,6 +146,12 @@
               text-decoration: none;
             }
             
+            .top-post-item .description .tp-meta {
+              font-size: 12px;
+              line-height: 14px;
+              margin: 0;
+              color: #818181;
+            }
             .top-post-item .thumbnail {
               width: 80px;
               height: 80px;
@@ -242,6 +259,14 @@
             .site-navigation nav ul {
               list-style: none;
               display: flex;
+            }
+            .site-navigation nav li:nth-child(n+3) {
+                display: none;
+            }
+            @media (min-width: 420px) {
+                .site-navigation nav li:nth-child(n+3) {
+                  display: unset;
+                }
             }
             @media (min-width: 800px) {
                 .site-header {
@@ -468,6 +493,50 @@
             }
             @media (min-width: 1366px) {
             }
+              .more-to-read-items {
+                padding: 12px 6px;
+                border-top: 1px solid #C7DFF3;
+            }
+            .more-to-read-items a {
+                text-decoration: none;
+            }
+            .more-to-read-item-outer {
+                border-top: 1px solid #C7DFF3;
+                padding: 12px;
+            }
+            .more-to-read-items h3 {
+                 margin-top: 12px;
+             }
+            .more-to-read-items h4 {
+                 font-size: 13px;
+                 line-height: 18px;
+                 margin: 0;
+             }
+            @media (min-width: 800px) {
+                .more-to-read-items-inner{
+                    display: flex;
+                    flex-flow: wrap;
+                }
+                .more-to-read-item-outer {
+                    width: 50%;
+                }
+            }
+            @media (min-width: 1280px) {
+                .more-to-read-item-outer {
+                    width: 33.3333%;
+                }
+                .more-to-read-items {
+                    width: 100%;
+                    padding: 12px;
+                }
+                .more-to-read-items h3 {
+                     margin-top: 24px;
+                     font-size: 18px;
+                     line-height: 22px;
+                 }
+            }
+            @media (min-width: 1366px) {
+            }
             
               /*** fonts */
             h1 {
@@ -647,6 +716,11 @@
               margin: 0 12px;
             }
             /*** meta */
+            .tp-meta {
+               display: flex;
+               flex-wrap: wrap;
+               align-items: center;
+             }
             .meta {
               margin-top: 32px;
               margin-bottom: 16px;
@@ -758,6 +832,8 @@
             
             /*** post items */
             .toc {
+              background-color: white;
+              border-radius: 12px;
               display: unset;
               position: sticky;
               top: 44px;
@@ -818,16 +894,11 @@
               padding: 12px;
               padding-left: 24px;
             }
+            .post-items h4 {
+              margin-bottom: 0px;
+            }
             .top-post-item {
               padding: 0;
-            }
-            .post-items h3 {
-              font-size: 14px;
-              line-height: 16px;
-              color: #333333;
-              font-weight: bold;
-              margin-top: unset;
-              margin-bottom: 6px;
             }
             .post-item-outer {
               padding: 12px 0;
@@ -847,12 +918,6 @@
               line-height: 15px;
               height: 45px;
               text-overflow: ellipsis;
-            }
-            .top-post-item .description .meta {
-              font-size: 12px;
-              line-height: 14px;
-              margin: 0;
-              color: #818181;
             }
             
             /*** images */
@@ -917,7 +982,7 @@
               height: 48px;
               text-overflow: ellipsis;
             }
-            .top-post-item .description .meta {
+            .top-post-item .description .tp-meta {
               font-size: 12px;
               line-height: 14px;
               margin: 0;
@@ -1026,175 +1091,204 @@
     </head>
     
     <body>
-        <div class="body-inner">
-            <div class="site-header-outer">
-                <header class="site-header">
-                    <div> <a href="https://www.tsingapore.com/">
+        <div class="site-header-outer">
+            <header class="site-header">
+                <div> <a href="https://www.tsingapore.com/">
                 <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span><span style="font-weight: 700" class="logo-line">|</span>
             </a>
 
-                    </div>
-                    <div class="site-navigation">
-                        <nav>
-                            <ul>
-                                <li> <a href="https://www.tsingapore.com/culture/"><span>culture</span></a>
+                </div>
+                <div class="site-navigation">
+                    <nav>
+                        <ul>
+                            <li> <a href="https://www.tsingapore.com/culture/"><span>culture</span></a>
 
-                                </li>
-                                <li> <a href="https://www.tsingapore.com/fashion/"><span>fashion</span></a>
+                            </li>
+                            <li> <a href="https://www.tsingapore.com/fashion/"><span>fashion</span></a>
 
-                                </li>
-                                <li> <a href="https://www.tsingapore.com/beauty/"><span>beauty</span></a>
+                            </li>
+                            <li> <a href="https://www.tsingapore.com/beauty/"><span>beauty</span></a>
 
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </header>
-            </div>
-            <div class="main-content-outer">
-                <nav class="toc"></nav>
-                <main class="main-content">
-                    <article>
-                        <div class="page-header-outer">
-                            <header class="page-header">
-                                 <h1 id="let's-meet-mark-chao">Let's Meet Mark Chao</h1>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        </div>
+        <div class="main-content-outer">
+            <nav class="toc"></nav>
+            <main class="main-content">
+                <article>
+                    <div class="page-header-outer">
+                        <header class="page-header">
+                             <h1 id="let's-meet-mark-chao">Let's Meet Mark Chao</h1>
 
-                                <aside class="meta">
-                                    <div class="author-photo">
-                                        <img alt="The picture of Clara Ortiz" src="https://www.tsingapore.com/assets/images/clara_ortiz_64x64.jpg"
-                                        srcset="https://www.tsingapore.com/assets/images/clara_ortiz_128x128.jpg 2x">
-                                    </div>
-                                    <div class="info"> <span class="author-name">Clara Ortiz</span>
+                            <aside class="meta">
+                                <div class="author-photo">
+                                    <img alt="The picture of Clara Ortiz" src="https://www.tsingapore.com/assets/images/clara_ortiz_64x64.jpg"
+                                    srcset="https://www.tsingapore.com/assets/images/clara_ortiz_128x128.jpg 2x">
+                                </div>
+                                <div class="info"> <span class="author-name">Clara Ortiz</span>
  <span class="published-date">Nov 26th, 2021</span>
 
-                                    </div>
-                                </aside>
-                            </header>
-                        </div>
-                        <div class="post-body-outer">
-                            <div class="post-body">
-                                <div class="post-body-inner">
-                                    <p>It is located in Dongyang, Jinhua in Zhejiang province, where the Chinese
-                                        town of Hengdian proudly recounts <strong>China’s cultural heritage</strong>.
-                                        Located in <strong>Hengdian</strong>, China’s answer to <a href="https://www.nytimes.com/2020/01/24/movies/Oscars-Math.html">Hollywood</a>,
-                                        Hengdian World Studios (Hengdian World Studios) is marketed as the country’s
-                                        premier filmmaking location. When I think of the set, I see a Qing Dynasty-clad
-                                        guy with the smoke machine blazing.</p>
-                                    <div id="featured-img">
-                                        <aside>
-                                            <figure class="full-width-figure  featured">
-                                                <picture>
-                                                    <source type="image/webp" srcset="
+                                </div>
+                            </aside>
+                        </header>
+                    </div>
+                    <div class="post-body-outer">
+                        <div class="post-body">
+                            <div class="post-body-inner">
+                                <p>It is located in Dongyang, Jinhua in Zhejiang province, where the Chinese
+                                    town of Hengdian proudly recounts <strong>China’s cultural heritage</strong>.
+                                    Located in <strong>Hengdian</strong>, China’s answer to <a href="https://www.nytimes.com/2020/01/24/movies/Oscars-Math.html">Hollywood</a>,
+                                    Hengdian World Studios (Hengdian World Studios) is marketed as the country’s
+                                    premier filmmaking location. When I think of the set, I see a Qing Dynasty-clad
+                                    guy with the smoke machine blazing.</p>
+                                <div id="featured-img">
+                                    <aside>
+                                        <figure class="full-width-figure  featured">
+                                            <picture>
+                                                <source type="image/webp" srcset="
               /assets/pictures/mark-chao-800.webp 800w,
               /assets/pictures/mark-chao-1200.webp 1200w,
               /assets/pictures/mark-chao-1600.webp 1600w" sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                    <source type="image/jpeg" srcset="
+                                                <source type="image/jpeg" srcset="
               /assets/pictures/mark-chao-800.jpg 800w,
               /assets/pictures/mark-chao-1200.jpg 1200w,
               /assets/pictures/mark-chao-1600.jpg 1600w" sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                    <img src="/assets/pictures/mark-chao-800.jpg" alt="Mark Chao is receiving an award"
-                                                    />
-                                                </picture>
-                                                <figcaption>From <a href="https://commons.wikimedia.org/wiki/File:Mark_LhpDongphuong.jpg"
-                                                    rel="nofollow">Wikimedia Commons</a>
-                                                </figcaption>
-                                            </figure>
-                                        </aside>
-                                    </div>
-                                    <p>There is a private studio downtown where lights are on, and the cameras
-                                        are ready.
-<strong>Mark Chao, an actor and model</strong>, is now the focus
-                                        of this business.</p>
-                                    <p>Whenever <a href="https://www.weibo.com/mastachao">Chao</a> is speaking
-                                        Mandarin, he exudes a <strong>youthful exuberance</strong>. Now and again,
-                                        Chao’s <strong>easy laugh</strong> and slurred Chinese humor interrupt the
-                                        conversation, just as in Asian reality shows featuring Chao. Comparing
-                                        him to someone who doesn’t speak English, his demeanor softens, and <strong>his voice sounds more pleasant</strong>.
-                                        He’s a natural at switching back and forth between the two languages.</p>
-                                    <p>Chao was born in <strong>Taipei</strong>, where he spent much of his childhood
-                                        until <strong>coming to Canada</strong> in early adolescence. Chao grew up
-                                        in Canada and attended the University of Victoria, where he earned a <strong>business degree</strong>.
-                                        On the other hand, Chao began his career in the entertainment sector when
-                                        he was <strong>just 25 years old</strong>. His impressive resume has grown
-                                        over the past decade, as he has been in several critically-acclaimed films
-                                        and television shows. I hope I’ve grown,” he says. When it comes to making
-                                        decisions and living life, “I think I’ve gotten savvier.”</p>
-                                    <p>To be a public figure, <strong>one must fulfill one’s standards</strong> and
-                                        those of one’s team, production crews, and audience. Actor Chao has chosen
-                                        to focus on his trade rather than juggle various responsibilities as other
-                                        celebrities do to enhance their careers. Without a trace of embarrassment,
-                                        he admits, “I can’t play music, and I can’t even dance.” When it comes
-                                        to my work, I’ve finally found a method to express myself through acting.
-                                        Perhaps it’s because his acting skills were found so fast in the first
-                                        few years of his career.</p>
-                                    <p><strong>“I believe that pleasure is a byproduct of achievement.
-As long as you can claim with complete honesty that you’re content, you’ve accomplished success.”</strong>
-                                    </p>
-                                    <p>Chao made his television <strong>debut in Black &amp; White</strong>, a
-                                        drama series that garnered him the <a href="https://www.straitstimes.com/lifestyle/entertainment/six-golden-bell-awards-for-the-world-between-us">Best Actor award</a> at
-                                        the <strong>44th Golden Bell Awards</strong>, his first recognition.</p>
-                                    <p>Chao, who has had a <strong>long and successful career</strong>, portrayed
-                                        Wu Ying Xiong, an aggressive officer in the series, and considers that
-                                        to be his <strong>most memorable performance</strong>. “I didn’t realize
-                                        how much I cared about the role until we finished filming,” says the actor.
-                                        For a few months, I was still following Wu Ying Xiong’s example. As soon
-                                        as I entered a restaurant, I would glance around for exits, assess my circumstances,
-                                        and think, “I can take this man.” “ After making light of the situation,
-                                        he says, “I don’t do it anymore, though.”</p>
-                                    <p>When <strong><a href="https://www.netflix.com/sg/title/81019520">Eternal Love</a></strong> premiered
-                                        in 2017, Chao became a household name among <strong>mainstream Netflix viewers</strong>,
-                                        who had never heard of him before to that point. His portrayal of a gorgeous
-                                        male lead in a Chinese mythological tale was hailed with equally successful
-                                        outcomes. Chao was included on <strong>Forbes’ annual <a href="https://www.forbes.com/sites/russellflannery/2017/09/22/2017-forbes-china-celebrity-list-full-list/#2e8d7902686d">China Celebrity 100 list</a> in 2017</strong> along
-                                        with other luminaries of the business, making the series China’s most-watched
-                                        television series since its airing. “</p>
-                                    <p>There appears to be a trend in most of Chao’s character-development endeavors,
-                                        despite the <strong>very divergent</strong> roles he’s taken on. “I always
-                                        question the director, ‘Why do you believe I am fit for this role?’” he
-                                        reveals. How do I know what they see in me and how much of a likeness to
-                                        the persona I’m portraying they see? The connection is easier to create
-                                        because of it.” Chao’s <strong>ambitions, both professional and personal, are sincere</strong>.
-                                        The actor’s enthusiasm and humility shine through while discussing his
-                                        accomplishments.</p>
-                                    <p><strong>Finding happiness</strong> at the heart of one’s being is a deceptively
-                                        simple undertaking that <strong>few can do</strong>, according to Chao.
-                                        In order to be considered a success, you must be able to claim that you
-                                        are <strong>happy from the depths of your soul</strong>, from the bottom
-                                        of your heart. The way Chao’s career is progressing, as well as the <strong>birth of his daughter</strong> last
-                                        year, it clearly appears that he has attained the delights of satisfaction
-                                        — if not the success of his description.</p>
-                                    <p>Giving is said to be the <strong>key to happiness</strong>, according to
-                                        popular belief. When you’re making a charitable effort at the same time,
-                                        it comes as no surprise to Chao. Photosynthesis in plants is the inspiration
-                                        for the Guang He Shi Ke initiative, which translates as a “<strong>comforting process</strong>”
-                                        in Mandarin. This is my <strong>unique approach to life</strong>,” he says,
-                                        describing the process as appreciating the beauty and warmth in our daily
-                                        routines. However, I believe that we can all see past the cacophony. That’s
-                                        what the initiative is all about: <strong>finding and focusing on the things we cherish most</strong>.”</p>
-                                    <p>A new topic is selected each year for the advertising campaign. In 2019,
-                                        Guang He Shi Ke launched its first public engagement centered on photosynthetic
-                                        reading, which resulted in the donation of <strong>10,000 books to children in need</strong> after
-                                        being read for 10,000 hours. Chao is clearly <strong>at the peak of his professional and personal life</strong> at
-                                        this point. Although he appears to be an ambitious man on the surface,
-                                        this man is actually a <strong>sensitive and caring person</strong>. According
-                                        to the man, “I’m still a more conventional person.” It’s my dream that <strong>I’ll provide a reliable source of income and stability for my family</strong>.
-                                        That’s my goal in marriage: <strong>constantly listening to my wife</strong>,
-                                        no matter how frustrated she is or what she has to say. First and most
-                                        importantly, I want to be the one who is able to <strong>put my own sentiments aside</strong> so
-                                        that I may better understand and empathize with her.” According to Chao, <strong>that is what makes the man</strong>.</p>
+                                                <img src="/assets/pictures/mark-chao-800.jpg" alt="Mark Chao is receiving an award"
+                                                />
+                                            </picture>
+                                            <figcaption>From <a href="https://commons.wikimedia.org/wiki/File:Mark_LhpDongphuong.jpg"
+                                                rel="nofollow">Wikimedia Commons</a>
+                                            </figcaption>
+                                        </figure>
+                                    </aside>
                                 </div>
+                                <p>There is a private studio downtown where lights are on, and the cameras
+                                    are ready.
+<strong>Mark Chao, an actor and model</strong>, is now the focus
+                                    of this business.</p>
+                                <p>Whenever <a href="https://www.weibo.com/mastachao">Chao</a> is speaking
+                                    Mandarin, he exudes a <strong>youthful exuberance</strong>. Now and again,
+                                    Chao’s <strong>easy laugh</strong> and slurred Chinese humor interrupt the
+                                    conversation, just as in Asian reality shows featuring Chao. Comparing
+                                    him to someone who doesn’t speak English, his demeanor softens, and <strong>his voice sounds more pleasant</strong>.
+                                    He’s a natural at switching back and forth between the two languages.</p>
+                                <p>Chao was born in <strong>Taipei</strong>, where he spent much of his childhood
+                                    until <strong>coming to Canada</strong> in early adolescence. Chao grew up
+                                    in Canada and attended the University of Victoria, where he earned a <strong>business degree</strong>.
+                                    On the other hand, Chao began his career in the entertainment sector when
+                                    he was <strong>just 25 years old</strong>. His impressive resume has grown
+                                    over the past decade, as he has been in several critically-acclaimed films
+                                    and television shows. I hope I’ve grown,” he says. When it comes to making
+                                    decisions and living life, “I think I’ve gotten savvier.”</p>
+                                <p>To be a public figure, <strong>one must fulfill one’s standards</strong> and
+                                    those of one’s team, production crews, and audience. Actor Chao has chosen
+                                    to focus on his trade rather than juggle various responsibilities as other
+                                    celebrities do to enhance their careers. Without a trace of embarrassment,
+                                    he admits, “I can’t play music, and I can’t even dance.” When it comes
+                                    to my work, I’ve finally found a method to express myself through acting.
+                                    Perhaps it’s because his acting skills were found so fast in the first
+                                    few years of his career.</p>
+                                <p><strong>“I believe that pleasure is a byproduct of achievement.
+As long as you can claim with complete honesty that you’re content, you’ve accomplished success.”</strong>
+                                </p>
+                                <p>Chao made his television <strong>debut in Black &amp; White</strong>, a
+                                    drama series that garnered him the <a href="https://www.straitstimes.com/lifestyle/entertainment/six-golden-bell-awards-for-the-world-between-us">Best Actor award</a> at
+                                    the <strong>44th Golden Bell Awards</strong>, his first recognition.</p>
+                                <p>Chao, who has had a <strong>long and successful career</strong>, portrayed
+                                    Wu Ying Xiong, an aggressive officer in the series, and considers that
+                                    to be his <strong>most memorable performance</strong>. “I didn’t realize
+                                    how much I cared about the role until we finished filming,” says the actor.
+                                    For a few months, I was still following Wu Ying Xiong’s example. As soon
+                                    as I entered a restaurant, I would glance around for exits, assess my circumstances,
+                                    and think, “I can take this man.” “ After making light of the situation,
+                                    he says, “I don’t do it anymore, though.”</p>
+                                <p>When <strong><a href="https://www.netflix.com/sg/title/81019520">Eternal Love</a></strong> premiered
+                                    in 2017, Chao became a household name among <strong>mainstream Netflix viewers</strong>,
+                                    who had never heard of him before to that point. His portrayal of a gorgeous
+                                    male lead in a Chinese mythological tale was hailed with equally successful
+                                    outcomes. Chao was included on <strong>Forbes’ annual <a href="https://www.forbes.com/sites/russellflannery/2017/09/22/2017-forbes-china-celebrity-list-full-list/#2e8d7902686d">China Celebrity 100 list</a> in 2017</strong> along
+                                    with other luminaries of the business, making the series China’s most-watched
+                                    television series since its airing. “</p>
+                                <p>There appears to be a trend in most of Chao’s character-development endeavors,
+                                    despite the <strong>very divergent</strong> roles he’s taken on. “I always
+                                    question the director, ‘Why do you believe I am fit for this role?’” he
+                                    reveals. How do I know what they see in me and how much of a likeness to
+                                    the persona I’m portraying they see? The connection is easier to create
+                                    because of it.” Chao’s <strong>ambitions, both professional and personal, are sincere</strong>.
+                                    The actor’s enthusiasm and humility shine through while discussing his
+                                    accomplishments.</p>
+                                <p><strong>Finding happiness</strong> at the heart of one’s being is a deceptively
+                                    simple undertaking that <strong>few can do</strong>, according to Chao.
+                                    In order to be considered a success, you must be able to claim that you
+                                    are <strong>happy from the depths of your soul</strong>, from the bottom
+                                    of your heart. The way Chao’s career is progressing, as well as the <strong>birth of his daughter</strong> last
+                                    year, it clearly appears that he has attained the delights of satisfaction
+                                    — if not the success of his description.</p>
+                                <p>Giving is said to be the <strong>key to happiness</strong>, according to
+                                    popular belief. When you’re making a charitable effort at the same time,
+                                    it comes as no surprise to Chao. Photosynthesis in plants is the inspiration
+                                    for the Guang He Shi Ke initiative, which translates as a “<strong>comforting process</strong>”
+                                    in Mandarin. This is my <strong>unique approach to life</strong>,” he says,
+                                    describing the process as appreciating the beauty and warmth in our daily
+                                    routines. However, I believe that we can all see past the cacophony. That’s
+                                    what the initiative is all about: <strong>finding and focusing on the things we cherish most</strong>.”</p>
+                                <p>A new topic is selected each year for the advertising campaign. In 2019,
+                                    Guang He Shi Ke launched its first public engagement centered on photosynthetic
+                                    reading, which resulted in the donation of <strong>10,000 books to children in need</strong> after
+                                    being read for 10,000 hours. Chao is clearly <strong>at the peak of his professional and personal life</strong> at
+                                    this point. Although he appears to be an ambitious man on the surface,
+                                    this man is actually a <strong>sensitive and caring person</strong>. According
+                                    to the man, “I’m still a more conventional person.” It’s my dream that <strong>I’ll provide a reliable source of income and stability for my family</strong>.
+                                    That’s my goal in marriage: <strong>constantly listening to my wife</strong>,
+                                    no matter how frustrated she is or what she has to say. First and most
+                                    importantly, I want to be the one who is able to <strong>put my own sentiments aside</strong> so
+                                    that I may better understand and empathize with her.” According to Chao, <strong>that is what makes the man</strong>.</p>
                             </div>
                         </div>
-                    </article>
-                </main>
-                <nav class="post-items">
-                     <h3>Top posts</h3>
+                    </div>
+                </article>
+            </main>
+            <nav class="post-items">
+                 <h3>Top posts</h3>
 
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/5-ways-to-celebrate-womens-history-month/">
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/crypto-trading-in-singapore/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="A gold coin like Bitcoin"
+                         srcset="/assets/pictures/bitcoin-physical-coin-80x80.jpg,
+                                /assets/pictures/bitcoin-physical-coin-160x160.jpg 2x"
+                         src="/assets/pictures/bitcoin-physical-coin-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">FINANCE</h3>
+                        <h4 class="title">Crypto Trading in Singapore</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">10 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/5-ways-to-celebrate-womens-history-month/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt=""
@@ -1217,14 +1311,14 @@ As long as you can claim with complete honesty that you’re content, you’ve a
 
 
 
-                                                                                                                                                                                                <span class="meta">10 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">430 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt=""
@@ -1247,14 +1341,14 @@ As long as you can claim with complete honesty that you’re content, you’ve a
 
 
 
-                                                                                                                                                                                                <span class="meta">346 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">780 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/top-10-gofundme-alternatives/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/top-10-gofundme-alternatives/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A woman's hand is giving money"
@@ -1277,14 +1371,14 @@ As long as you can claim with complete honesty that you’re content, you’ve a
 
 
 
-                                                                                                                                                                                                <span class="meta">206 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">640 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/bag-charm-from-hermes/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/bag-charm-from-hermes/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Photo of a Hermes Kellydoll bag."
@@ -1307,14 +1401,14 @@ As long as you can claim with complete honesty that you’re content, you’ve a
 
 
 
-                                                                                                                                                                                                <span class="meta">94 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">528 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Billie Eilish eyes"
@@ -1337,44 +1431,17 @@ As long as you can claim with complete honesty that you’re content, you’ve a
 
 
 
-                                                                                                                                                                                                <span class="meta">738 views - 5 min read</span>
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,172 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/things-to-look-for-in-a-good-online-casino/">
-                <div class="top-post-item featured-post">
-                    <img width="80" height="80" class="thumbnail"
-                         alt="Close-up photo of playing cards"
-                         srcset="/assets/pictures/playing-cards-80x80.jpg,
-                                /assets/pictures/playing-cards-160x160.jpg 2x"
-                         src="/assets/pictures/playing-cards-80x80.jpg"
-                         loading="lazy"
-                    />
-                    <div class="description">
-                        <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Things To Look For In A Good Online Casino</h4>
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                <span class="meta">101 views - 5 min read</span>
-
-                                            </div>
                 </div>
-            </a>
-
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-marshmallow-test/">
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-marshmallow-test/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="White ceramic mug on book, filled with marshmallow."
@@ -1397,25 +1464,28 @@ As long as you can claim with complete honesty that you’re content, you’ve a
 
 
 
-                                                                                                                                                                                                <span class="meta">696 views - 5 min read</span>
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,130 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/how-to-cleanse-recharge-your-crystals/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/things-to-look-for-in-a-good-online-casino/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
-                         alt="Macro photography of black ceramic Gautama Buddha miniature"
-                         srcset="/assets/pictures/crystal-consciousness-80x80.jpg,
-                                /assets/pictures/crystal-consciousness-160x160.jpg 2x"
-                         src="/assets/pictures/crystal-consciousness-80x80.jpg"
+                         alt="Close-up photo of playing cards"
+                         srcset="/assets/pictures/playing-cards-80x80.jpg,
+                                /assets/pictures/playing-cards-160x160.jpg 2x"
+                         src="/assets/pictures/playing-cards-80x80.jpg"
                          loading="lazy"
                     />
                     <div class="description">
                         <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Clean and recharge your crystals with these simple steps</h4>
+                        <h4 class="title">Things To Look For In A Good Online Casino</h4>
 
 
 
@@ -1427,44 +1497,14 @@ As long as you can claim with complete honesty that you’re content, you’ve a
 
 
 
-                                                                                                                                                                                                <span class="meta">297 views - 5 min read</span>
-
-                                            </div>
-                </div>
-            </a>
-
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/lauren-tsai-model-artist-netflix-terrace-house-reality-interview-fashion/">
-                <div class="top-post-item featured-post">
-                    <img width="80" height="80" class="thumbnail"
-                         alt="Lauren Tsai is smiling to the camera"
-                         srcset="/assets/pictures/lauren-tsai-80x80.jpg,
-                                /assets/pictures/lauren-tsai-160x160.jpg 2x"
-                         src="/assets/pictures/lauren-tsai-80x80.jpg"
-                         loading="lazy"
-                    />
-                    <div class="description">
-                        <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Lauren Tsai, Model, Artist and Actress of Netflix's Terrace House</h4>
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                <span class="meta">311 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">535 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/discontinued-icons-audemars-piguet-royal-oak-15202st/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/discontinued-icons-audemars-piguet-royal-oak-15202st/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Audemars Piguet Royal Oak Jumbo"
@@ -1487,14 +1527,44 @@ As long as you can claim with complete honesty that you’re content, you’ve a
 
 
 
-                                                                                                                                                                                                <span class="meta">318 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">752 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singapore-food-waste-uglyfood-treatsure-insectta/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/how-to-cleanse-recharge-your-crystals/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Macro photography of black ceramic Gautama Buddha miniature"
+                         srcset="/assets/pictures/crystal-consciousness-80x80.jpg,
+                                /assets/pictures/crystal-consciousness-160x160.jpg 2x"
+                         src="/assets/pictures/crystal-consciousness-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Clean and recharge your crystals with these simple steps</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">731 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singapore-food-waste-uglyfood-treatsure-insectta/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A few half rotten apples on the ground"
@@ -1517,14 +1587,14 @@ As long as you can claim with complete honesty that you’re content, you’ve a
 
 
 
-                                                                                                                                                                                                <span class="meta">304 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">738 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/aura-photograph-new-age-selfie/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/aura-photograph-new-age-selfie/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Yellow and black coated wire"
@@ -1547,14 +1617,14 @@ As long as you can claim with complete honesty that you’re content, you’ve a
 
 
 
-                                                                                                                                                                                                <span class="meta">297 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">731 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/taha-bouqdib-maranda-barnes-husband-wife-duo-built-twg-tea-interview/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/taha-bouqdib-maranda-barnes-husband-wife-duo-built-twg-tea-interview/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Green tea plantation from birds eye view"
@@ -1577,14 +1647,14 @@ As long as you can claim with complete honesty that you’re content, you’ve a
 
 
 
-                                                                                                                                                                                                <span class="meta">325 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">759 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/iwc-goes-green-with-timbertex/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/iwc-goes-green-with-timbertex/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A person's hand with a watch"
@@ -1607,27 +1677,222 @@ As long as you can claim with complete honesty that you’re content, you’ve a
 
 
 
-                                                                                                                                                                                                <span class="meta">332 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                </nav>
-            </div>
-            <aside class="site-footer-outer">
-                <footer class="site-footer">
-                    <div> <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span>
-                        <span
-                        style="font-weight: 700" class="logo-line">|</span>
-                    </div>
-                    <div> <span><a href="https://www.tsingapore.com/sitemap.xml">sitemap</a></span> | <span><a href="mailto:info@tsingapore.com">email</a></span>
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singpost-guardians-singapore-lost-mail/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Letter forced into the post box"
+                         srcset="/assets/pictures/letter-forced-into-the-post-box-80x80.jpg,
+                                /assets/pictures/letter-forced-into-the-post-box-160x160.jpg 2x"
+                         src="/assets/pictures/letter-forced-into-the-post-box-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">STORY</h3>
+                        <h4 class="title">Who Look After Singapore's Undelivered Mail</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-met-operas-musicians-are-struggling/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Photography of people sitting on theater during nighttime"
+                         srcset="/assets/pictures/half-empty-new-york-opera-80x80.jpg,
+                                /assets/pictures/half-empty-new-york-opera-160x160.jpg 2x"
+                         src="/assets/pictures/half-empty-new-york-opera-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Met Opera Musicians Who Have Been Working Without Pay Since April</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/omega-2021-novelties-collection/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Omega seamaster 300 watch on a bronze box"
+                         srcset="/assets/pictures/omega-seamaster-300-80x80.jpg,
+                                /assets/pictures/omega-seamaster-300-160x160.jpg 2x"
+                         src="/assets/pictures/omega-seamaster-300-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">FASHION</h3>
+                        <h4 class="title">Omega Commemorates the Year 2021 with a Bronze Seamaster</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">773 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/maisie-williams-pasha-de-cartier-the-new-mutant-xmen-tiktok-interview/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Maisie Williams speaking at the 2019 San Diego Comic Con"
+                         srcset="/assets/pictures/maisie-williams-80x80.jpg,
+                                /assets/pictures/maisie-williams-160x160.jpg 2x"
+                         src="/assets/pictures/maisie-williams-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Maisie Williams On TikTok, and Saving Dolphins</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">710 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-britney-spears-song-is-in-the-works/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Britney Spears singing"
+                         srcset="/assets/pictures/britney-spears-singing-80x80.jpg,
+                                /assets/pictures/britney-spears-singing-160x160.jpg 2x"
+                         src="/assets/pictures/britney-spears-singing-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">GOSSIP</h3>
+                        <h4 class="title">New Britney Spears Song Is In The Works</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">941 views - 4 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+            </nav>
+            <nav class="more-to-read-items">
+                 <h3>More To Read</h3>
+
+                <div class="more-to-read-items-inner">
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/tiffany-co-high-jewellery-colors-of-nature/">
+                <h4 class="title">Tiffany & Co.'s Colors Of Nature High Jewellery Collection</h4>
+            </a>
 
                     </div>
-                </footer>
-            </aside>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-truth-and-myths-of-the-sanpaku-eyes/">
+                <h4 class="title">The Truth and Myths of the Sanpaku Eyes</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/kim-kardashian-the-new-york-times-style-magazine-singapore-october-cover-story/">
+                <h4 class="title">Keeping Up With Kim Kardashian</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/pear-scent-fragrance-louis-vuitton-coeur-battant-jo-malone/">
+                <h4 class="title">The Underrated Fruity Scent of Pear</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/spring-brings-more-colour-to-eyeshadow-palettes/">
+                <h4 class="title">Eyeshadow Palettes Get More Color in the Spring</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-history-of-famous-celebrity-irises-and-their-meaning/">
+                <h4 class="title">The History of Famous Celebrity Irises and Their Meaning</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-letter-t/">
+                <h4 class="title">The Letter T</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/what-are-sanpaku-eyes/">
+                <h4 class="title">What Are Sanpaku Eyes?</h4>
+            </a>
+
+                    </div>
+                </div>
+            </nav>
         </div>
+        <aside class="site-footer-outer">
+            <footer class="site-footer">
+                <div> <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span>
+                    <span
+                    style="font-weight: 700" class="logo-line">|</span>
+                </div>
+                <div> <span><a href="https://www.tsingapore.com/sitemap.xml">sitemap</a></span> | <span><a href="mailto:info@tsingapore.com">email</a></span>
+
+                </div>
+            </footer>
+        </aside>
         <script defer src="https://www.tsingapore.com/assets/js/main.js"></script>
     </body>
 

@@ -92,7 +92,7 @@
                 }
                 a {
                   color: #000000;
-                  text-decoration: underline dashed #007aff;
+                  text-decoration: underline solid #007aff;
                 }
                 /*** generic custom stuff */
                 .logo-line,
@@ -118,12 +118,23 @@
                 }
                 
                 /*** post items */
+                .post-items {
+                  padding: 12px 6px;
+                }
                 .post-items a {
                   text-decoration: none;
                 }
+                .post-items h3 {
+                  font-size: 14px;
+                  line-height: 16px;
+                  color: #333333;
+                  font-weight: bold;
+                  margin-top: unset;
+                  margin-bottom: 6px;
+                }
                 .post-items h4 {
                   margin-top: 0px;
-                  margin-bottom: 0px;
+                  margin-bottom: 4px;
                 }
                 .top-post-item {
                   display: flex;
@@ -135,6 +146,12 @@
                   text-decoration: none;
                 }
                 
+                .top-post-item .description .tp-meta {
+                  font-size: 12px;
+                  line-height: 14px;
+                  margin: 0;
+                  color: #818181;
+                }
                 .top-post-item .thumbnail {
                   width: 80px;
                   height: 80px;
@@ -242,6 +259,14 @@
                 .site-navigation nav ul {
                   list-style: none;
                   display: flex;
+                }
+                .site-navigation nav li:nth-child(n+3) {
+                    display: none;
+                }
+                @media (min-width: 420px) {
+                    .site-navigation nav li:nth-child(n+3) {
+                      display: unset;
+                    }
                 }
                 @media (min-width: 800px) {
                     .site-header {
@@ -468,6 +493,50 @@
                 }
                 @media (min-width: 1366px) {
                 }
+                  .more-to-read-items {
+                    padding: 12px 6px;
+                    border-top: 1px solid #C7DFF3;
+                }
+                .more-to-read-items a {
+                    text-decoration: none;
+                }
+                .more-to-read-item-outer {
+                    border-top: 1px solid #C7DFF3;
+                    padding: 12px;
+                }
+                .more-to-read-items h3 {
+                     margin-top: 12px;
+                 }
+                .more-to-read-items h4 {
+                     font-size: 13px;
+                     line-height: 18px;
+                     margin: 0;
+                 }
+                @media (min-width: 800px) {
+                    .more-to-read-items-inner{
+                        display: flex;
+                        flex-flow: wrap;
+                    }
+                    .more-to-read-item-outer {
+                        width: 50%;
+                    }
+                }
+                @media (min-width: 1280px) {
+                    .more-to-read-item-outer {
+                        width: 33.3333%;
+                    }
+                    .more-to-read-items {
+                        width: 100%;
+                        padding: 12px;
+                    }
+                    .more-to-read-items h3 {
+                         margin-top: 24px;
+                         font-size: 18px;
+                         line-height: 22px;
+                     }
+                }
+                @media (min-width: 1366px) {
+                }
                 
                   /*** fonts */
                 h1 {
@@ -647,6 +716,11 @@
                   margin: 0 12px;
                 }
                 /*** meta */
+                .tp-meta {
+                   display: flex;
+                   flex-wrap: wrap;
+                   align-items: center;
+                 }
                 .meta {
                   margin-top: 32px;
                   margin-bottom: 16px;
@@ -758,6 +832,8 @@
                 
                 /*** post items */
                 .toc {
+                  background-color: white;
+                  border-radius: 12px;
                   display: unset;
                   position: sticky;
                   top: 44px;
@@ -818,16 +894,11 @@
                   padding: 12px;
                   padding-left: 24px;
                 }
+                .post-items h4 {
+                  margin-bottom: 0px;
+                }
                 .top-post-item {
                   padding: 0;
-                }
-                .post-items h3 {
-                  font-size: 14px;
-                  line-height: 16px;
-                  color: #333333;
-                  font-weight: bold;
-                  margin-top: unset;
-                  margin-bottom: 6px;
                 }
                 .post-item-outer {
                   padding: 12px 0;
@@ -847,12 +918,6 @@
                   line-height: 15px;
                   height: 45px;
                   text-overflow: ellipsis;
-                }
-                .top-post-item .description .meta {
-                  font-size: 12px;
-                  line-height: 14px;
-                  margin: 0;
-                  color: #818181;
                 }
                 
                 /*** images */
@@ -917,7 +982,7 @@
                   height: 48px;
                   text-overflow: ellipsis;
                 }
-                .top-post-item .description .meta {
+                .top-post-item .description .tp-meta {
                   font-size: 12px;
                   line-height: 14px;
                   margin: 0;
@@ -1026,132 +1091,161 @@
     </head>
     
     <body>
-        <div class="body-inner">
-            <div class="site-header-outer">
-                <header class="site-header">
-                    <div> <a href="https://www.tsingapore.com/">
+        <div class="site-header-outer">
+            <header class="site-header">
+                <div> <a href="https://www.tsingapore.com/">
                 <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span><span style="font-weight: 700" class="logo-line">|</span>
             </a>
 
-                    </div>
-                    <div class="site-navigation">
-                        <nav>
-                            <ul>
-                                <li> <a href="https://www.tsingapore.com/culture/"><span>culture</span></a>
+                </div>
+                <div class="site-navigation">
+                    <nav>
+                        <ul>
+                            <li> <a href="https://www.tsingapore.com/culture/"><span>culture</span></a>
 
-                                </li>
-                                <li> <a href="https://www.tsingapore.com/fashion/"><span>fashion</span></a>
+                            </li>
+                            <li> <a href="https://www.tsingapore.com/fashion/"><span>fashion</span></a>
 
-                                </li>
-                                <li> <a href="https://www.tsingapore.com/beauty/"><span>beauty</span></a>
+                            </li>
+                            <li> <a href="https://www.tsingapore.com/beauty/"><span>beauty</span></a>
 
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </header>
-            </div>
-            <div class="main-content-outer">
-                <nav class="toc"></nav>
-                <main class="main-content">
-                    <article>
-                        <div class="page-header-outer">
-                            <header class="page-header">
-                                 <h1 id="new-britney-spears-song-is-in-the-works">New Britney Spears Song Is In The Works</h1>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        </div>
+        <div class="main-content-outer">
+            <nav class="toc"></nav>
+            <main class="main-content">
+                <article>
+                    <div class="page-header-outer">
+                        <header class="page-header">
+                             <h1 id="new-britney-spears-song-is-in-the-works">New Britney Spears Song Is In The Works</h1>
 
-                                <aside class="meta">
-                                    <div class="author-photo">
-                                        <img alt="The picture of Clara Ortiz" src="https://www.tsingapore.com/assets/images/clara_ortiz_64x64.jpg"
-                                        srcset="https://www.tsingapore.com/assets/images/clara_ortiz_128x128.jpg 2x">
-                                    </div>
-                                    <div class="info"> <span class="author-name">Clara Ortiz</span>
+                            <aside class="meta">
+                                <div class="author-photo">
+                                    <img alt="The picture of Clara Ortiz" src="https://www.tsingapore.com/assets/images/clara_ortiz_64x64.jpg"
+                                    srcset="https://www.tsingapore.com/assets/images/clara_ortiz_128x128.jpg 2x">
+                                </div>
+                                <div class="info"> <span class="author-name">Clara Ortiz</span>
  <span class="published-date">Dec 27th, 2021</span>
 
-                                    </div>
-                                </aside>
-                            </header>
-                        </div>
-                        <div class="post-body-outer">
-                            <div class="post-body">
-                                <div class="post-body-inner">
-                                    <p>In a recent interview, Britney Spears attacks her family and previews
-                                        a new song, saying, “<strong>I haven’t forgotten what they did to me.</strong>”</p>
-                                    <p>Even though Britney Spears enjoys Christmas as a <a href="https://www.yahoo.com/entertainment/britney-spears-celebrates-1st-birthday-free-woman-212706800.html">free woman</a>,
-                                        it does <strong>not</strong> appear like she will be <strong>spending Christmas with her family</strong>.</p>
-                                    <div
-                                    id="featured-img">
-                                        <aside>
-                                            <figure class="full-width-figure  featured">
-                                                <picture>
-                                                    <source type="image/webp" srcset="
+                                </div>
+                            </aside>
+                        </header>
+                    </div>
+                    <div class="post-body-outer">
+                        <div class="post-body">
+                            <div class="post-body-inner">
+                                <p>In a recent interview, Britney Spears attacks her family and previews
+                                    a new song, saying, “<strong>I haven’t forgotten what they did to me.</strong>”</p>
+                                <p>Even though Britney Spears enjoys Christmas as a <a href="https://www.yahoo.com/entertainment/britney-spears-celebrates-1st-birthday-free-woman-212706800.html">free woman</a>,
+                                    it does <strong>not</strong> appear like she will be <strong>spending Christmas with her family</strong>.</p>
+                                <div
+                                id="featured-img">
+                                    <aside>
+                                        <figure class="full-width-figure  featured">
+                                            <picture>
+                                                <source type="image/webp" srcset="
               /assets/pictures/britney-spears-singing-800.webp 800w,
               /assets/pictures/britney-spears-singing-1200.webp 1200w,
               /assets/pictures/britney-spears-singing-1600.webp 1600w"
-                                                    sizes="
+                                                sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                    <source type="image/jpeg" srcset="
+                                                <source type="image/jpeg" srcset="
               /assets/pictures/britney-spears-singing-800.jpg 800w,
               /assets/pictures/britney-spears-singing-1200.jpg 1200w,
               /assets/pictures/britney-spears-singing-1600.jpg 1600w"
-                                                    sizes="
+                                                sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                    <img src="/assets/pictures/britney-spears-singing-800.jpg" alt="Britney Spears singing"
-                                                    />
-                                                </picture>
-                                                <figcaption>From <a href="https://commons.wikimedia.org/wiki/File:BritneyPOM6.jpg"
-                                                    rel="nofollow">Wikimedia Commons</a>
-                                                </figcaption>
-                                            </figure>
-                                        </aside>
-                                </div>
-                                <p>According to the artist, she is “coming to remind my white ‘<strong>classy</strong>’
-                                    relatives that I haven’t forgotten what they did to me” and that she has
-                                    a “<strong>new song in the works</strong>,” according to the <a href="https://www.dailymail.co.uk/tvshowbiz/article-10338573/Britney-Spears-channels-inner-Instagram-influencer-seemingly-making-sponsored-post.html">Daily Mail</a>.
-                                    An accompanying video of Spears demonstrating her vocal range was accompanied
-                                    by a lengthy commentary.</p>
-                                <p>“Guys, I only just discovered this today… … in the aftermath of what my
-                                    family attempted to do to me three years ago… I needed to be my own cheerleader…
-                                    They indeed weren’t, as God knows “the vocalist penned a song She might
-                                    be alluding to when she was purportedly compelled to enter treatment at
-                                    the beginning of 2019. Spears boasted on numerous achievements, such as
-                                    the fact that she had sold approximately 100 million records globally.</p>
-                                <p>“I’m reminding myself as well as the rest of the world of who I am,” she
-                                    continued. “Yes… I intend to be my own best cheerleader.” Spears continued
-                                    by saying, “I’m going to let you know what I mean ;)!!!!!” about her prospective
-                                    new song.</p>
-                                <p>Indeed, this isn’t the first time Spears has spoken out against her family
-                                    and people she believes have harmed her throughout her career. Her father,
-                                    Jamie Spears, and her former management team, according to the starlet,
-                                    are to blame for having her weep during that notorious 2003 interview with
-                                    Diane Sawyer. Jamie <strong>brushed off the charges</strong>, prompting
-                                    Britney’s attorney, Mathew Rosengart, to stand out against her.</p>
-                                <p>“<a href="https://variety.com/2021/music/news/diane-sawyer-britney-spears-interview-jamie-spears-lawyer-1235133180/">According to Rosengart</a>,
-                                    “rather than <strong>abusing and insulting</strong> his daughter, even while
-                                    claiming to ‘love’ her,” Mr. Spears and his lawyer should “concentrate
-                                    on addressing the following core issues, on beginning with, which we have
-                                    been asking for months: In his capacity as a suspended conservator, would
-                                    he now reimburse himself for the <strong>millions of dollars</strong> in
-                                    combined pay and commissions from Britney’s work that he received before
-                                    he was terminated? What were the total sums of money he earned through
-                                    his daughter’s will and estate administration? In what capacity did he
-                                    sanction a $500,000 payment to Tri-Star Entertainment after Britney Spears
-                                    went on hiatus?</p>
-                                <p>Are there any facts to back up the charges in the extended New York Times
-                                    report about a listening device installed in his adult daughter’s bedroom?
-                                    Does he have any proof to back up his claims?”</p>
-                                <p>Spears has been <a href="https://www.nytimes.com/live/2021/11/12/arts/britney-spears-hearing-conservatorship">released from conservatorship</a>,
-                                    but she still has several financial issues to settle in court.</p>
+                                                <img src="/assets/pictures/britney-spears-singing-800.jpg" alt="Britney Spears singing"
+                                                />
+                                            </picture>
+                                            <figcaption>From <a href="https://commons.wikimedia.org/wiki/File:BritneyPOM6.jpg"
+                                                rel="nofollow">Wikimedia Commons</a>
+                                            </figcaption>
+                                        </figure>
+                                    </aside>
                             </div>
+                            <p>According to the artist, she is “coming to remind my white ‘<strong>classy</strong>’
+                                relatives that I haven’t forgotten what they did to me” and that she has
+                                a “<strong>new song in the works</strong>,” according to the <a href="https://www.dailymail.co.uk/tvshowbiz/article-10338573/Britney-Spears-channels-inner-Instagram-influencer-seemingly-making-sponsored-post.html">Daily Mail</a>.
+                                An accompanying video of Spears demonstrating her vocal range was accompanied
+                                by a lengthy commentary.</p>
+                            <p>“Guys, I only just discovered this today… … in the aftermath of what my
+                                family attempted to do to me three years ago… I needed to be my own cheerleader…
+                                They indeed weren’t, as God knows “the vocalist penned a song She might
+                                be alluding to when she was purportedly compelled to enter treatment at
+                                the beginning of 2019. Spears boasted on numerous achievements, such as
+                                the fact that she had sold approximately 100 million records globally.</p>
+                            <p>“I’m reminding myself as well as the rest of the world of who I am,” she
+                                continued. “Yes… I intend to be my own best cheerleader.” Spears continued
+                                by saying, “I’m going to let you know what I mean ;)!!!!!” about her prospective
+                                new song.</p>
+                            <p>Indeed, this isn’t the first time Spears has spoken out against her family
+                                and people she believes have harmed her throughout her career. Her father,
+                                Jamie Spears, and her former management team, according to the starlet,
+                                are to blame for having her weep during that notorious 2003 interview with
+                                Diane Sawyer. Jamie <strong>brushed off the charges</strong>, prompting
+                                Britney’s attorney, Mathew Rosengart, to stand out against her.</p>
+                            <p>“<a href="https://variety.com/2021/music/news/diane-sawyer-britney-spears-interview-jamie-spears-lawyer-1235133180/">According to Rosengart</a>,
+                                “rather than <strong>abusing and insulting</strong> his daughter, even while
+                                claiming to ‘love’ her,” Mr. Spears and his lawyer should “concentrate
+                                on addressing the following core issues, on beginning with, which we have
+                                been asking for months: In his capacity as a suspended conservator, would
+                                he now reimburse himself for the <strong>millions of dollars</strong> in
+                                combined pay and commissions from Britney’s work that he received before
+                                he was terminated? What were the total sums of money he earned through
+                                his daughter’s will and estate administration? In what capacity did he
+                                sanction a $500,000 payment to Tri-Star Entertainment after Britney Spears
+                                went on hiatus?</p>
+                            <p>Are there any facts to back up the charges in the extended New York Times
+                                report about a listening device installed in his adult daughter’s bedroom?
+                                Does he have any proof to back up his claims?”</p>
+                            <p>Spears has been <a href="https://www.nytimes.com/live/2021/11/12/arts/britney-spears-hearing-conservatorship">released from conservatorship</a>,
+                                but she still has several financial issues to settle in court.</p>
                         </div>
-            </div>
-            </article>
-            </main>
-            <nav class="post-items">
-                 <h3>Top posts</h3>
+                    </div>
+        </div>
+        </article>
+        </main>
+        <nav class="post-items">
+             <h3>Top posts</h3>
 
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/5-ways-to-celebrate-womens-history-month/">
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/crypto-trading-in-singapore/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="A gold coin like Bitcoin"
+                         srcset="/assets/pictures/bitcoin-physical-coin-80x80.jpg,
+                                /assets/pictures/bitcoin-physical-coin-160x160.jpg 2x"
+                         src="/assets/pictures/bitcoin-physical-coin-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">FINANCE</h3>
+                        <h4 class="title">Crypto Trading in Singapore</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">10 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/5-ways-to-celebrate-womens-history-month/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt=""
@@ -1174,14 +1268,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">10 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">430 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt=""
@@ -1204,14 +1298,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">346 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">780 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/top-10-gofundme-alternatives/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/top-10-gofundme-alternatives/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A woman's hand is giving money"
@@ -1234,14 +1328,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">206 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">640 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/bag-charm-from-hermes/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/bag-charm-from-hermes/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Photo of a Hermes Kellydoll bag."
@@ -1264,14 +1358,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">94 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">528 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Billie Eilish eyes"
@@ -1294,44 +1388,17 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">738 views - 5 min read</span>
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,172 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/things-to-look-for-in-a-good-online-casino/">
-                <div class="top-post-item featured-post">
-                    <img width="80" height="80" class="thumbnail"
-                         alt="Close-up photo of playing cards"
-                         srcset="/assets/pictures/playing-cards-80x80.jpg,
-                                /assets/pictures/playing-cards-160x160.jpg 2x"
-                         src="/assets/pictures/playing-cards-80x80.jpg"
-                         loading="lazy"
-                    />
-                    <div class="description">
-                        <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Things To Look For In A Good Online Casino</h4>
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                <span class="meta">101 views - 5 min read</span>
-
-                                            </div>
-                </div>
-            </a>
-
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-marshmallow-test/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-marshmallow-test/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="White ceramic mug on book, filled with marshmallow."
@@ -1354,25 +1421,28 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">696 views - 5 min read</span>
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,130 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/how-to-cleanse-recharge-your-crystals/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/things-to-look-for-in-a-good-online-casino/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
-                         alt="Macro photography of black ceramic Gautama Buddha miniature"
-                         srcset="/assets/pictures/crystal-consciousness-80x80.jpg,
-                                /assets/pictures/crystal-consciousness-160x160.jpg 2x"
-                         src="/assets/pictures/crystal-consciousness-80x80.jpg"
+                         alt="Close-up photo of playing cards"
+                         srcset="/assets/pictures/playing-cards-80x80.jpg,
+                                /assets/pictures/playing-cards-160x160.jpg 2x"
+                         src="/assets/pictures/playing-cards-80x80.jpg"
                          loading="lazy"
                     />
                     <div class="description">
                         <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Clean and recharge your crystals with these simple steps</h4>
+                        <h4 class="title">Things To Look For In A Good Online Casino</h4>
 
 
 
@@ -1384,44 +1454,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">297 views - 5 min read</span>
-
-                                            </div>
-                </div>
-            </a>
-
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/lauren-tsai-model-artist-netflix-terrace-house-reality-interview-fashion/">
-                <div class="top-post-item featured-post">
-                    <img width="80" height="80" class="thumbnail"
-                         alt="Lauren Tsai is smiling to the camera"
-                         srcset="/assets/pictures/lauren-tsai-80x80.jpg,
-                                /assets/pictures/lauren-tsai-160x160.jpg 2x"
-                         src="/assets/pictures/lauren-tsai-80x80.jpg"
-                         loading="lazy"
-                    />
-                    <div class="description">
-                        <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Lauren Tsai, Model, Artist and Actress of Netflix's Terrace House</h4>
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                <span class="meta">311 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">535 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/discontinued-icons-audemars-piguet-royal-oak-15202st/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/discontinued-icons-audemars-piguet-royal-oak-15202st/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Audemars Piguet Royal Oak Jumbo"
@@ -1444,14 +1484,44 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">318 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">752 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/how-to-cleanse-recharge-your-crystals/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Macro photography of black ceramic Gautama Buddha miniature"
+                         srcset="/assets/pictures/crystal-consciousness-80x80.jpg,
+                                /assets/pictures/crystal-consciousness-160x160.jpg 2x"
+                         src="/assets/pictures/crystal-consciousness-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Clean and recharge your crystals with these simple steps</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">731 views - 5 min read</span>
+
+                                            </div>
                 </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singapore-food-waste-uglyfood-treatsure-insectta/">
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singapore-food-waste-uglyfood-treatsure-insectta/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A few half rotten apples on the ground"
@@ -1474,14 +1544,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">304 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">738 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/aura-photograph-new-age-selfie/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/aura-photograph-new-age-selfie/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Yellow and black coated wire"
@@ -1504,14 +1574,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">297 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">731 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/taha-bouqdib-maranda-barnes-husband-wife-duo-built-twg-tea-interview/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/taha-bouqdib-maranda-barnes-husband-wife-duo-built-twg-tea-interview/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Green tea plantation from birds eye view"
@@ -1534,14 +1604,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">325 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">759 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/iwc-goes-green-with-timbertex/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/iwc-goes-green-with-timbertex/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A person's hand with a watch"
@@ -1564,14 +1634,213 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">332 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singpost-guardians-singapore-lost-mail/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Letter forced into the post box"
+                         srcset="/assets/pictures/letter-forced-into-the-post-box-80x80.jpg,
+                                /assets/pictures/letter-forced-into-the-post-box-160x160.jpg 2x"
+                         src="/assets/pictures/letter-forced-into-the-post-box-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">STORY</h3>
+                        <h4 class="title">Who Look After Singapore's Undelivered Mail</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
+
+                                            </div>
                 </div>
-            </nav>
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-met-operas-musicians-are-struggling/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Photography of people sitting on theater during nighttime"
+                         srcset="/assets/pictures/half-empty-new-york-opera-80x80.jpg,
+                                /assets/pictures/half-empty-new-york-opera-160x160.jpg 2x"
+                         src="/assets/pictures/half-empty-new-york-opera-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Met Opera Musicians Who Have Been Working Without Pay Since April</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/omega-2021-novelties-collection/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Omega seamaster 300 watch on a bronze box"
+                         srcset="/assets/pictures/omega-seamaster-300-80x80.jpg,
+                                /assets/pictures/omega-seamaster-300-160x160.jpg 2x"
+                         src="/assets/pictures/omega-seamaster-300-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">FASHION</h3>
+                        <h4 class="title">Omega Commemorates the Year 2021 with a Bronze Seamaster</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">773 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/mark-chao-actor-interview/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Mark Chao is receiving an award"
+                         srcset="/assets/pictures/mark-chao-80x80.jpg,
+                                /assets/pictures/mark-chao-160x160.jpg 2x"
+                         src="/assets/pictures/mark-chao-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Let's Meet Mark Chao</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,158 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/maisie-williams-pasha-de-cartier-the-new-mutant-xmen-tiktok-interview/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Maisie Williams speaking at the 2019 San Diego Comic Con"
+                         srcset="/assets/pictures/maisie-williams-80x80.jpg,
+                                /assets/pictures/maisie-williams-160x160.jpg 2x"
+                         src="/assets/pictures/maisie-williams-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Maisie Williams On TikTok, and Saving Dolphins</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">710 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+            </div>
+        </nav>
+        <nav class="more-to-read-items">
+             <h3>More To Read</h3>
+
+            <div class="more-to-read-items-inner">
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/tiffany-co-high-jewellery-colors-of-nature/">
+                <h4 class="title">Tiffany & Co.'s Colors Of Nature High Jewellery Collection</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-truth-and-myths-of-the-sanpaku-eyes/">
+                <h4 class="title">The Truth and Myths of the Sanpaku Eyes</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/kim-kardashian-the-new-york-times-style-magazine-singapore-october-cover-story/">
+                <h4 class="title">Keeping Up With Kim Kardashian</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/pear-scent-fragrance-louis-vuitton-coeur-battant-jo-malone/">
+                <h4 class="title">The Underrated Fruity Scent of Pear</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/spring-brings-more-colour-to-eyeshadow-palettes/">
+                <h4 class="title">Eyeshadow Palettes Get More Color in the Spring</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-history-of-famous-celebrity-irises-and-their-meaning/">
+                <h4 class="title">The History of Famous Celebrity Irises and Their Meaning</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-letter-t/">
+                <h4 class="title">The Letter T</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/what-are-sanpaku-eyes/">
+                <h4 class="title">What Are Sanpaku Eyes?</h4>
+            </a>
+
+                </div>
+            </div>
+        </nav>
         </div>
         <aside class="site-footer-outer">
             <footer class="site-footer">
@@ -1584,7 +1853,6 @@
                 </div>
             </footer>
         </aside>
-        </div>
         <script defer src="https://www.tsingapore.com/assets/js/main.js"></script>
     </body>
 

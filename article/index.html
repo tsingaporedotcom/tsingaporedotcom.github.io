@@ -90,7 +90,7 @@
             }
             a {
               color: #000000;
-              text-decoration: underline dashed #007aff;
+              text-decoration: underline solid #007aff;
             }
             /*** generic custom stuff */
             .logo-line,
@@ -116,12 +116,23 @@
             }
             
             /*** post items */
+            .post-items {
+              padding: 12px 6px;
+            }
             .post-items a {
               text-decoration: none;
             }
+            .post-items h3 {
+              font-size: 14px;
+              line-height: 16px;
+              color: #333333;
+              font-weight: bold;
+              margin-top: unset;
+              margin-bottom: 6px;
+            }
             .post-items h4 {
               margin-top: 0px;
-              margin-bottom: 0px;
+              margin-bottom: 4px;
             }
             .top-post-item {
               display: flex;
@@ -133,6 +144,12 @@
               text-decoration: none;
             }
             
+            .top-post-item .description .tp-meta {
+              font-size: 12px;
+              line-height: 14px;
+              margin: 0;
+              color: #818181;
+            }
             .top-post-item .thumbnail {
               width: 80px;
               height: 80px;
@@ -240,6 +257,14 @@
             .site-navigation nav ul {
               list-style: none;
               display: flex;
+            }
+            .site-navigation nav li:nth-child(n+3) {
+                display: none;
+            }
+            @media (min-width: 420px) {
+                .site-navigation nav li:nth-child(n+3) {
+                  display: unset;
+                }
             }
             @media (min-width: 800px) {
                 .site-header {
@@ -466,6 +491,50 @@
             }
             @media (min-width: 1366px) {
             }
+              .more-to-read-items {
+                padding: 12px 6px;
+                border-top: 1px solid #C7DFF3;
+            }
+            .more-to-read-items a {
+                text-decoration: none;
+            }
+            .more-to-read-item-outer {
+                border-top: 1px solid #C7DFF3;
+                padding: 12px;
+            }
+            .more-to-read-items h3 {
+                 margin-top: 12px;
+             }
+            .more-to-read-items h4 {
+                 font-size: 13px;
+                 line-height: 18px;
+                 margin: 0;
+             }
+            @media (min-width: 800px) {
+                .more-to-read-items-inner{
+                    display: flex;
+                    flex-flow: wrap;
+                }
+                .more-to-read-item-outer {
+                    width: 50%;
+                }
+            }
+            @media (min-width: 1280px) {
+                .more-to-read-item-outer {
+                    width: 33.3333%;
+                }
+                .more-to-read-items {
+                    width: 100%;
+                    padding: 12px;
+                }
+                .more-to-read-items h3 {
+                     margin-top: 24px;
+                     font-size: 18px;
+                     line-height: 22px;
+                 }
+            }
+            @media (min-width: 1366px) {
+            }
             
               /*** fonts */
             h1 {
@@ -645,6 +714,11 @@
               margin: 0 12px;
             }
             /*** meta */
+            .tp-meta {
+               display: flex;
+               flex-wrap: wrap;
+               align-items: center;
+             }
             .meta {
               margin-top: 32px;
               margin-bottom: 16px;
@@ -756,6 +830,8 @@
             
             /*** post items */
             .toc {
+              background-color: white;
+              border-radius: 12px;
               display: unset;
               position: sticky;
               top: 44px;
@@ -816,16 +892,11 @@
               padding: 12px;
               padding-left: 24px;
             }
+            .post-items h4 {
+              margin-bottom: 0px;
+            }
             .top-post-item {
               padding: 0;
-            }
-            .post-items h3 {
-              font-size: 14px;
-              line-height: 16px;
-              color: #333333;
-              font-weight: bold;
-              margin-top: unset;
-              margin-bottom: 6px;
             }
             .post-item-outer {
               padding: 12px 0;
@@ -845,12 +916,6 @@
               line-height: 15px;
               height: 45px;
               text-overflow: ellipsis;
-            }
-            .top-post-item .description .meta {
-              font-size: 12px;
-              line-height: 14px;
-              margin: 0;
-              color: #818181;
             }
             
             /*** images */
@@ -915,7 +980,7 @@
               height: 48px;
               text-overflow: ellipsis;
             }
-            .top-post-item .description .meta {
+            .top-post-item .description .tp-meta {
               font-size: 12px;
               line-height: 14px;
               margin: 0;
@@ -986,8 +1051,32 @@
                     <div class="index-page">
                         <div class="index-item-outer-wide">
                             <div class="index-item">
+                                <div class="thumbnail"> <a class="td" href="https://www.tsingapore.com/article/crypto-trading-in-singapore/">
+                <img alt="A gold coin like Bitcoin" src="/assets/pictures/bitcoin-physical-coin-800.jpg"/>
+            </a>
+
+                                </div>
+                                <div class="meta2">
+                                     <h3 class="category">
+                <span>Finance</span>
+            </h3>
+
+                                     <h4 class="title">
+                <a class="td" href="https://www.tsingapore.com/article/crypto-trading-in-singapore/">
+                    <span>Crypto Trading in Singapore</span>
+                </a>
+            </h4>
+
+                                    <p class="excerpt">Singapore is a hub for cryptocurrencies with many crypto exchanges and
+                                        startups. Learn what kind of regulations are surrounding cryptocurrencies
+                                        in Singapore.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="index-item-outer-medium">
+                            <div class="index-item">
                                 <div class="thumbnail"> <a class="td" href="https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore/">
-                <img alt="" src="/assets/pictures/wonders-of-the-world-2022-800.jpg"/>
+                <img alt="" src="/assets/pictures/wonders-of-the-world-2022-800.jpg" />
             </a>
 
                                 </div>
@@ -1030,10 +1119,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="index-item-outer-medium">
+                        <div class="index-item-outer-wide">
                             <div class="index-item">
                                 <div class="thumbnail"> <a class="td" href="https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish/">
-                <img alt="Billie Eilish eyes" src="/assets/pictures/billie-eilish-eyes-800.jpg" />
+                <img alt="Billie Eilish eyes" src="/assets/pictures/billie-eilish-eyes-800.jpg"/>
             </a>
 
                                 </div>
@@ -1054,10 +1143,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="index-item-outer-wide">
+                        <div class="index-item-outer-medium">
                             <div class="index-item">
                                 <div class="thumbnail"> <a class="td" href="https://www.tsingapore.com/article/the-marshmallow-test/">
-                <img alt="White ceramic mug on book, filled with marshmallow." src="/assets/pictures/hot-chocolate-with-marshmallow-800.jpg"/>
+                <img alt="White ceramic mug on book, filled with marshmallow." src="/assets/pictures/hot-chocolate-with-marshmallow-800.jpg" />
             </a>
 
                                 </div>
@@ -1102,10 +1191,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="index-item-outer-medium">
+                        <div class="index-item-outer-wide">
                             <div class="index-item">
                                 <div class="thumbnail"> <a class="td" href="https://www.tsingapore.com/article/how-to-cleanse-recharge-your-crystals/">
-                <img alt="Macro photography of black ceramic Gautama Buddha miniature" src="/assets/pictures/crystal-consciousness-800.jpg" />
+                <img alt="Macro photography of black ceramic Gautama Buddha miniature" src="/assets/pictures/crystal-consciousness-800.jpg"/>
             </a>
 
                                 </div>
@@ -1125,10 +1214,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="index-item-outer-wide">
+                        <div class="index-item-outer-medium">
                             <div class="index-item">
                                 <div class="thumbnail"> <a class="td" href="https://www.tsingapore.com/article/discontinued-icons-audemars-piguet-royal-oak-15202st/">
-                <img alt="Audemars Piguet Royal Oak Jumbo" src="/assets/pictures/audemars-piguet-royal-oak-jumbo-800.jpg"/>
+                <img alt="Audemars Piguet Royal Oak Jumbo" src="/assets/pictures/audemars-piguet-royal-oak-jumbo-800.jpg" />
             </a>
 
                                 </div>

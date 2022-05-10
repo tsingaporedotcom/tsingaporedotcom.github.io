@@ -92,7 +92,7 @@
             }
             a {
               color: #000000;
-              text-decoration: underline dashed #007aff;
+              text-decoration: underline solid #007aff;
             }
             /*** generic custom stuff */
             .logo-line,
@@ -118,12 +118,23 @@
             }
             
             /*** post items */
+            .post-items {
+              padding: 12px 6px;
+            }
             .post-items a {
               text-decoration: none;
             }
+            .post-items h3 {
+              font-size: 14px;
+              line-height: 16px;
+              color: #333333;
+              font-weight: bold;
+              margin-top: unset;
+              margin-bottom: 6px;
+            }
             .post-items h4 {
               margin-top: 0px;
-              margin-bottom: 0px;
+              margin-bottom: 4px;
             }
             .top-post-item {
               display: flex;
@@ -135,6 +146,12 @@
               text-decoration: none;
             }
             
+            .top-post-item .description .tp-meta {
+              font-size: 12px;
+              line-height: 14px;
+              margin: 0;
+              color: #818181;
+            }
             .top-post-item .thumbnail {
               width: 80px;
               height: 80px;
@@ -242,6 +259,14 @@
             .site-navigation nav ul {
               list-style: none;
               display: flex;
+            }
+            .site-navigation nav li:nth-child(n+3) {
+                display: none;
+            }
+            @media (min-width: 420px) {
+                .site-navigation nav li:nth-child(n+3) {
+                  display: unset;
+                }
             }
             @media (min-width: 800px) {
                 .site-header {
@@ -468,6 +493,50 @@
             }
             @media (min-width: 1366px) {
             }
+              .more-to-read-items {
+                padding: 12px 6px;
+                border-top: 1px solid #C7DFF3;
+            }
+            .more-to-read-items a {
+                text-decoration: none;
+            }
+            .more-to-read-item-outer {
+                border-top: 1px solid #C7DFF3;
+                padding: 12px;
+            }
+            .more-to-read-items h3 {
+                 margin-top: 12px;
+             }
+            .more-to-read-items h4 {
+                 font-size: 13px;
+                 line-height: 18px;
+                 margin: 0;
+             }
+            @media (min-width: 800px) {
+                .more-to-read-items-inner{
+                    display: flex;
+                    flex-flow: wrap;
+                }
+                .more-to-read-item-outer {
+                    width: 50%;
+                }
+            }
+            @media (min-width: 1280px) {
+                .more-to-read-item-outer {
+                    width: 33.3333%;
+                }
+                .more-to-read-items {
+                    width: 100%;
+                    padding: 12px;
+                }
+                .more-to-read-items h3 {
+                     margin-top: 24px;
+                     font-size: 18px;
+                     line-height: 22px;
+                 }
+            }
+            @media (min-width: 1366px) {
+            }
             
               /*** fonts */
             h1 {
@@ -647,6 +716,11 @@
               margin: 0 12px;
             }
             /*** meta */
+            .tp-meta {
+               display: flex;
+               flex-wrap: wrap;
+               align-items: center;
+             }
             .meta {
               margin-top: 32px;
               margin-bottom: 16px;
@@ -758,6 +832,8 @@
             
             /*** post items */
             .toc {
+              background-color: white;
+              border-radius: 12px;
               display: unset;
               position: sticky;
               top: 44px;
@@ -818,16 +894,11 @@
               padding: 12px;
               padding-left: 24px;
             }
+            .post-items h4 {
+              margin-bottom: 0px;
+            }
             .top-post-item {
               padding: 0;
-            }
-            .post-items h3 {
-              font-size: 14px;
-              line-height: 16px;
-              color: #333333;
-              font-weight: bold;
-              margin-top: unset;
-              margin-bottom: 6px;
             }
             .post-item-outer {
               padding: 12px 0;
@@ -847,12 +918,6 @@
               line-height: 15px;
               height: 45px;
               text-overflow: ellipsis;
-            }
-            .top-post-item .description .meta {
-              font-size: 12px;
-              line-height: 14px;
-              margin: 0;
-              color: #818181;
             }
             
             /*** images */
@@ -917,7 +982,7 @@
               height: 48px;
               text-overflow: ellipsis;
             }
-            .top-post-item .description .meta {
+            .top-post-item .description .tp-meta {
               font-size: 12px;
               line-height: 14px;
               margin: 0;
@@ -1026,150 +1091,179 @@
     </head>
     
     <body>
-        <div class="body-inner">
-            <div class="site-header-outer">
-                <header class="site-header">
-                    <div> <a href="https://www.tsingapore.com/">
+        <div class="site-header-outer">
+            <header class="site-header">
+                <div> <a href="https://www.tsingapore.com/">
                 <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span><span style="font-weight: 700" class="logo-line">|</span>
             </a>
 
-                    </div>
-                    <div class="site-navigation">
-                        <nav>
-                            <ul>
-                                <li> <a href="https://www.tsingapore.com/culture/"><span>culture</span></a>
+                </div>
+                <div class="site-navigation">
+                    <nav>
+                        <ul>
+                            <li> <a href="https://www.tsingapore.com/culture/"><span>culture</span></a>
 
-                                </li>
-                                <li> <a href="https://www.tsingapore.com/fashion/"><span>fashion</span></a>
+                            </li>
+                            <li> <a href="https://www.tsingapore.com/fashion/"><span>fashion</span></a>
 
-                                </li>
-                                <li> <a href="https://www.tsingapore.com/beauty/"><span>beauty</span></a>
+                            </li>
+                            <li> <a href="https://www.tsingapore.com/beauty/"><span>beauty</span></a>
 
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </header>
-            </div>
-            <div class="main-content-outer">
-                <nav class="toc"></nav>
-                <main class="main-content">
-                    <article>
-                        <div class="page-header-outer">
-                            <header class="page-header">
-                                 <h1 id="keeping-up-with-kim-kardashian">Keeping Up With Kim Kardashian</h1>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        </div>
+        <div class="main-content-outer">
+            <nav class="toc"></nav>
+            <main class="main-content">
+                <article>
+                    <div class="page-header-outer">
+                        <header class="page-header">
+                             <h1 id="keeping-up-with-kim-kardashian">Keeping Up With Kim Kardashian</h1>
 
-                                <aside class="meta">
-                                    <div class="author-photo">
-                                        <img alt="The picture of Clara Ortiz" src="https://www.tsingapore.com/assets/images/clara_ortiz_64x64.jpg"
-                                        srcset="https://www.tsingapore.com/assets/images/clara_ortiz_128x128.jpg 2x">
-                                    </div>
-                                    <div class="info"> <span class="author-name">Clara Ortiz</span>
+                            <aside class="meta">
+                                <div class="author-photo">
+                                    <img alt="The picture of Clara Ortiz" src="https://www.tsingapore.com/assets/images/clara_ortiz_64x64.jpg"
+                                    srcset="https://www.tsingapore.com/assets/images/clara_ortiz_128x128.jpg 2x">
+                                </div>
+                                <div class="info"> <span class="author-name">Clara Ortiz</span>
  <span class="published-date">Nov 23rd, 2021</span>
 
-                                    </div>
-                                </aside>
-                            </header>
-                        </div>
-                        <div class="post-body-outer">
-                            <div class="post-body">
-                                <div class="post-body-inner">
-                                    <p>They made their <strong>debut together on an E! reality program</strong> starring
-                                        Ryan Seacrest 10 years ago. For one thing, the premise <strong>wasn’t original</strong>,
-                                        as it has been with so many previous Seacrest productions. <a href="https://www.vice.com/en_us/article/jmkpyp/the-osbournes-britains-kardashians-reality-tv">“The Osbournes”</a>,
-                                        a reality series following the domestic antics of heavy metal artist Ozzy
-                                        Osbourne and his family, had launched on MTV five years earlier, in 2002.</p>
-                                    <div
-                                    id="featured-img">
-                                        <aside>
-                                            <figure class="full-width-figure  featured">
-                                                <picture>
-                                                    <source type="image/webp" srcset="
+                                </div>
+                            </aside>
+                        </header>
+                    </div>
+                    <div class="post-body-outer">
+                        <div class="post-body">
+                            <div class="post-body-inner">
+                                <p>They made their <strong>debut together on an E! reality program</strong> starring
+                                    Ryan Seacrest 10 years ago. For one thing, the premise <strong>wasn’t original</strong>,
+                                    as it has been with so many previous Seacrest productions. <a href="https://www.vice.com/en_us/article/jmkpyp/the-osbournes-britains-kardashians-reality-tv">“The Osbournes”</a>,
+                                    a reality series following the domestic antics of heavy metal artist Ozzy
+                                    Osbourne and his family, had launched on MTV five years earlier, in 2002.</p>
+                                <div
+                                id="featured-img">
+                                    <aside>
+                                        <figure class="full-width-figure  featured">
+                                            <picture>
+                                                <source type="image/webp" srcset="
               /assets/pictures/kim-kardashian-2021-november-800.webp 800w,
               /assets/pictures/kim-kardashian-2021-november-1200.webp 1200w,
               /assets/pictures/kim-kardashian-2021-november-1600.webp 1600w"
-                                                    sizes="
+                                                sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                    <source type="image/jpeg" srcset="
+                                                <source type="image/jpeg" srcset="
               /assets/pictures/kim-kardashian-2021-november-800.jpg 800w,
               /assets/pictures/kim-kardashian-2021-november-1200.jpg 1200w,
               /assets/pictures/kim-kardashian-2021-november-1600.jpg 1600w"
-                                                    sizes="
+                                                sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                    <img src="/assets/pictures/kim-kardashian-2021-november-800.jpg" alt="Kim Kardasian in black dress"
-                                                    />
-                                                </picture>
-                                                <figcaption>Credit: <a href="https://twitter.com/KimKardashian" rel="nofollow">Twitter / KimKardashian</a>
-                                                </figcaption>
-                                            </figure>
-                                        </aside>
-                                </div>
-                                <p>Seacrest’s new program featured a similar idea to Osbourne’s, only that
-                                    none of the cast members had the same amount of fame. When they first came
-                                    on the scene, they were solely recognized for their connections to renowned
-                                    people. Since its <strong>debut in October</strong> 2007, the reviews of
-                                    <a
-                                    href="http://www.eonline.com/shows/kardashians">“Keeping Up with the Kardashian”</a> <strong>have been harsh</strong>,
-                                        labelling its cast <strong>“self-absorbed” and “desperate”</strong> for their
-                                        superficiality.</p>
-                                <p>Because of this, it simply served to fuel the Kardashians’ <strong>desire to make the program a success</strong>.
-                                    Adding further seasons to “KUWTK,” it became the second most successful
-                                    reality series of all time — and its <strong>outlandish star</strong>, the
-                                    world’s most famous person because of their fame (not to mention the <strong>wife of the most famous rapper</strong>,
-                                    Kanye West).</p>
-                                <p><a href="https://www.forbes.com/profile/kim-kardashian-west/">Kim Kardashian West is now the highest-earning reality TV star globally</a>,
-                                    despite the skepticism and the insulting memes. The surprisingly prolific
-                                    entrepreneur <strong>developed a personal brand</strong> with a sphere of
-                                    influence that spanned many sectors by leveraging her significant social
-                                    media presence. Kimoji, Kim Kardashian West (which gives a more <strong>intimate insight into her life</strong> on
-                                    a freemium basis), and Kim Kardashian: Hollywood were three of her most
-                                    successful applications in the digital world. Fashion designers such as
-                                    Balmain’s creative director Olivier Rousteing, Givenchy’s former creative
-                                    director Riccardo Tisci and the founder of a <strong>high-end fashion house</strong> (Kanye
-                                    West) made her a vital front-row fixture and a style icon so significant
-                                    that every outfit was worn or <strong>hairstyle changed would inevitably be covered</strong>.</p>
-                                <p>While her net worth was previously unknown, Forbes reports that she made <strong>$51 million</strong>,
-                                    a sum previously kept under the radar. On social media, the 37-year-old
-                                    had no qualms about promoting her latest collaborations or showcasing her
-                                    most recent purchases, no matter what.</p>
-                                <p><a href="https://www.nytimes.com/2016/10/04/world/europe/kim-kardashian-robbed.html">Then there was the Paris terrorist attack of 2016</a>.
-                                    Her own Twitter tweets <strong>alerted the burglars to her whereabouts</strong>,
-                                    and they broke into Kardashian West’s hotel room and stole her jewelry.
-                                    She had a wake-up call after that encounter. In an interview following
-                                    our Los Angeles shoot, she says, “I certainly experience a lot more <strong>anxiety today</strong>,
-                                    simply with people knowing your every move.” A quarter of a year later,
-                                    in January, the <a href="https://www.instagram.com/kimkardashian/">“queen of social media”</a>,
-                                    as she’s called, reappeared on all her social media accounts, <strong>posting nothing for the entire time</strong>.</p>
-                                <p>After that, she returned with a new outlook on life and a more <strong>refined appearance</strong>.
-                                    “Such a different person,” she exclaimed on <a href="https://www.youtube.com/watch?v=TzKeiCfHVu0">“The Ellen Show”</a> in
-                                    April, admitting that she formerly loved flash but now “doesn’t care about
-                                    that stuff anymore.”</p>
-                                <p>When we met Kardashian West during her photo session, there was nothing
-                                    to suggest she wasn’t the born-again minimalist she now proclaims herself
-                                    to be, even though just a few years earlier, she released a coffee-table
-                                    book of her selfies named <a href="https://www.nytimes.com/2015/09/27/books/review/selfish-by-kim-kardashian-west-and-more.html">“Selfish”</a>.
-                                    She appears in a <strong>basic white tank</strong> top coupled with olive
-                                    green joggers, and her hair is fashioned in a straight, unfussy shoulder-grazing
-                                    haircut at Milk Studios in Los Angeles’ <strong>creative beehive</strong> (and
-                                    Kanye West’s former office) North Cahuenga Boulevard.</p>
-                                <p>Her children, North, four, and Saint, two, are clearly at the top of <strong>her priority list</strong> due
-                                    to what she’s learned over the last year. “My whole world is my kids. It’s
-                                    everything I care about… from absolutely every little thing that they do
-                                    to what they wear, to <strong>all their hobbies</strong>,” she says when
-                                    asked what she’s currently focusing on. I’m grateful to be their mother.
-                                    As a result of having children, I’m unable to spend as much time with my
-                                    friends.</p>
+                                                <img src="/assets/pictures/kim-kardashian-2021-november-800.jpg" alt="Kim Kardasian in black dress"
+                                                />
+                                            </picture>
+                                            <figcaption>Credit: <a href="https://twitter.com/KimKardashian" rel="nofollow">Twitter / KimKardashian</a>
+                                            </figcaption>
+                                        </figure>
+                                    </aside>
                             </div>
+                            <p>Seacrest’s new program featured a similar idea to Osbourne’s, only that
+                                none of the cast members had the same amount of fame. When they first came
+                                on the scene, they were solely recognized for their connections to renowned
+                                people. Since its <strong>debut in October</strong> 2007, the reviews of
+                                <a
+                                href="http://www.eonline.com/shows/kardashians">“Keeping Up with the Kardashian”</a> <strong>have been harsh</strong>,
+                                    labelling its cast <strong>“self-absorbed” and “desperate”</strong> for their
+                                    superficiality.</p>
+                            <p>Because of this, it simply served to fuel the Kardashians’ <strong>desire to make the program a success</strong>.
+                                Adding further seasons to “KUWTK,” it became the second most successful
+                                reality series of all time — and its <strong>outlandish star</strong>, the
+                                world’s most famous person because of their fame (not to mention the <strong>wife of the most famous rapper</strong>,
+                                Kanye West).</p>
+                            <p><a href="https://www.forbes.com/profile/kim-kardashian-west/">Kim Kardashian West is now the highest-earning reality TV star globally</a>,
+                                despite the skepticism and the insulting memes. The surprisingly prolific
+                                entrepreneur <strong>developed a personal brand</strong> with a sphere of
+                                influence that spanned many sectors by leveraging her significant social
+                                media presence. Kimoji, Kim Kardashian West (which gives a more <strong>intimate insight into her life</strong> on
+                                a freemium basis), and Kim Kardashian: Hollywood were three of her most
+                                successful applications in the digital world. Fashion designers such as
+                                Balmain’s creative director Olivier Rousteing, Givenchy’s former creative
+                                director Riccardo Tisci and the founder of a <strong>high-end fashion house</strong> (Kanye
+                                West) made her a vital front-row fixture and a style icon so significant
+                                that every outfit was worn or <strong>hairstyle changed would inevitably be covered</strong>.</p>
+                            <p>While her net worth was previously unknown, Forbes reports that she made <strong>$51 million</strong>,
+                                a sum previously kept under the radar. On social media, the 37-year-old
+                                had no qualms about promoting her latest collaborations or showcasing her
+                                most recent purchases, no matter what.</p>
+                            <p><a href="https://www.nytimes.com/2016/10/04/world/europe/kim-kardashian-robbed.html">Then there was the Paris terrorist attack of 2016</a>.
+                                Her own Twitter tweets <strong>alerted the burglars to her whereabouts</strong>,
+                                and they broke into Kardashian West’s hotel room and stole her jewelry.
+                                She had a wake-up call after that encounter. In an interview following
+                                our Los Angeles shoot, she says, “I certainly experience a lot more <strong>anxiety today</strong>,
+                                simply with people knowing your every move.” A quarter of a year later,
+                                in January, the <a href="https://www.instagram.com/kimkardashian/">“queen of social media”</a>,
+                                as she’s called, reappeared on all her social media accounts, <strong>posting nothing for the entire time</strong>.</p>
+                            <p>After that, she returned with a new outlook on life and a more <strong>refined appearance</strong>.
+                                “Such a different person,” she exclaimed on <a href="https://www.youtube.com/watch?v=TzKeiCfHVu0">“The Ellen Show”</a> in
+                                April, admitting that she formerly loved flash but now “doesn’t care about
+                                that stuff anymore.”</p>
+                            <p>When we met Kardashian West during her photo session, there was nothing
+                                to suggest she wasn’t the born-again minimalist she now proclaims herself
+                                to be, even though just a few years earlier, she released a coffee-table
+                                book of her selfies named <a href="https://www.nytimes.com/2015/09/27/books/review/selfish-by-kim-kardashian-west-and-more.html">“Selfish”</a>.
+                                She appears in a <strong>basic white tank</strong> top coupled with olive
+                                green joggers, and her hair is fashioned in a straight, unfussy shoulder-grazing
+                                haircut at Milk Studios in Los Angeles’ <strong>creative beehive</strong> (and
+                                Kanye West’s former office) North Cahuenga Boulevard.</p>
+                            <p>Her children, North, four, and Saint, two, are clearly at the top of <strong>her priority list</strong> due
+                                to what she’s learned over the last year. “My whole world is my kids. It’s
+                                everything I care about… from absolutely every little thing that they do
+                                to what they wear, to <strong>all their hobbies</strong>,” she says when
+                                asked what she’s currently focusing on. I’m grateful to be their mother.
+                                As a result of having children, I’m unable to spend as much time with my
+                                friends.</p>
                         </div>
-            </div>
-            </article>
-            </main>
-            <nav class="post-items">
-                 <h3>Top posts</h3>
+                    </div>
+        </div>
+        </article>
+        </main>
+        <nav class="post-items">
+             <h3>Top posts</h3>
 
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/5-ways-to-celebrate-womens-history-month/">
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/crypto-trading-in-singapore/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="A gold coin like Bitcoin"
+                         srcset="/assets/pictures/bitcoin-physical-coin-80x80.jpg,
+                                /assets/pictures/bitcoin-physical-coin-160x160.jpg 2x"
+                         src="/assets/pictures/bitcoin-physical-coin-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">FINANCE</h3>
+                        <h4 class="title">Crypto Trading in Singapore</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">10 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/5-ways-to-celebrate-womens-history-month/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt=""
@@ -1192,14 +1286,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">10 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">430 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt=""
@@ -1222,14 +1316,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">346 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">780 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/top-10-gofundme-alternatives/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/top-10-gofundme-alternatives/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A woman's hand is giving money"
@@ -1252,14 +1346,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">206 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">640 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/bag-charm-from-hermes/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/bag-charm-from-hermes/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Photo of a Hermes Kellydoll bag."
@@ -1282,14 +1376,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">94 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">528 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Billie Eilish eyes"
@@ -1312,44 +1406,17 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">738 views - 5 min read</span>
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,172 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/things-to-look-for-in-a-good-online-casino/">
-                <div class="top-post-item featured-post">
-                    <img width="80" height="80" class="thumbnail"
-                         alt="Close-up photo of playing cards"
-                         srcset="/assets/pictures/playing-cards-80x80.jpg,
-                                /assets/pictures/playing-cards-160x160.jpg 2x"
-                         src="/assets/pictures/playing-cards-80x80.jpg"
-                         loading="lazy"
-                    />
-                    <div class="description">
-                        <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Things To Look For In A Good Online Casino</h4>
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                <span class="meta">101 views - 5 min read</span>
-
-                                            </div>
-                </div>
-            </a>
-
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-marshmallow-test/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-marshmallow-test/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="White ceramic mug on book, filled with marshmallow."
@@ -1372,25 +1439,28 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">696 views - 5 min read</span>
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,130 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/how-to-cleanse-recharge-your-crystals/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/things-to-look-for-in-a-good-online-casino/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
-                         alt="Macro photography of black ceramic Gautama Buddha miniature"
-                         srcset="/assets/pictures/crystal-consciousness-80x80.jpg,
-                                /assets/pictures/crystal-consciousness-160x160.jpg 2x"
-                         src="/assets/pictures/crystal-consciousness-80x80.jpg"
+                         alt="Close-up photo of playing cards"
+                         srcset="/assets/pictures/playing-cards-80x80.jpg,
+                                /assets/pictures/playing-cards-160x160.jpg 2x"
+                         src="/assets/pictures/playing-cards-80x80.jpg"
                          loading="lazy"
                     />
                     <div class="description">
                         <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Clean and recharge your crystals with these simple steps</h4>
+                        <h4 class="title">Things To Look For In A Good Online Casino</h4>
 
 
 
@@ -1402,44 +1472,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">297 views - 5 min read</span>
-
-                                            </div>
-                </div>
-            </a>
-
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/lauren-tsai-model-artist-netflix-terrace-house-reality-interview-fashion/">
-                <div class="top-post-item featured-post">
-                    <img width="80" height="80" class="thumbnail"
-                         alt="Lauren Tsai is smiling to the camera"
-                         srcset="/assets/pictures/lauren-tsai-80x80.jpg,
-                                /assets/pictures/lauren-tsai-160x160.jpg 2x"
-                         src="/assets/pictures/lauren-tsai-80x80.jpg"
-                         loading="lazy"
-                    />
-                    <div class="description">
-                        <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Lauren Tsai, Model, Artist and Actress of Netflix's Terrace House</h4>
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                <span class="meta">311 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">535 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/discontinued-icons-audemars-piguet-royal-oak-15202st/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/discontinued-icons-audemars-piguet-royal-oak-15202st/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Audemars Piguet Royal Oak Jumbo"
@@ -1462,14 +1502,44 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">318 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">752 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/how-to-cleanse-recharge-your-crystals/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Macro photography of black ceramic Gautama Buddha miniature"
+                         srcset="/assets/pictures/crystal-consciousness-80x80.jpg,
+                                /assets/pictures/crystal-consciousness-160x160.jpg 2x"
+                         src="/assets/pictures/crystal-consciousness-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Clean and recharge your crystals with these simple steps</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">731 views - 5 min read</span>
+
+                                            </div>
                 </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singapore-food-waste-uglyfood-treatsure-insectta/">
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singapore-food-waste-uglyfood-treatsure-insectta/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A few half rotten apples on the ground"
@@ -1492,14 +1562,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">304 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">738 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/aura-photograph-new-age-selfie/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/aura-photograph-new-age-selfie/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Yellow and black coated wire"
@@ -1522,14 +1592,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">297 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">731 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/taha-bouqdib-maranda-barnes-husband-wife-duo-built-twg-tea-interview/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/taha-bouqdib-maranda-barnes-husband-wife-duo-built-twg-tea-interview/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Green tea plantation from birds eye view"
@@ -1552,14 +1622,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">325 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">759 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/iwc-goes-green-with-timbertex/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/iwc-goes-green-with-timbertex/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A person's hand with a watch"
@@ -1582,14 +1652,238 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">332 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singpost-guardians-singapore-lost-mail/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Letter forced into the post box"
+                         srcset="/assets/pictures/letter-forced-into-the-post-box-80x80.jpg,
+                                /assets/pictures/letter-forced-into-the-post-box-160x160.jpg 2x"
+                         src="/assets/pictures/letter-forced-into-the-post-box-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">STORY</h3>
+                        <h4 class="title">Who Look After Singapore's Undelivered Mail</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
+
+                                            </div>
                 </div>
-            </nav>
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-met-operas-musicians-are-struggling/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Photography of people sitting on theater during nighttime"
+                         srcset="/assets/pictures/half-empty-new-york-opera-80x80.jpg,
+                                /assets/pictures/half-empty-new-york-opera-160x160.jpg 2x"
+                         src="/assets/pictures/half-empty-new-york-opera-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Met Opera Musicians Who Have Been Working Without Pay Since April</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/omega-2021-novelties-collection/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Omega seamaster 300 watch on a bronze box"
+                         srcset="/assets/pictures/omega-seamaster-300-80x80.jpg,
+                                /assets/pictures/omega-seamaster-300-160x160.jpg 2x"
+                         src="/assets/pictures/omega-seamaster-300-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">FASHION</h3>
+                        <h4 class="title">Omega Commemorates the Year 2021 with a Bronze Seamaster</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">773 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/mark-chao-actor-interview/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Mark Chao is receiving an award"
+                         srcset="/assets/pictures/mark-chao-80x80.jpg,
+                                /assets/pictures/mark-chao-160x160.jpg 2x"
+                         src="/assets/pictures/mark-chao-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Let's Meet Mark Chao</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,158 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/maisie-williams-pasha-de-cartier-the-new-mutant-xmen-tiktok-interview/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Maisie Williams speaking at the 2019 San Diego Comic Con"
+                         srcset="/assets/pictures/maisie-williams-80x80.jpg,
+                                /assets/pictures/maisie-williams-160x160.jpg 2x"
+                         src="/assets/pictures/maisie-williams-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Maisie Williams On TikTok, and Saving Dolphins</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">710 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-britney-spears-song-is-in-the-works/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Britney Spears singing"
+                         srcset="/assets/pictures/britney-spears-singing-80x80.jpg,
+                                /assets/pictures/britney-spears-singing-160x160.jpg 2x"
+                         src="/assets/pictures/britney-spears-singing-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">GOSSIP</h3>
+                        <h4 class="title">New Britney Spears Song Is In The Works</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">941 views - 4 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+            </div>
+        </nav>
+        <nav class="more-to-read-items">
+             <h3>More To Read</h3>
+
+            <div class="more-to-read-items-inner">
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/tiffany-co-high-jewellery-colors-of-nature/">
+                <h4 class="title">Tiffany & Co.'s Colors Of Nature High Jewellery Collection</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-truth-and-myths-of-the-sanpaku-eyes/">
+                <h4 class="title">The Truth and Myths of the Sanpaku Eyes</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/pear-scent-fragrance-louis-vuitton-coeur-battant-jo-malone/">
+                <h4 class="title">The Underrated Fruity Scent of Pear</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/spring-brings-more-colour-to-eyeshadow-palettes/">
+                <h4 class="title">Eyeshadow Palettes Get More Color in the Spring</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-history-of-famous-celebrity-irises-and-their-meaning/">
+                <h4 class="title">The History of Famous Celebrity Irises and Their Meaning</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-letter-t/">
+                <h4 class="title">The Letter T</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/what-are-sanpaku-eyes/">
+                <h4 class="title">What Are Sanpaku Eyes?</h4>
+            </a>
+
+                </div>
+            </div>
+        </nav>
         </div>
         <aside class="site-footer-outer">
             <footer class="site-footer">
@@ -1602,7 +1896,6 @@
                 </div>
             </footer>
         </aside>
-        </div>
         <script defer src="https://www.tsingapore.com/assets/js/main.js"></script>
     </body>
 

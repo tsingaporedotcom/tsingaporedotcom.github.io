@@ -92,7 +92,7 @@
                 }
                 a {
                   color: #000000;
-                  text-decoration: underline dashed #007aff;
+                  text-decoration: underline solid #007aff;
                 }
                 /*** generic custom stuff */
                 .logo-line,
@@ -118,12 +118,23 @@
                 }
                 
                 /*** post items */
+                .post-items {
+                  padding: 12px 6px;
+                }
                 .post-items a {
                   text-decoration: none;
                 }
+                .post-items h3 {
+                  font-size: 14px;
+                  line-height: 16px;
+                  color: #333333;
+                  font-weight: bold;
+                  margin-top: unset;
+                  margin-bottom: 6px;
+                }
                 .post-items h4 {
                   margin-top: 0px;
-                  margin-bottom: 0px;
+                  margin-bottom: 4px;
                 }
                 .top-post-item {
                   display: flex;
@@ -135,6 +146,12 @@
                   text-decoration: none;
                 }
                 
+                .top-post-item .description .tp-meta {
+                  font-size: 12px;
+                  line-height: 14px;
+                  margin: 0;
+                  color: #818181;
+                }
                 .top-post-item .thumbnail {
                   width: 80px;
                   height: 80px;
@@ -242,6 +259,14 @@
                 .site-navigation nav ul {
                   list-style: none;
                   display: flex;
+                }
+                .site-navigation nav li:nth-child(n+3) {
+                    display: none;
+                }
+                @media (min-width: 420px) {
+                    .site-navigation nav li:nth-child(n+3) {
+                      display: unset;
+                    }
                 }
                 @media (min-width: 800px) {
                     .site-header {
@@ -468,6 +493,50 @@
                 }
                 @media (min-width: 1366px) {
                 }
+                  .more-to-read-items {
+                    padding: 12px 6px;
+                    border-top: 1px solid #C7DFF3;
+                }
+                .more-to-read-items a {
+                    text-decoration: none;
+                }
+                .more-to-read-item-outer {
+                    border-top: 1px solid #C7DFF3;
+                    padding: 12px;
+                }
+                .more-to-read-items h3 {
+                     margin-top: 12px;
+                 }
+                .more-to-read-items h4 {
+                     font-size: 13px;
+                     line-height: 18px;
+                     margin: 0;
+                 }
+                @media (min-width: 800px) {
+                    .more-to-read-items-inner{
+                        display: flex;
+                        flex-flow: wrap;
+                    }
+                    .more-to-read-item-outer {
+                        width: 50%;
+                    }
+                }
+                @media (min-width: 1280px) {
+                    .more-to-read-item-outer {
+                        width: 33.3333%;
+                    }
+                    .more-to-read-items {
+                        width: 100%;
+                        padding: 12px;
+                    }
+                    .more-to-read-items h3 {
+                         margin-top: 24px;
+                         font-size: 18px;
+                         line-height: 22px;
+                     }
+                }
+                @media (min-width: 1366px) {
+                }
                 
                   /*** fonts */
                 h1 {
@@ -647,6 +716,11 @@
                   margin: 0 12px;
                 }
                 /*** meta */
+                .tp-meta {
+                   display: flex;
+                   flex-wrap: wrap;
+                   align-items: center;
+                 }
                 .meta {
                   margin-top: 32px;
                   margin-bottom: 16px;
@@ -758,6 +832,8 @@
                 
                 /*** post items */
                 .toc {
+                  background-color: white;
+                  border-radius: 12px;
                   display: unset;
                   position: sticky;
                   top: 44px;
@@ -818,16 +894,11 @@
                   padding: 12px;
                   padding-left: 24px;
                 }
+                .post-items h4 {
+                  margin-bottom: 0px;
+                }
                 .top-post-item {
                   padding: 0;
-                }
-                .post-items h3 {
-                  font-size: 14px;
-                  line-height: 16px;
-                  color: #333333;
-                  font-weight: bold;
-                  margin-top: unset;
-                  margin-bottom: 6px;
                 }
                 .post-item-outer {
                   padding: 12px 0;
@@ -847,12 +918,6 @@
                   line-height: 15px;
                   height: 45px;
                   text-overflow: ellipsis;
-                }
-                .top-post-item .description .meta {
-                  font-size: 12px;
-                  line-height: 14px;
-                  margin: 0;
-                  color: #818181;
                 }
                 
                 /*** images */
@@ -917,7 +982,7 @@
                   height: 48px;
                   text-overflow: ellipsis;
                 }
-                .top-post-item .description .meta {
+                .top-post-item .description .tp-meta {
                   font-size: 12px;
                   line-height: 14px;
                   margin: 0;
@@ -1026,290 +1091,319 @@
     </head>
     
     <body>
-        <div class="body-inner">
-            <div class="site-header-outer">
-                <header class="site-header">
-                    <div> <a href="https://www.tsingapore.com/">
+        <div class="site-header-outer">
+            <header class="site-header">
+                <div> <a href="https://www.tsingapore.com/">
                 <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span><span style="font-weight: 700" class="logo-line">|</span>
             </a>
 
-                    </div>
-                    <div class="site-navigation">
-                        <nav>
-                            <ul>
-                                <li> <a href="https://www.tsingapore.com/culture/"><span>culture</span></a>
+                </div>
+                <div class="site-navigation">
+                    <nav>
+                        <ul>
+                            <li> <a href="https://www.tsingapore.com/culture/"><span>culture</span></a>
 
-                                </li>
-                                <li> <a href="https://www.tsingapore.com/fashion/"><span>fashion</span></a>
+                            </li>
+                            <li> <a href="https://www.tsingapore.com/fashion/"><span>fashion</span></a>
 
-                                </li>
-                                <li> <a href="https://www.tsingapore.com/beauty/"><span>beauty</span></a>
+                            </li>
+                            <li> <a href="https://www.tsingapore.com/beauty/"><span>beauty</span></a>
 
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </header>
-            </div>
-            <div class="main-content-outer">
-                <aside class="toc">
-                     <h3>Table of contents</h3>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        </div>
+        <div class="main-content-outer">
+            <aside class="toc">
+                 <h3>Table of contents</h3>
 
-                    <ul>
-                        <li class="h1"><a href="#omega-commemorates-the-year-2021-with-a-bronze-seamaster">Omega Commemorates the Year 2021 with a Bronze Seamaster</a>
-                        </li>
-                        <li class="h2"><a href="#seamaster-300">Seamaster 300</a>
-                        </li>
-                        <li class="h2"><a href="#constellation">Constellation</a>
-                        </li>
-                        <li class="h2"><a href="#omega-de-ville">Omega De Ville</a>
-                        </li>
-                        <li class="h2"><a href="#seamaster-aqua-terra">Seamaster Aqua Terra</a>
-                        </li>
-                        <li class="h2"><a href="#seamaster-diver-300m">Seamaster Diver 300M</a>
-                        </li>
-                    </ul>
-                </aside>
-                <script>
-                    window.addEventListener('DOMContentLoaded', () => {
-                      const observer = new IntersectionObserver(entries => {
-                        entries.forEach(entry => {
-                          const id = entry.target.getAttribute('id');
-                          console.log('hello', id);
-                          const elements = document.querySelector(`.toc ul li a[href="#${id}"]`);
-                          console.log('elements', elements);
-                          if (elements) {
-                              if (entry.intersectionRatio > 0) {
-                                elements.parentElement.classList.add('selected');
-                              } else {
-                                elements.parentElement.classList.remove('selected');
-                              }
+                <ul>
+                    <li class="h1"><a href="#omega-commemorates-the-year-2021-with-a-bronze-seamaster">Omega Commemorates the Year 2021 with a Bronze Seamaster</a>
+                    </li>
+                    <li class="h2"><a href="#seamaster-300">Seamaster 300</a>
+                    </li>
+                    <li class="h2"><a href="#constellation">Constellation</a>
+                    </li>
+                    <li class="h2"><a href="#omega-de-ville">Omega De Ville</a>
+                    </li>
+                    <li class="h2"><a href="#seamaster-aqua-terra">Seamaster Aqua Terra</a>
+                    </li>
+                    <li class="h2"><a href="#seamaster-diver-300m">Seamaster Diver 300M</a>
+                    </li>
+                </ul>
+            </aside>
+            <script>
+                window.addEventListener('DOMContentLoaded', () => {
+                  const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                      const id = entry.target.getAttribute('id');
+                      console.log('hello', id);
+                      const elements = document.querySelector(`.toc ul li a[href="#${id}"]`);
+                      console.log('elements', elements);
+                      if (elements) {
+                          if (entry.intersectionRatio > 0) {
+                            elements.parentElement.classList.add('selected');
+                          } else {
+                            elements.parentElement.classList.remove('selected');
                           }
-                        });
-                      });
-                    
-                      const articles = document.querySelectorAll('article[id]');
-                      if(articles) {
-                        articles.forEach((section) => { observer.observe(section); });
-                      }
-                    
-                      const h1s = document.querySelectorAll('h1[id]');
-                      if(h1s) {
-                        h1s.forEach((section) => { observer.observe(section); });
-                      }
-                      const h2s = document.querySelectorAll('h2[id]');
-                      if(h2s) {
-                        h2s.forEach((section) => { observer.observe(section); });
-                      }
-                      const h3s = document.querySelectorAll('h3[id]');
-                      if(h3s) {
-                        h3s.forEach((section) => { observer.observe(section); });
                       }
                     });
-                </script>
-                <main class="main-content">
-                    <article>
-                        <div class="page-header-outer">
-                            <header class="page-header">
-                                 <h1 id="omega-commemorates-the-year-2021-with-a-bronze-seamaster">Omega Commemorates the Year 2021 with a Bronze Seamaster</h1>
+                  });
+                
+                  const articles = document.querySelectorAll('article[id]');
+                  if(articles) {
+                    articles.forEach((section) => { observer.observe(section); });
+                  }
+                
+                  const h1s = document.querySelectorAll('h1[id]');
+                  if(h1s) {
+                    h1s.forEach((section) => { observer.observe(section); });
+                  }
+                  const h2s = document.querySelectorAll('h2[id]');
+                  if(h2s) {
+                    h2s.forEach((section) => { observer.observe(section); });
+                  }
+                  const h3s = document.querySelectorAll('h3[id]');
+                  if(h3s) {
+                    h3s.forEach((section) => { observer.observe(section); });
+                  }
+                });
+            </script>
+            <main class="main-content">
+                <article>
+                    <div class="page-header-outer">
+                        <header class="page-header">
+                             <h1 id="omega-commemorates-the-year-2021-with-a-bronze-seamaster">Omega Commemorates the Year 2021 with a Bronze Seamaster</h1>
 
-                                <aside class="meta">
-                                    <div class="author-photo">
-                                        <img alt="The picture of Clara Ortiz" src="https://www.tsingapore.com/assets/images/clara_ortiz_64x64.jpg"
-                                        srcset="https://www.tsingapore.com/assets/images/clara_ortiz_128x128.jpg 2x">
-                                    </div>
-                                    <div class="info"> <span class="author-name">Clara Ortiz</span>
+                            <aside class="meta">
+                                <div class="author-photo">
+                                    <img alt="The picture of Clara Ortiz" src="https://www.tsingapore.com/assets/images/clara_ortiz_64x64.jpg"
+                                    srcset="https://www.tsingapore.com/assets/images/clara_ortiz_128x128.jpg 2x">
+                                </div>
+                                <div class="info"> <span class="author-name">Clara Ortiz</span>
  <span class="published-date">Jan 20th, 2022</span>
 
-                                    </div>
-                                </aside>
-                            </header>
-                        </div>
-                        <div class="post-body-outer">
-                            <div class="post-body">
-                                <div class="post-body-inner">
-                                    <p>In its capacity as a watch manufacturer, <a href="https://www.omegawatches.com/stories/novelties-2021">Omega</a> is <strong>most renowned</strong> for
-                                        its highly technical approaches to the art of timekeeping. However, a simple
-                                        glance through their catalogs reveals that the Swiss firm also possesses
-                                        a fine sense of aesthetics and functionality.</p>
-                                    <p>Proof of this was provided by the Tourbillon <a href="https://en.wikipedia.org/wiki/Coaxial_escapement">Co-Axial</a> Master
-                                        Chronometer, released last year. The new bracelet design for the revised
-                                        Speedmaster Moonwatch Professional Co-Axial Master Chronometer Chronograph
-                                        42mm was yet another notch in the figurative belt for the brand.</p>
-                                    <div
-                                    id="featured-img">
-                                        <aside>
-                                            <figure class="full-width-figure  featured">
-                                                <picture>
-                                                    <source type="image/webp" srcset="
+                                </div>
+                            </aside>
+                        </header>
+                    </div>
+                    <div class="post-body-outer">
+                        <div class="post-body">
+                            <div class="post-body-inner">
+                                <p>In its capacity as a watch manufacturer, <a href="https://www.omegawatches.com/stories/novelties-2021">Omega</a> is <strong>most renowned</strong> for
+                                    its highly technical approaches to the art of timekeeping. However, a simple
+                                    glance through their catalogs reveals that the Swiss firm also possesses
+                                    a fine sense of aesthetics and functionality.</p>
+                                <p>Proof of this was provided by the Tourbillon <a href="https://en.wikipedia.org/wiki/Coaxial_escapement">Co-Axial</a> Master
+                                    Chronometer, released last year. The new bracelet design for the revised
+                                    Speedmaster Moonwatch Professional Co-Axial Master Chronometer Chronograph
+                                    42mm was yet another notch in the figurative belt for the brand.</p>
+                                <div
+                                id="featured-img">
+                                    <aside>
+                                        <figure class="full-width-figure  featured">
+                                            <picture>
+                                                <source type="image/webp" srcset="
               /assets/pictures/omega-seamaster-300-800.webp 800w,
               /assets/pictures/omega-seamaster-300-1200.webp 1200w,
               /assets/pictures/omega-seamaster-300-1600.webp 1600w" sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                    <source type="image/jpeg" srcset="
+                                                <source type="image/jpeg" srcset="
               /assets/pictures/omega-seamaster-300-800.jpg 800w,
               /assets/pictures/omega-seamaster-300-1200.jpg 1200w,
               /assets/pictures/omega-seamaster-300-1600.jpg 1600w" sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                    <img src="/assets/pictures/omega-seamaster-300-800.jpg" alt="Omega seamaster 300 watch on a bronze box"
-                                                    />
-                                                </picture>
-                                                <figcaption>Picture from Omega's <a href="https://www.omegawatches.com/watches/seamaster/heritage-models/seamaster-300/seamaster-300-bronze-gold/product"
-                                                    rel="nofollow">Seamaster 300 Bronze Gold webpage</a>
-                                                </figcaption>
-                                            </figure>
-                                        </aside>
-                                </div>
-                                <p>Omega is forging forward with a series of <strong>new releases for 2021</strong>,
-                                    all of which are intended to freshen the company’s current line by incorporating
-                                    new materials, colors, and case sizes. The Seamaster collection, which
-                                    has been a staple for decades, has seen the <strong>most significant</strong> increase
-                                    this year; the manufacturer is also expanding its range of dress watches,
-                                    which now has a new dial layout for those who prefer formal timepieces.</p>
-                                <h2
-                                id="seamaster-300">Seamaster 300</h2>
-                                    <p>While the Seamaster 300 isn’t typically considered the most essential
-                                        model in the Seamaster series, its significance in Omega’s <strong>history cannot be overstated</strong>.
-                                        The Seamaster 300, the first of the company’s timepieces to include a dive
-                                        bezel, made its <strong>debut in 1957</strong> alongside the Speedmaster
-                                        and Railmaster as part of a “Master” trio of sports watches that had the
-                                        Speedmaster and Railmaster. In the intervening years, the Seamaster 300
-                                        has gone through various revisions, with the most current being a <strong>Bronze Gold model</strong> available
-                                        in 2021.</p>
-                                    <p>Bronze Gold is Omega’s newest <strong>unique gold alloy</strong>, created
-                                        by combining copper, gold, gallium, and palladium to provide a more distinctive
-                                        color that distinguishes it from its other gold alloys, Sedna Gold and
-                                        Moonshine Gold, which are already available. The presence of gold, which
-                                        accounts for 37.5% of the total weight of the alloy, permits it to <strong>survive corrosion</strong> and
-                                        the production of verdigris. On the other hand, Gallium and palladium aid
-                                        in the regulation of Bronze Gold’s patination, ensuring that the <strong>color remains constant</strong> with
-                                        that of the underlying alloy.</p>
-                                    <p>Along with the new Seamaster 300 Bronze Gold, there are two revised <strong>steel models</strong> to
-                                        choose from, each with a dial-in, either a black or blue color scheme.
-                                        Other notable characteristics of the Seamaster 300 include a <strong>sandwich dial</strong> structure
-                                        and a lollipop second hand, both of which are brand new (for the stainless
-                                        steel watches). The <strong>coaxial Calibre 8912</strong>, a no-date version
-                                        of the <a href="https://www.metas.ch/metas/en/home.html">Swiss Federal Institute of Metrology</a> (METAS)-certified
-                                        Calibre 8900, is the heart of the new Seamaster 300 series. The new Seamaster
-                                        300 series is available now.</p>
-                                    
+                                                <img src="/assets/pictures/omega-seamaster-300-800.jpg" alt="Omega seamaster 300 watch on a bronze box"
+                                                />
+                                            </picture>
+                                            <figcaption>Picture from Omega's <a href="https://www.omegawatches.com/watches/seamaster/heritage-models/seamaster-300/seamaster-300-bronze-gold/product"
+                                                rel="nofollow">Seamaster 300 Bronze Gold webpage</a>
+                                            </figcaption>
+                                        </figure>
+                                    </aside>
+                            </div>
+                            <p>Omega is forging forward with a series of <strong>new releases for 2021</strong>,
+                                all of which are intended to freshen the company’s current line by incorporating
+                                new materials, colors, and case sizes. The Seamaster collection, which
+                                has been a staple for decades, has seen the <strong>most significant</strong> increase
+                                this year; the manufacturer is also expanding its range of dress watches,
+                                which now has a new dial layout for those who prefer formal timepieces.</p>
+                            <h2
+                            id="seamaster-300">Seamaster 300</h2>
+                                <p>While the Seamaster 300 isn’t typically considered the most essential
+                                    model in the Seamaster series, its significance in Omega’s <strong>history cannot be overstated</strong>.
+                                    The Seamaster 300, the first of the company’s timepieces to include a dive
+                                    bezel, made its <strong>debut in 1957</strong> alongside the Speedmaster
+                                    and Railmaster as part of a “Master” trio of sports watches that had the
+                                    Speedmaster and Railmaster. In the intervening years, the Seamaster 300
+                                    has gone through various revisions, with the most current being a <strong>Bronze Gold model</strong> available
+                                    in 2021.</p>
+                                <p>Bronze Gold is Omega’s newest <strong>unique gold alloy</strong>, created
+                                    by combining copper, gold, gallium, and palladium to provide a more distinctive
+                                    color that distinguishes it from its other gold alloys, Sedna Gold and
+                                    Moonshine Gold, which are already available. The presence of gold, which
+                                    accounts for 37.5% of the total weight of the alloy, permits it to <strong>survive corrosion</strong> and
+                                    the production of verdigris. On the other hand, Gallium and palladium aid
+                                    in the regulation of Bronze Gold’s patination, ensuring that the <strong>color remains constant</strong> with
+                                    that of the underlying alloy.</p>
+                                <p>Along with the new Seamaster 300 Bronze Gold, there are two revised <strong>steel models</strong> to
+                                    choose from, each with a dial-in, either a black or blue color scheme.
+                                    Other notable characteristics of the Seamaster 300 include a <strong>sandwich dial</strong> structure
+                                    and a lollipop second hand, both of which are brand new (for the stainless
+                                    steel watches). The <strong>coaxial Calibre 8912</strong>, a no-date version
+                                    of the <a href="https://www.metas.ch/metas/en/home.html">Swiss Federal Institute of Metrology</a> (METAS)-certified
+                                    Calibre 8900, is the heart of the new Seamaster 300 series. The new Seamaster
+                                    300 series is available now.</p>
+                                
 <h2 id="constellation">Constellation</h2>
 
-                                    <p>Constellation is one of Omega’s more <strong>visually distinctive</strong> lines,
-                                        thanks to its Art Deco leanings and unmistakable griffes around the bezel
-                                        and case’s perimeter. According to the manufacturer, the Constellation
-                                        Small Seconds will now be available in a <strong>wider range of dial colors</strong> and
-                                        configurations, enabling different varieties within the line.</p>
-                                    <aside>
-                                        <figure class="full-width-figure ">
-                                            <picture>
-                                                <source type="image/webp" srcset="
+                                <p>Constellation is one of Omega’s more <strong>visually distinctive</strong> lines,
+                                    thanks to its Art Deco leanings and unmistakable griffes around the bezel
+                                    and case’s perimeter. According to the manufacturer, the Constellation
+                                    Small Seconds will now be available in a <strong>wider range of dial colors</strong> and
+                                    configurations, enabling different varieties within the line.</p>
+                                <aside>
+                                    <figure class="full-width-figure ">
+                                        <picture>
+                                            <source type="image/webp" srcset="
               /assets/pictures/omega-constallation-800.webp 800w,
               /assets/pictures/omega-constallation-1200.webp 1200w,
               /assets/pictures/omega-constallation-1600.webp 1600w" sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                <source type="image/jpeg" srcset="
+                                            <source type="image/jpeg" srcset="
               /assets/pictures/omega-constallation-800.jpg 800w,
               /assets/pictures/omega-constallation-1200.jpg 1200w,
               /assets/pictures/omega-constallation-1600.jpg 1600w" sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                <img src="/assets/pictures/omega-constallation-800.jpg" alt="" />
-                                            </picture>
-                                            <figcaption></figcaption>
-                                        </figure>
-                                    </aside>
-                                    <p>Some of the new references include two-tone alternatives, such as Sedna
-                                        Gold combined with steel, as well as the option of having timepieces with
-                                        full-cut diamonds set around the bezel and little seconds sub-dial, among
-                                        other things. In addition to mother-of-pearl dials, the whole gem-set clocks
-                                        are also available. The light chestnut dial of the two-tone timepieces,
-                                        on the other hand, will be included with the timepieces.</p>
-                                    
+                                            <img src="/assets/pictures/omega-constallation-800.jpg" alt="" />
+                                        </picture>
+                                        <figcaption></figcaption>
+                                    </figure>
+                                </aside>
+                                <p>Some of the new references include two-tone alternatives, such as Sedna
+                                    Gold combined with steel, as well as the option of having timepieces with
+                                    full-cut diamonds set around the bezel and little seconds sub-dial, among
+                                    other things. In addition to mother-of-pearl dials, the whole gem-set clocks
+                                    are also available. The light chestnut dial of the two-tone timepieces,
+                                    on the other hand, will be included with the timepieces.</p>
+                                
 <h2 id="omega-de-ville">Omega De Ville</h2>
 
-                                    <p>By using a thin case and a straightforward design language, the Omega
-                                        De Ville collection inspires a sense of <strong>simplicity and refinement</strong>.
-                                        De Ville Trésor Power Reserve and <strong>De Ville Trésor Small Seconds</strong> are
-                                        two new series that will be introduced by Omega in 2021 to further enhance
-                                        the appeal of the Trésor collection. Both watches have a redesigned dial
-                                        layout. The former features a pair of sub-dials at 12 and 6 o’clock, indicating
-                                        the <strong>power reserve</strong> and running seconds, respectively, while
-                                        the latter does not. Fortunately, with the De Ville Trésor Small Seconds,
-                                        the number of sub-dials is reduced once again to a bare minimum (running
-                                        seconds).</p>
-                                    <p>The De Ville Trésor Power Reserve is available in <strong>steel, yellow gold, and Sedna Gold</strong>.
-                                        In contrast, the De Ville Trésor Small Seconds is only available in steel,
-                                        with the option of a gem-set bezel on the case-back and bracelet. Dial
-                                        colors include black, silver, blue, burgundy, and green. The case size
-                                        for both series is a very comfortable 40 millimeters. In addition, a manual-winding
-                                        coaxial movement that is METAS-certified provides exceptional precision
-                                        and mechanical performance in a very wrist-friendly package.</p>
-                                    
+                                <p>By using a thin case and a straightforward design language, the Omega
+                                    De Ville collection inspires a sense of <strong>simplicity and refinement</strong>.
+                                    De Ville Trésor Power Reserve and <strong>De Ville Trésor Small Seconds</strong> are
+                                    two new series that will be introduced by Omega in 2021 to further enhance
+                                    the appeal of the Trésor collection. Both watches have a redesigned dial
+                                    layout. The former features a pair of sub-dials at 12 and 6 o’clock, indicating
+                                    the <strong>power reserve</strong> and running seconds, respectively, while
+                                    the latter does not. Fortunately, with the De Ville Trésor Small Seconds,
+                                    the number of sub-dials is reduced once again to a bare minimum (running
+                                    seconds).</p>
+                                <p>The De Ville Trésor Power Reserve is available in <strong>steel, yellow gold, and Sedna Gold</strong>.
+                                    In contrast, the De Ville Trésor Small Seconds is only available in steel,
+                                    with the option of a gem-set bezel on the case-back and bracelet. Dial
+                                    colors include black, silver, blue, burgundy, and green. The case size
+                                    for both series is a very comfortable 40 millimeters. In addition, a manual-winding
+                                    coaxial movement that is METAS-certified provides exceptional precision
+                                    and mechanical performance in a very wrist-friendly package.</p>
+                                
 <h2 id="seamaster-aqua-terra">Seamaster Aqua Terra</h2>
 
-                                    <p>The Seamaster Aqua Terra has long exemplified <strong>versatility and wearability</strong>,
-                                        striking a balance between sporty pleasing aesthetics and high-quality
-                                        engineering and construction.</p>
-                                    <aside>
-                                        <figure class="full-width-figure ">
-                                            <picture>
-                                                <source type="image/webp" srcset="
+                                <p>The Seamaster Aqua Terra has long exemplified <strong>versatility and wearability</strong>,
+                                    striking a balance between sporty pleasing aesthetics and high-quality
+                                    engineering and construction.</p>
+                                <aside>
+                                    <figure class="full-width-figure ">
+                                        <picture>
+                                            <source type="image/webp" srcset="
               /assets/pictures/omega-aqua-terra-800.webp 800w,
               /assets/pictures/omega-aqua-terra-1200.webp 1200w,
               /assets/pictures/omega-aqua-terra-1600.webp 1600w" sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                <source type="image/jpeg" srcset="
+                                            <source type="image/jpeg" srcset="
               /assets/pictures/omega-aqua-terra-800.jpg 800w,
               /assets/pictures/omega-aqua-terra-1200.jpg 1200w,
               /assets/pictures/omega-aqua-terra-1600.jpg 1600w" sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                <img src="/assets/pictures/omega-aqua-terra-800.jpg" alt="Seamaster Aqua Terra - Sedna gold on Sedna gold with diamonds"
-                                                />
-                                            </picture>
-                                            <figcaption>Picture from Omega's <a href="https://www.omegawatches.com/watches/seamaster/aqua-terra-150m/ladies-collection/product"
-                                                rel="nofollow">Aqua Terra 150M webpage</a>
-                                            </figcaption>
-                                        </figure>
-                                    </aside>
-                                    <p>The fairer side of things has been updated in the collection this year
-                                        with new wave-embossed dials that are complimented by gem-set bezels and
-                                        indexes, among other features. These <strong>new dials are available</strong> in
-                                        pale pink and nude, and they are paired with leather straps in the same
-                                        color family. The Seamaster Aqua Terra Master Chronometer Ladies’ Collection
-                                        will also include a smaller 34-millimeter case size, which will add to
-                                        the <strong>delicate charm</strong> of the new watches when they were released
-                                        in 2021.</p>
-                                    
+                                            <img src="/assets/pictures/omega-aqua-terra-800.jpg" alt="Seamaster Aqua Terra - Sedna gold on Sedna gold with diamonds"
+                                            />
+                                        </picture>
+                                        <figcaption>Picture from Omega's <a href="https://www.omegawatches.com/watches/seamaster/aqua-terra-150m/ladies-collection/product"
+                                            rel="nofollow">Aqua Terra 150M webpage</a>
+                                        </figcaption>
+                                    </figure>
+                                </aside>
+                                <p>The fairer side of things has been updated in the collection this year
+                                    with new wave-embossed dials that are complimented by gem-set bezels and
+                                    indexes, among other features. These <strong>new dials are available</strong> in
+                                    pale pink and nude, and they are paired with leather straps in the same
+                                    color family. The Seamaster Aqua Terra Master Chronometer Ladies’ Collection
+                                    will also include a smaller 34-millimeter case size, which will add to
+                                    the <strong>delicate charm</strong> of the new watches when they were released
+                                    in 2021.</p>
+                                
 <h2 id="seamaster-diver-300m">Seamaster Diver 300M</h2>
 
-                                    <p>The Seamaster Diver 300M was designed from the ground up to withstand
-                                        the rigors of ocean exploration, and it has been considered a <strong>real dive</strong> watch
-                                        since its <strong>introduction in 1993</strong>. The Seamaster Diver 300M
-                                        Black Black is available in various color options, including an all-black
-                                        ceramic facade in its most recent version.</p>
-                                    <p>Omega used <strong>ceramic to make a black version</strong> of the Seamaster
-                                        Diver 300M Black Black’s dial, case, crown, strap clasp, and helium escape
-                                        valve, relying on the material’s durability for the construction. The black
-                                        PVD indices, skeleton hours and minutes, hands, and an integrated black
-                                        rubber strap all contribute to the overall look of the timepiece. Almost
-                                        every Seamaster Diver 300M Black Black feature has been <strong>laser-ablated</strong> to
-                                        create a positive relief effect, creating a contrasting three-dimensional
-                                        aesthetic for the timepiece that also improves dial legibility.</p>
-                            </div>
+                                <p>The Seamaster Diver 300M was designed from the ground up to withstand
+                                    the rigors of ocean exploration, and it has been considered a <strong>real dive</strong> watch
+                                    since its <strong>introduction in 1993</strong>. The Seamaster Diver 300M
+                                    Black Black is available in various color options, including an all-black
+                                    ceramic facade in its most recent version.</p>
+                                <p>Omega used <strong>ceramic to make a black version</strong> of the Seamaster
+                                    Diver 300M Black Black’s dial, case, crown, strap clasp, and helium escape
+                                    valve, relying on the material’s durability for the construction. The black
+                                    PVD indices, skeleton hours and minutes, hands, and an integrated black
+                                    rubber strap all contribute to the overall look of the timepiece. Almost
+                                    every Seamaster Diver 300M Black Black feature has been <strong>laser-ablated</strong> to
+                                    create a positive relief effect, creating a contrasting three-dimensional
+                                    aesthetic for the timepiece that also improves dial legibility.</p>
                         </div>
-            </div>
-            </article>
-            </main>
-            <nav class="post-items">
-                 <h3>Top posts</h3>
+                    </div>
+        </div>
+        </article>
+        </main>
+        <nav class="post-items">
+             <h3>Top posts</h3>
 
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/5-ways-to-celebrate-womens-history-month/">
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/crypto-trading-in-singapore/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="A gold coin like Bitcoin"
+                         srcset="/assets/pictures/bitcoin-physical-coin-80x80.jpg,
+                                /assets/pictures/bitcoin-physical-coin-160x160.jpg 2x"
+                         src="/assets/pictures/bitcoin-physical-coin-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">FINANCE</h3>
+                        <h4 class="title">Crypto Trading in Singapore</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">10 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/5-ways-to-celebrate-womens-history-month/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt=""
@@ -1332,14 +1426,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">10 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">430 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt=""
@@ -1362,14 +1456,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">346 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">780 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/top-10-gofundme-alternatives/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/top-10-gofundme-alternatives/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A woman's hand is giving money"
@@ -1392,14 +1486,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">206 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">640 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/bag-charm-from-hermes/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/bag-charm-from-hermes/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Photo of a Hermes Kellydoll bag."
@@ -1422,14 +1516,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">94 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">528 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Billie Eilish eyes"
@@ -1452,44 +1546,17 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">738 views - 5 min read</span>
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,172 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/things-to-look-for-in-a-good-online-casino/">
-                <div class="top-post-item featured-post">
-                    <img width="80" height="80" class="thumbnail"
-                         alt="Close-up photo of playing cards"
-                         srcset="/assets/pictures/playing-cards-80x80.jpg,
-                                /assets/pictures/playing-cards-160x160.jpg 2x"
-                         src="/assets/pictures/playing-cards-80x80.jpg"
-                         loading="lazy"
-                    />
-                    <div class="description">
-                        <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Things To Look For In A Good Online Casino</h4>
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                <span class="meta">101 views - 5 min read</span>
-
-                                            </div>
-                </div>
-            </a>
-
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-marshmallow-test/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-marshmallow-test/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="White ceramic mug on book, filled with marshmallow."
@@ -1512,25 +1579,28 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">696 views - 5 min read</span>
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,130 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/how-to-cleanse-recharge-your-crystals/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/things-to-look-for-in-a-good-online-casino/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
-                         alt="Macro photography of black ceramic Gautama Buddha miniature"
-                         srcset="/assets/pictures/crystal-consciousness-80x80.jpg,
-                                /assets/pictures/crystal-consciousness-160x160.jpg 2x"
-                         src="/assets/pictures/crystal-consciousness-80x80.jpg"
+                         alt="Close-up photo of playing cards"
+                         srcset="/assets/pictures/playing-cards-80x80.jpg,
+                                /assets/pictures/playing-cards-160x160.jpg 2x"
+                         src="/assets/pictures/playing-cards-80x80.jpg"
                          loading="lazy"
                     />
                     <div class="description">
                         <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Clean and recharge your crystals with these simple steps</h4>
+                        <h4 class="title">Things To Look For In A Good Online Casino</h4>
 
 
 
@@ -1542,44 +1612,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">297 views - 5 min read</span>
-
-                                            </div>
-                </div>
-            </a>
-
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/lauren-tsai-model-artist-netflix-terrace-house-reality-interview-fashion/">
-                <div class="top-post-item featured-post">
-                    <img width="80" height="80" class="thumbnail"
-                         alt="Lauren Tsai is smiling to the camera"
-                         srcset="/assets/pictures/lauren-tsai-80x80.jpg,
-                                /assets/pictures/lauren-tsai-160x160.jpg 2x"
-                         src="/assets/pictures/lauren-tsai-80x80.jpg"
-                         loading="lazy"
-                    />
-                    <div class="description">
-                        <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Lauren Tsai, Model, Artist and Actress of Netflix's Terrace House</h4>
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                <span class="meta">311 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">535 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/discontinued-icons-audemars-piguet-royal-oak-15202st/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/discontinued-icons-audemars-piguet-royal-oak-15202st/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Audemars Piguet Royal Oak Jumbo"
@@ -1602,14 +1642,44 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">318 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">752 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/how-to-cleanse-recharge-your-crystals/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Macro photography of black ceramic Gautama Buddha miniature"
+                         srcset="/assets/pictures/crystal-consciousness-80x80.jpg,
+                                /assets/pictures/crystal-consciousness-160x160.jpg 2x"
+                         src="/assets/pictures/crystal-consciousness-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Clean and recharge your crystals with these simple steps</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">731 views - 5 min read</span>
+
+                                            </div>
                 </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singapore-food-waste-uglyfood-treatsure-insectta/">
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singapore-food-waste-uglyfood-treatsure-insectta/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A few half rotten apples on the ground"
@@ -1632,14 +1702,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">304 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">738 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/aura-photograph-new-age-selfie/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/aura-photograph-new-age-selfie/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Yellow and black coated wire"
@@ -1662,14 +1732,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">297 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">731 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/taha-bouqdib-maranda-barnes-husband-wife-duo-built-twg-tea-interview/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/taha-bouqdib-maranda-barnes-husband-wife-duo-built-twg-tea-interview/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Green tea plantation from birds eye view"
@@ -1692,14 +1762,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">325 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">759 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/iwc-goes-green-with-timbertex/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/iwc-goes-green-with-timbertex/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A person's hand with a watch"
@@ -1722,14 +1792,213 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">332 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singpost-guardians-singapore-lost-mail/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Letter forced into the post box"
+                         srcset="/assets/pictures/letter-forced-into-the-post-box-80x80.jpg,
+                                /assets/pictures/letter-forced-into-the-post-box-160x160.jpg 2x"
+                         src="/assets/pictures/letter-forced-into-the-post-box-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">STORY</h3>
+                        <h4 class="title">Who Look After Singapore's Undelivered Mail</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
+
+                                            </div>
                 </div>
-            </nav>
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-met-operas-musicians-are-struggling/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Photography of people sitting on theater during nighttime"
+                         srcset="/assets/pictures/half-empty-new-york-opera-80x80.jpg,
+                                /assets/pictures/half-empty-new-york-opera-160x160.jpg 2x"
+                         src="/assets/pictures/half-empty-new-york-opera-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Met Opera Musicians Who Have Been Working Without Pay Since April</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/mark-chao-actor-interview/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Mark Chao is receiving an award"
+                         srcset="/assets/pictures/mark-chao-80x80.jpg,
+                                /assets/pictures/mark-chao-160x160.jpg 2x"
+                         src="/assets/pictures/mark-chao-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Let's Meet Mark Chao</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,158 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/maisie-williams-pasha-de-cartier-the-new-mutant-xmen-tiktok-interview/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Maisie Williams speaking at the 2019 San Diego Comic Con"
+                         srcset="/assets/pictures/maisie-williams-80x80.jpg,
+                                /assets/pictures/maisie-williams-160x160.jpg 2x"
+                         src="/assets/pictures/maisie-williams-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Maisie Williams On TikTok, and Saving Dolphins</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">710 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-britney-spears-song-is-in-the-works/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Britney Spears singing"
+                         srcset="/assets/pictures/britney-spears-singing-80x80.jpg,
+                                /assets/pictures/britney-spears-singing-160x160.jpg 2x"
+                         src="/assets/pictures/britney-spears-singing-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">GOSSIP</h3>
+                        <h4 class="title">New Britney Spears Song Is In The Works</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">941 views - 4 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+            </div>
+        </nav>
+        <nav class="more-to-read-items">
+             <h3>More To Read</h3>
+
+            <div class="more-to-read-items-inner">
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/tiffany-co-high-jewellery-colors-of-nature/">
+                <h4 class="title">Tiffany & Co.'s Colors Of Nature High Jewellery Collection</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-truth-and-myths-of-the-sanpaku-eyes/">
+                <h4 class="title">The Truth and Myths of the Sanpaku Eyes</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/kim-kardashian-the-new-york-times-style-magazine-singapore-october-cover-story/">
+                <h4 class="title">Keeping Up With Kim Kardashian</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/pear-scent-fragrance-louis-vuitton-coeur-battant-jo-malone/">
+                <h4 class="title">The Underrated Fruity Scent of Pear</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/spring-brings-more-colour-to-eyeshadow-palettes/">
+                <h4 class="title">Eyeshadow Palettes Get More Color in the Spring</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-history-of-famous-celebrity-irises-and-their-meaning/">
+                <h4 class="title">The History of Famous Celebrity Irises and Their Meaning</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-letter-t/">
+                <h4 class="title">The Letter T</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/what-are-sanpaku-eyes/">
+                <h4 class="title">What Are Sanpaku Eyes?</h4>
+            </a>
+
+                </div>
+            </div>
+        </nav>
         </div>
         <aside class="site-footer-outer">
             <footer class="site-footer">
@@ -1742,7 +2011,6 @@
                 </div>
             </footer>
         </aside>
-        </div>
         <script defer src="https://www.tsingapore.com/assets/js/main.js"></script>
     </body>
 

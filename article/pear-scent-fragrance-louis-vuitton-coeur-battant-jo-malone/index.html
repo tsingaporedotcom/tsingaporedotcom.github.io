@@ -92,7 +92,7 @@
             }
             a {
               color: #000000;
-              text-decoration: underline dashed #007aff;
+              text-decoration: underline solid #007aff;
             }
             /*** generic custom stuff */
             .logo-line,
@@ -118,12 +118,23 @@
             }
             
             /*** post items */
+            .post-items {
+              padding: 12px 6px;
+            }
             .post-items a {
               text-decoration: none;
             }
+            .post-items h3 {
+              font-size: 14px;
+              line-height: 16px;
+              color: #333333;
+              font-weight: bold;
+              margin-top: unset;
+              margin-bottom: 6px;
+            }
             .post-items h4 {
               margin-top: 0px;
-              margin-bottom: 0px;
+              margin-bottom: 4px;
             }
             .top-post-item {
               display: flex;
@@ -135,6 +146,12 @@
               text-decoration: none;
             }
             
+            .top-post-item .description .tp-meta {
+              font-size: 12px;
+              line-height: 14px;
+              margin: 0;
+              color: #818181;
+            }
             .top-post-item .thumbnail {
               width: 80px;
               height: 80px;
@@ -242,6 +259,14 @@
             .site-navigation nav ul {
               list-style: none;
               display: flex;
+            }
+            .site-navigation nav li:nth-child(n+3) {
+                display: none;
+            }
+            @media (min-width: 420px) {
+                .site-navigation nav li:nth-child(n+3) {
+                  display: unset;
+                }
             }
             @media (min-width: 800px) {
                 .site-header {
@@ -468,6 +493,50 @@
             }
             @media (min-width: 1366px) {
             }
+              .more-to-read-items {
+                padding: 12px 6px;
+                border-top: 1px solid #C7DFF3;
+            }
+            .more-to-read-items a {
+                text-decoration: none;
+            }
+            .more-to-read-item-outer {
+                border-top: 1px solid #C7DFF3;
+                padding: 12px;
+            }
+            .more-to-read-items h3 {
+                 margin-top: 12px;
+             }
+            .more-to-read-items h4 {
+                 font-size: 13px;
+                 line-height: 18px;
+                 margin: 0;
+             }
+            @media (min-width: 800px) {
+                .more-to-read-items-inner{
+                    display: flex;
+                    flex-flow: wrap;
+                }
+                .more-to-read-item-outer {
+                    width: 50%;
+                }
+            }
+            @media (min-width: 1280px) {
+                .more-to-read-item-outer {
+                    width: 33.3333%;
+                }
+                .more-to-read-items {
+                    width: 100%;
+                    padding: 12px;
+                }
+                .more-to-read-items h3 {
+                     margin-top: 24px;
+                     font-size: 18px;
+                     line-height: 22px;
+                 }
+            }
+            @media (min-width: 1366px) {
+            }
             
               /*** fonts */
             h1 {
@@ -647,6 +716,11 @@
               margin: 0 12px;
             }
             /*** meta */
+            .tp-meta {
+               display: flex;
+               flex-wrap: wrap;
+               align-items: center;
+             }
             .meta {
               margin-top: 32px;
               margin-bottom: 16px;
@@ -758,6 +832,8 @@
             
             /*** post items */
             .toc {
+              background-color: white;
+              border-radius: 12px;
               display: unset;
               position: sticky;
               top: 44px;
@@ -818,16 +894,11 @@
               padding: 12px;
               padding-left: 24px;
             }
+            .post-items h4 {
+              margin-bottom: 0px;
+            }
             .top-post-item {
               padding: 0;
-            }
-            .post-items h3 {
-              font-size: 14px;
-              line-height: 16px;
-              color: #333333;
-              font-weight: bold;
-              margin-top: unset;
-              margin-bottom: 6px;
             }
             .post-item-outer {
               padding: 12px 0;
@@ -847,12 +918,6 @@
               line-height: 15px;
               height: 45px;
               text-overflow: ellipsis;
-            }
-            .top-post-item .description .meta {
-              font-size: 12px;
-              line-height: 14px;
-              margin: 0;
-              color: #818181;
             }
             
             /*** images */
@@ -917,7 +982,7 @@
               height: 48px;
               text-overflow: ellipsis;
             }
-            .top-post-item .description .meta {
+            .top-post-item .description .tp-meta {
               font-size: 12px;
               line-height: 14px;
               margin: 0;
@@ -1026,186 +1091,215 @@
     </head>
     
     <body>
-        <div class="body-inner">
-            <div class="site-header-outer">
-                <header class="site-header">
-                    <div> <a href="https://www.tsingapore.com/">
+        <div class="site-header-outer">
+            <header class="site-header">
+                <div> <a href="https://www.tsingapore.com/">
                 <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span><span style="font-weight: 700" class="logo-line">|</span>
             </a>
 
-                    </div>
-                    <div class="site-navigation">
-                        <nav>
-                            <ul>
-                                <li> <a href="https://www.tsingapore.com/culture/"><span>culture</span></a>
+                </div>
+                <div class="site-navigation">
+                    <nav>
+                        <ul>
+                            <li> <a href="https://www.tsingapore.com/culture/"><span>culture</span></a>
 
-                                </li>
-                                <li> <a href="https://www.tsingapore.com/fashion/"><span>fashion</span></a>
+                            </li>
+                            <li> <a href="https://www.tsingapore.com/fashion/"><span>fashion</span></a>
 
-                                </li>
-                                <li> <a href="https://www.tsingapore.com/beauty/"><span>beauty</span></a>
+                            </li>
+                            <li> <a href="https://www.tsingapore.com/beauty/"><span>beauty</span></a>
 
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </header>
-            </div>
-            <div class="main-content-outer">
-                <nav class="toc"></nav>
-                <main class="main-content">
-                    <article>
-                        <div class="page-header-outer">
-                            <header class="page-header">
-                                 <h1 id="the-underrated-fruity-scent-of-pear">The Underrated Fruity Scent of Pear</h1>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        </div>
+        <div class="main-content-outer">
+            <nav class="toc"></nav>
+            <main class="main-content">
+                <article>
+                    <div class="page-header-outer">
+                        <header class="page-header">
+                             <h1 id="the-underrated-fruity-scent-of-pear">The Underrated Fruity Scent of Pear</h1>
 
-                                <aside class="meta">
-                                    <div class="author-photo">
-                                        <img alt="The picture of Clara Ortiz" src="https://www.tsingapore.com/assets/images/clara_ortiz_64x64.jpg"
-                                        srcset="https://www.tsingapore.com/assets/images/clara_ortiz_128x128.jpg 2x">
-                                    </div>
-                                    <div class="info"> <span class="author-name">Clara Ortiz</span>
+                            <aside class="meta">
+                                <div class="author-photo">
+                                    <img alt="The picture of Clara Ortiz" src="https://www.tsingapore.com/assets/images/clara_ortiz_64x64.jpg"
+                                    srcset="https://www.tsingapore.com/assets/images/clara_ortiz_128x128.jpg 2x">
+                                </div>
+                                <div class="info"> <span class="author-name">Clara Ortiz</span>
  <span class="published-date">Jan 14th, 2022</span>
 
-                                    </div>
-                                </aside>
-                            </header>
-                        </div>
-                        <div class="post-body-outer">
-                            <div class="post-body">
-                                <div class="post-body-inner">
-                                    <p>The pear is a bit of an underappreciated treasure about fruit notes in
-                                        perfumes.</p>
-                                    <p>However, the scent of a pear fragrance is just as delicious and refreshing
-                                        as any other fruit scent.</p>
-                                    <p>Whereas citrus notes, such as those from mandarin orange and lemon, are
-                                        a quick way to convey zest and a dazzling aspect, the pear is a sweeter
-                                        and overall more subdued fruit.</p>
-                                    <div id="featured-img">
-                                        <aside>
-                                            <figure class="full-width-figure  featured">
-                                                <picture>
-                                                    <source type="image/webp" srcset="
+                                </div>
+                            </aside>
+                        </header>
+                    </div>
+                    <div class="post-body-outer">
+                        <div class="post-body">
+                            <div class="post-body-inner">
+                                <p>The pear is a bit of an underappreciated treasure about fruit notes in
+                                    perfumes.</p>
+                                <p>However, the scent of a pear fragrance is just as delicious and refreshing
+                                    as any other fruit scent.</p>
+                                <p>Whereas citrus notes, such as those from mandarin orange and lemon, are
+                                    a quick way to convey zest and a dazzling aspect, the pear is a sweeter
+                                    and overall more subdued fruit.</p>
+                                <div id="featured-img">
+                                    <aside>
+                                        <figure class="full-width-figure  featured">
+                                            <picture>
+                                                <source type="image/webp" srcset="
               /assets/pictures/jean-paul-gaultier-scandal-800.webp 800w,
               /assets/pictures/jean-paul-gaultier-scandal-1200.webp 1200w,
               /assets/pictures/jean-paul-gaultier-scandal-1600.webp 1600w"
-                                                    sizes="
+                                                sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                    <source type="image/jpeg" srcset="
+                                                <source type="image/jpeg" srcset="
               /assets/pictures/jean-paul-gaultier-scandal-800.jpg 800w,
               /assets/pictures/jean-paul-gaultier-scandal-1200.jpg 1200w,
               /assets/pictures/jean-paul-gaultier-scandal-1600.jpg 1600w"
-                                                    sizes="
+                                                sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                    <img src="/assets/pictures/jean-paul-gaultier-scandal-800.jpg" alt="Parfume surrounded with pears."
-                                                    />
-                                                </picture>
-                                                <figcaption>Photo from <a href="https://www.jeanpaulgaultier.com/ww/en/fragrances"
-                                                    rel="nofollow">Jean Paul Gaultier's Website</a>
-                                                </figcaption>
-                                            </figure>
-                                        </aside>
-                                    </div>
-                                    <p>Although it is not as widely employed in perfumery, the diversity of the
-                                        pear’s smell is one of its main advantages. The pear note might have a
-                                        fleshy, green, crisp, or juicy scent, depending on the variety of pear
-                                        fruit used and the aspect of the fruit highlighted in a particular fragrance.</p>
-                                    <h2
-                                    id="cur-battant">Cur Battant</h2>
-                                        <p>Jacques Cavallier-Belletrud is the master perfumer behind Louis Vuitton’s
-                                            exclusive luxury scents. Ambrette seeds and a synthetic component known
-                                            as ‘cascalone’ are used in the company’s newest fragrance, <a href="https://eu.louisvuitton.com/eng-e1/products/c%C5%93ur-battant-nvprod1780069v">Cur Battant</a> (French
-                                            for heartbeat), highlighting the pear note. To the perfumer’s knowledge,
-                                            the fragrance is primarily inspired by the sensation of voluptuousness
-                                            that one gets while biting into a delicious piece of citrus fruit. When
-                                            it comes to the scent, the top note is a fantastic, crisp rendition of
-                                            the pear, which is accentuated by the magnificent, musky aroma of ambrette
-                                            seeds. As the perfume develops on the skin, the cascalone molecule leaves
-                                            behind a fresh and slightly aquatic note that stays on the skin. The final
-                                            composition is a bright, woody floral with other notes such as Egyptian
-                                            jasmine and narcissus and a chypré (a perfume group) base consisting solely
-                                            of pure patchouli and moss. The lightness of the pear helps to balance
-                                            out the more sensual notes in the composition.</p>
-                                        
+                                                <img src="/assets/pictures/jean-paul-gaultier-scandal-800.jpg" alt="Parfume surrounded with pears."
+                                                />
+                                            </picture>
+                                            <figcaption>Photo from <a href="https://www.jeanpaulgaultier.com/ww/en/fragrances"
+                                                rel="nofollow">Jean Paul Gaultier's Website</a>
+                                            </figcaption>
+                                        </figure>
+                                    </aside>
+                                </div>
+                                <p>Although it is not as widely employed in perfumery, the diversity of the
+                                    pear’s smell is one of its main advantages. The pear note might have a
+                                    fleshy, green, crisp, or juicy scent, depending on the variety of pear
+                                    fruit used and the aspect of the fruit highlighted in a particular fragrance.</p>
+                                <h2
+                                id="cur-battant">Cur Battant</h2>
+                                    <p>Jacques Cavallier-Belletrud is the master perfumer behind Louis Vuitton’s
+                                        exclusive luxury scents. Ambrette seeds and a synthetic component known
+                                        as ‘cascalone’ are used in the company’s newest fragrance, <a href="https://eu.louisvuitton.com/eng-e1/products/c%C5%93ur-battant-nvprod1780069v">Cur Battant</a> (French
+                                        for heartbeat), highlighting the pear note. To the perfumer’s knowledge,
+                                        the fragrance is primarily inspired by the sensation of voluptuousness
+                                        that one gets while biting into a delicious piece of citrus fruit. When
+                                        it comes to the scent, the top note is a fantastic, crisp rendition of
+                                        the pear, which is accentuated by the magnificent, musky aroma of ambrette
+                                        seeds. As the perfume develops on the skin, the cascalone molecule leaves
+                                        behind a fresh and slightly aquatic note that stays on the skin. The final
+                                        composition is a bright, woody floral with other notes such as Egyptian
+                                        jasmine and narcissus and a chypré (a perfume group) base consisting solely
+                                        of pure patchouli and moss. The lightness of the pear helps to balance
+                                        out the more sensual notes in the composition.</p>
+                                    
 <h2 id="english-pear--freesia">English Pear &amp; Freesia</h2>
 
-                                        <p>With its release in 2010, <a href="http://m.jomalone.com.sg/products/3608/Fragrances/The-Collections/Fruity/English-Pear-Freesia">Jo Malone London’s English Pear &amp; Freesia</a> cologne
-                                            was one of the perfumes that helped spark a renewed interest in pear-based
-                                            smells, and it continues to be one of the brand’s hallmarks scents today.
-                                            Perfumer Christine Nagel (the current in-house perfumer for Hermès) produced
-                                            English Pear &amp; Freesia, which means “English Pear and Freesia.” Based
-                                            on the King William pear as its primary constituent, this harmony lends
-                                            the smell of its rich, juicy notes. Featuring floral notes of white freesia,
-                                            the perfume is further mellowed by base notes of amber, patchouli, and
-                                            wood, which prevent it from becoming overly sweet and ensure that it leaves
-                                            a longer-lasting trail behind them. It has a lovely aroma that is not excessively
-                                            sweet, and it is reminiscent of ripened pears waiting to be plucked from
-                                            the branch when sprayed on the skin.</p>
-                                        <aside>
-                                            <figure class="full-width-figure ">
-                                                <picture>
-                                                    <source type="image/webp" srcset="
+                                    <p>With its release in 2010, <a href="http://m.jomalone.com.sg/products/3608/Fragrances/The-Collections/Fruity/English-Pear-Freesia">Jo Malone London’s English Pear &amp; Freesia</a> cologne
+                                        was one of the perfumes that helped spark a renewed interest in pear-based
+                                        smells, and it continues to be one of the brand’s hallmarks scents today.
+                                        Perfumer Christine Nagel (the current in-house perfumer for Hermès) produced
+                                        English Pear &amp; Freesia, which means “English Pear and Freesia.” Based
+                                        on the King William pear as its primary constituent, this harmony lends
+                                        the smell of its rich, juicy notes. Featuring floral notes of white freesia,
+                                        the perfume is further mellowed by base notes of amber, patchouli, and
+                                        wood, which prevent it from becoming overly sweet and ensure that it leaves
+                                        a longer-lasting trail behind them. It has a lovely aroma that is not excessively
+                                        sweet, and it is reminiscent of ripened pears waiting to be plucked from
+                                        the branch when sprayed on the skin.</p>
+                                    <aside>
+                                        <figure class="full-width-figure ">
+                                            <picture>
+                                                <source type="image/webp" srcset="
               /assets/pictures/english-pear-freesia-800.webp 800w,
               /assets/pictures/english-pear-freesia-1200.webp 1200w,
               /assets/pictures/english-pear-freesia-1600.webp 1600w" sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                    <source type="image/jpeg" srcset="
+                                                <source type="image/jpeg" srcset="
               /assets/pictures/english-pear-freesia-800.jpg 800w,
               /assets/pictures/english-pear-freesia-1200.jpg 1200w,
               /assets/pictures/english-pear-freesia-1600.jpg 1600w" sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                    <img src="/assets/pictures/english-pear-freesia-800.jpg" alt="Perfume surrounded with pears."
-                                                    />
-                                                </picture>
-                                                <figcaption>Photo from <a href="https://www.jomalone.co.uk/our-stories/english-pear-freesia"
-                                                    rel="nofollow">Jo Malone's Website</a>
-                                                </figcaption>
-                                            </figure>
-                                        </aside>
-                                        
+                                                <img src="/assets/pictures/english-pear-freesia-800.jpg" alt="Perfume surrounded with pears."
+                                                />
+                                            </picture>
+                                            <figcaption>Photo from <a href="https://www.jomalone.co.uk/our-stories/english-pear-freesia"
+                                                rel="nofollow">Jo Malone's Website</a>
+                                            </figcaption>
+                                        </figure>
+                                    </aside>
+                                    
 <h2 id="scandal-à-paris">Scandal à Paris</h2>
 
-                                        <p>Using a soft pear and a trademark honey note, <a href="https://www.jeanpaulgaultier.com/en-us/fragrance-scandal-a-paris/">Jean-Paul Gaultier’s Scandal à Paris</a> takes
-                                            the fruit and gives it a more gourmand spin. In addition to the original
-                                            Eau de Parfum, there is also a more intense night version of the fragrance,
-                                            produced by famed perfumers Fabrice Pellegrin and Daphné Bugey, who also
-                                            designed the original Eau de Parfum.</p>
-                                        <p>With a gourmand honey note at first, designer Gaultier describes the smell
-                                            as “quite seductive,” but “soon it becomes very feminine and fresh, thanks
-                                            to the combination of jasmine and fresh pears.” According to him, Gaultier’s
-                                            fragrance memories are sparked by flashbacks to his childhood. My approach
-                                            to scent has always been quite a gourmand, bringing back childhood memories
-                                            or simply a fondness for a specific meal, such as the Baba au Rhum that
-                                            I used to enjoy with my grandmother. There is a significant amount of honey
-                                            in the Scandal perfumes, which gives this smell a “gourmand” aspect, according
-                                            to the perfumer.”</p>
-                                        
+                                    <p>Using a soft pear and a trademark honey note, <a href="https://www.jeanpaulgaultier.com/en-us/fragrance-scandal-a-paris/">Jean-Paul Gaultier’s Scandal à Paris</a> takes
+                                        the fruit and gives it a more gourmand spin. In addition to the original
+                                        Eau de Parfum, there is also a more intense night version of the fragrance,
+                                        produced by famed perfumers Fabrice Pellegrin and Daphné Bugey, who also
+                                        designed the original Eau de Parfum.</p>
+                                    <p>With a gourmand honey note at first, designer Gaultier describes the smell
+                                        as “quite seductive,” but “soon it becomes very feminine and fresh, thanks
+                                        to the combination of jasmine and fresh pears.” According to him, Gaultier’s
+                                        fragrance memories are sparked by flashbacks to his childhood. My approach
+                                        to scent has always been quite a gourmand, bringing back childhood memories
+                                        or simply a fondness for a specific meal, such as the Baba au Rhum that
+                                        I used to enjoy with my grandmother. There is a significant amount of honey
+                                        in the Scandal perfumes, which gives this smell a “gourmand” aspect, according
+                                        to the perfumer.”</p>
+                                    
 <h2 id="petite-chérie-eau-de-parfum">Petite Chérie Eau de Parfum</h2>
 
-                                        <p>A celebration of the pear note in fragrance would be incomplete without
-                                            a nod to Annick Goutal’s famous <a href="https://www.goutalparis.com/en/petite-cherie-eau-de-parfum">Petite Chérie Eau de Parfum</a>,
-                                            launched in 1997. In a limited edition, green-tinted flacon, this scent
-                                            features an embellished floral patch created by English embroidery artist
-                                            Ellie Mac; the fragrance is available for purchase. Thanks to a blend of
-                                            pear, juicy peach, and musky rose, the fragrance itself is almost intoxicatingly
-                                            sweet on the initial application; but, as it dries down, it transforms
-                                            into a more quietly energizing perfume. Citrus notes of freshly cut grass
-                                            and velvety vanilla help balance out this fragrance’s sweetness, making
-                                            it the ideal choice for people who enjoy a lively, youthful aroma that
-                                            will have others leaning in for a closer sniff.</p>
-                                </div>
+                                    <p>A celebration of the pear note in fragrance would be incomplete without
+                                        a nod to Annick Goutal’s famous <a href="https://www.goutalparis.com/en/petite-cherie-eau-de-parfum">Petite Chérie Eau de Parfum</a>,
+                                        launched in 1997. In a limited edition, green-tinted flacon, this scent
+                                        features an embellished floral patch created by English embroidery artist
+                                        Ellie Mac; the fragrance is available for purchase. Thanks to a blend of
+                                        pear, juicy peach, and musky rose, the fragrance itself is almost intoxicatingly
+                                        sweet on the initial application; but, as it dries down, it transforms
+                                        into a more quietly energizing perfume. Citrus notes of freshly cut grass
+                                        and velvety vanilla help balance out this fragrance’s sweetness, making
+                                        it the ideal choice for people who enjoy a lively, youthful aroma that
+                                        will have others leaning in for a closer sniff.</p>
                             </div>
                         </div>
-                    </article>
-                </main>
-                <nav class="post-items">
-                     <h3>Top posts</h3>
+                    </div>
+                </article>
+            </main>
+            <nav class="post-items">
+                 <h3>Top posts</h3>
 
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/5-ways-to-celebrate-womens-history-month/">
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/crypto-trading-in-singapore/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="A gold coin like Bitcoin"
+                         srcset="/assets/pictures/bitcoin-physical-coin-80x80.jpg,
+                                /assets/pictures/bitcoin-physical-coin-160x160.jpg 2x"
+                         src="/assets/pictures/bitcoin-physical-coin-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">FINANCE</h3>
+                        <h4 class="title">Crypto Trading in Singapore</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">10 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/5-ways-to-celebrate-womens-history-month/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt=""
@@ -1228,14 +1322,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">10 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">430 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt=""
@@ -1258,14 +1352,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">346 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">780 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/top-10-gofundme-alternatives/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/top-10-gofundme-alternatives/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A woman's hand is giving money"
@@ -1288,14 +1382,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">206 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">640 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/bag-charm-from-hermes/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/bag-charm-from-hermes/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Photo of a Hermes Kellydoll bag."
@@ -1318,14 +1412,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">94 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">528 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Billie Eilish eyes"
@@ -1348,44 +1442,17 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">738 views - 5 min read</span>
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,172 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/things-to-look-for-in-a-good-online-casino/">
-                <div class="top-post-item featured-post">
-                    <img width="80" height="80" class="thumbnail"
-                         alt="Close-up photo of playing cards"
-                         srcset="/assets/pictures/playing-cards-80x80.jpg,
-                                /assets/pictures/playing-cards-160x160.jpg 2x"
-                         src="/assets/pictures/playing-cards-80x80.jpg"
-                         loading="lazy"
-                    />
-                    <div class="description">
-                        <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Things To Look For In A Good Online Casino</h4>
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                <span class="meta">101 views - 5 min read</span>
-
-                                            </div>
                 </div>
-            </a>
-
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-marshmallow-test/">
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-marshmallow-test/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="White ceramic mug on book, filled with marshmallow."
@@ -1408,25 +1475,28 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">696 views - 5 min read</span>
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,130 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/how-to-cleanse-recharge-your-crystals/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/things-to-look-for-in-a-good-online-casino/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
-                         alt="Macro photography of black ceramic Gautama Buddha miniature"
-                         srcset="/assets/pictures/crystal-consciousness-80x80.jpg,
-                                /assets/pictures/crystal-consciousness-160x160.jpg 2x"
-                         src="/assets/pictures/crystal-consciousness-80x80.jpg"
+                         alt="Close-up photo of playing cards"
+                         srcset="/assets/pictures/playing-cards-80x80.jpg,
+                                /assets/pictures/playing-cards-160x160.jpg 2x"
+                         src="/assets/pictures/playing-cards-80x80.jpg"
                          loading="lazy"
                     />
                     <div class="description">
                         <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Clean and recharge your crystals with these simple steps</h4>
+                        <h4 class="title">Things To Look For In A Good Online Casino</h4>
 
 
 
@@ -1438,44 +1508,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">297 views - 5 min read</span>
-
-                                            </div>
-                </div>
-            </a>
-
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/lauren-tsai-model-artist-netflix-terrace-house-reality-interview-fashion/">
-                <div class="top-post-item featured-post">
-                    <img width="80" height="80" class="thumbnail"
-                         alt="Lauren Tsai is smiling to the camera"
-                         srcset="/assets/pictures/lauren-tsai-80x80.jpg,
-                                /assets/pictures/lauren-tsai-160x160.jpg 2x"
-                         src="/assets/pictures/lauren-tsai-80x80.jpg"
-                         loading="lazy"
-                    />
-                    <div class="description">
-                        <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Lauren Tsai, Model, Artist and Actress of Netflix's Terrace House</h4>
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                <span class="meta">311 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">535 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/discontinued-icons-audemars-piguet-royal-oak-15202st/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/discontinued-icons-audemars-piguet-royal-oak-15202st/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Audemars Piguet Royal Oak Jumbo"
@@ -1498,14 +1538,44 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">318 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">752 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singapore-food-waste-uglyfood-treatsure-insectta/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/how-to-cleanse-recharge-your-crystals/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Macro photography of black ceramic Gautama Buddha miniature"
+                         srcset="/assets/pictures/crystal-consciousness-80x80.jpg,
+                                /assets/pictures/crystal-consciousness-160x160.jpg 2x"
+                         src="/assets/pictures/crystal-consciousness-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Clean and recharge your crystals with these simple steps</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">731 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singapore-food-waste-uglyfood-treatsure-insectta/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A few half rotten apples on the ground"
@@ -1528,14 +1598,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">304 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">738 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/aura-photograph-new-age-selfie/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/aura-photograph-new-age-selfie/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Yellow and black coated wire"
@@ -1558,14 +1628,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">297 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">731 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/taha-bouqdib-maranda-barnes-husband-wife-duo-built-twg-tea-interview/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/taha-bouqdib-maranda-barnes-husband-wife-duo-built-twg-tea-interview/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Green tea plantation from birds eye view"
@@ -1588,14 +1658,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">325 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">759 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/iwc-goes-green-with-timbertex/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/iwc-goes-green-with-timbertex/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A person's hand with a watch"
@@ -1618,27 +1688,250 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">332 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                </nav>
-            </div>
-            <aside class="site-footer-outer">
-                <footer class="site-footer">
-                    <div> <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span>
-                        <span
-                        style="font-weight: 700" class="logo-line">|</span>
-                    </div>
-                    <div> <span><a href="https://www.tsingapore.com/sitemap.xml">sitemap</a></span> | <span><a href="mailto:info@tsingapore.com">email</a></span>
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singpost-guardians-singapore-lost-mail/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Letter forced into the post box"
+                         srcset="/assets/pictures/letter-forced-into-the-post-box-80x80.jpg,
+                                /assets/pictures/letter-forced-into-the-post-box-160x160.jpg 2x"
+                         src="/assets/pictures/letter-forced-into-the-post-box-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">STORY</h3>
+                        <h4 class="title">Who Look After Singapore's Undelivered Mail</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-met-operas-musicians-are-struggling/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Photography of people sitting on theater during nighttime"
+                         srcset="/assets/pictures/half-empty-new-york-opera-80x80.jpg,
+                                /assets/pictures/half-empty-new-york-opera-160x160.jpg 2x"
+                         src="/assets/pictures/half-empty-new-york-opera-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Met Opera Musicians Who Have Been Working Without Pay Since April</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/omega-2021-novelties-collection/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Omega seamaster 300 watch on a bronze box"
+                         srcset="/assets/pictures/omega-seamaster-300-80x80.jpg,
+                                /assets/pictures/omega-seamaster-300-160x160.jpg 2x"
+                         src="/assets/pictures/omega-seamaster-300-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">FASHION</h3>
+                        <h4 class="title">Omega Commemorates the Year 2021 with a Bronze Seamaster</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">773 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/mark-chao-actor-interview/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Mark Chao is receiving an award"
+                         srcset="/assets/pictures/mark-chao-80x80.jpg,
+                                /assets/pictures/mark-chao-160x160.jpg 2x"
+                         src="/assets/pictures/mark-chao-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Let's Meet Mark Chao</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,158 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/maisie-williams-pasha-de-cartier-the-new-mutant-xmen-tiktok-interview/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Maisie Williams speaking at the 2019 San Diego Comic Con"
+                         srcset="/assets/pictures/maisie-williams-80x80.jpg,
+                                /assets/pictures/maisie-williams-160x160.jpg 2x"
+                         src="/assets/pictures/maisie-williams-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Maisie Williams On TikTok, and Saving Dolphins</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">710 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-britney-spears-song-is-in-the-works/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Britney Spears singing"
+                         srcset="/assets/pictures/britney-spears-singing-80x80.jpg,
+                                /assets/pictures/britney-spears-singing-160x160.jpg 2x"
+                         src="/assets/pictures/britney-spears-singing-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">GOSSIP</h3>
+                        <h4 class="title">New Britney Spears Song Is In The Works</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">941 views - 4 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+            </nav>
+            <nav class="more-to-read-items">
+                 <h3>More To Read</h3>
+
+                <div class="more-to-read-items-inner">
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/tiffany-co-high-jewellery-colors-of-nature/">
+                <h4 class="title">Tiffany & Co.'s Colors Of Nature High Jewellery Collection</h4>
+            </a>
 
                     </div>
-                </footer>
-            </aside>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-truth-and-myths-of-the-sanpaku-eyes/">
+                <h4 class="title">The Truth and Myths of the Sanpaku Eyes</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/kim-kardashian-the-new-york-times-style-magazine-singapore-october-cover-story/">
+                <h4 class="title">Keeping Up With Kim Kardashian</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/spring-brings-more-colour-to-eyeshadow-palettes/">
+                <h4 class="title">Eyeshadow Palettes Get More Color in the Spring</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-history-of-famous-celebrity-irises-and-their-meaning/">
+                <h4 class="title">The History of Famous Celebrity Irises and Their Meaning</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-letter-t/">
+                <h4 class="title">The Letter T</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/what-are-sanpaku-eyes/">
+                <h4 class="title">What Are Sanpaku Eyes?</h4>
+            </a>
+
+                    </div>
+                </div>
+            </nav>
         </div>
+        <aside class="site-footer-outer">
+            <footer class="site-footer">
+                <div> <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span>
+                    <span
+                    style="font-weight: 700" class="logo-line">|</span>
+                </div>
+                <div> <span><a href="https://www.tsingapore.com/sitemap.xml">sitemap</a></span> | <span><a href="mailto:info@tsingapore.com">email</a></span>
+
+                </div>
+            </footer>
+        </aside>
         <script defer src="https://www.tsingapore.com/assets/js/main.js"></script>
     </body>
 

@@ -92,7 +92,7 @@
                 }
                 a {
                   color: #000000;
-                  text-decoration: underline dashed #007aff;
+                  text-decoration: underline solid #007aff;
                 }
                 /*** generic custom stuff */
                 .logo-line,
@@ -118,12 +118,23 @@
                 }
                 
                 /*** post items */
+                .post-items {
+                  padding: 12px 6px;
+                }
                 .post-items a {
                   text-decoration: none;
                 }
+                .post-items h3 {
+                  font-size: 14px;
+                  line-height: 16px;
+                  color: #333333;
+                  font-weight: bold;
+                  margin-top: unset;
+                  margin-bottom: 6px;
+                }
                 .post-items h4 {
                   margin-top: 0px;
-                  margin-bottom: 0px;
+                  margin-bottom: 4px;
                 }
                 .top-post-item {
                   display: flex;
@@ -135,6 +146,12 @@
                   text-decoration: none;
                 }
                 
+                .top-post-item .description .tp-meta {
+                  font-size: 12px;
+                  line-height: 14px;
+                  margin: 0;
+                  color: #818181;
+                }
                 .top-post-item .thumbnail {
                   width: 80px;
                   height: 80px;
@@ -242,6 +259,14 @@
                 .site-navigation nav ul {
                   list-style: none;
                   display: flex;
+                }
+                .site-navigation nav li:nth-child(n+3) {
+                    display: none;
+                }
+                @media (min-width: 420px) {
+                    .site-navigation nav li:nth-child(n+3) {
+                      display: unset;
+                    }
                 }
                 @media (min-width: 800px) {
                     .site-header {
@@ -468,6 +493,50 @@
                 }
                 @media (min-width: 1366px) {
                 }
+                  .more-to-read-items {
+                    padding: 12px 6px;
+                    border-top: 1px solid #C7DFF3;
+                }
+                .more-to-read-items a {
+                    text-decoration: none;
+                }
+                .more-to-read-item-outer {
+                    border-top: 1px solid #C7DFF3;
+                    padding: 12px;
+                }
+                .more-to-read-items h3 {
+                     margin-top: 12px;
+                 }
+                .more-to-read-items h4 {
+                     font-size: 13px;
+                     line-height: 18px;
+                     margin: 0;
+                 }
+                @media (min-width: 800px) {
+                    .more-to-read-items-inner{
+                        display: flex;
+                        flex-flow: wrap;
+                    }
+                    .more-to-read-item-outer {
+                        width: 50%;
+                    }
+                }
+                @media (min-width: 1280px) {
+                    .more-to-read-item-outer {
+                        width: 33.3333%;
+                    }
+                    .more-to-read-items {
+                        width: 100%;
+                        padding: 12px;
+                    }
+                    .more-to-read-items h3 {
+                         margin-top: 24px;
+                         font-size: 18px;
+                         line-height: 22px;
+                     }
+                }
+                @media (min-width: 1366px) {
+                }
                 
                   /*** fonts */
                 h1 {
@@ -647,6 +716,11 @@
                   margin: 0 12px;
                 }
                 /*** meta */
+                .tp-meta {
+                   display: flex;
+                   flex-wrap: wrap;
+                   align-items: center;
+                 }
                 .meta {
                   margin-top: 32px;
                   margin-bottom: 16px;
@@ -758,6 +832,8 @@
                 
                 /*** post items */
                 .toc {
+                  background-color: white;
+                  border-radius: 12px;
                   display: unset;
                   position: sticky;
                   top: 44px;
@@ -818,16 +894,11 @@
                   padding: 12px;
                   padding-left: 24px;
                 }
+                .post-items h4 {
+                  margin-bottom: 0px;
+                }
                 .top-post-item {
                   padding: 0;
-                }
-                .post-items h3 {
-                  font-size: 14px;
-                  line-height: 16px;
-                  color: #333333;
-                  font-weight: bold;
-                  margin-top: unset;
-                  margin-bottom: 6px;
                 }
                 .post-item-outer {
                   padding: 12px 0;
@@ -847,12 +918,6 @@
                   line-height: 15px;
                   height: 45px;
                   text-overflow: ellipsis;
-                }
-                .top-post-item .description .meta {
-                  font-size: 12px;
-                  line-height: 14px;
-                  margin: 0;
-                  color: #818181;
                 }
                 
                 /*** images */
@@ -917,7 +982,7 @@
                   height: 48px;
                   text-overflow: ellipsis;
                 }
-                .top-post-item .description .meta {
+                .top-post-item .description .tp-meta {
                   font-size: 12px;
                   line-height: 14px;
                   margin: 0;
@@ -1026,351 +1091,380 @@
     </head>
     
     <body>
-        <div class="body-inner">
-            <div class="site-header-outer">
-                <header class="site-header">
-                    <div> <a href="https://www.tsingapore.com/">
+        <div class="site-header-outer">
+            <header class="site-header">
+                <div> <a href="https://www.tsingapore.com/">
                 <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span><span style="font-weight: 700" class="logo-line">|</span>
             </a>
 
-                    </div>
-                    <div class="site-navigation">
-                        <nav>
-                            <ul>
-                                <li> <a href="https://www.tsingapore.com/culture/"><span>culture</span></a>
+                </div>
+                <div class="site-navigation">
+                    <nav>
+                        <ul>
+                            <li> <a href="https://www.tsingapore.com/culture/"><span>culture</span></a>
 
-                                </li>
-                                <li> <a href="https://www.tsingapore.com/fashion/"><span>fashion</span></a>
+                            </li>
+                            <li> <a href="https://www.tsingapore.com/fashion/"><span>fashion</span></a>
 
-                                </li>
-                                <li> <a href="https://www.tsingapore.com/beauty/"><span>beauty</span></a>
+                            </li>
+                            <li> <a href="https://www.tsingapore.com/beauty/"><span>beauty</span></a>
 
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </header>
-            </div>
-            <div class="main-content-outer">
-                <aside class="toc">
-                     <h3>Table of contents</h3>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        </div>
+        <div class="main-content-outer">
+            <aside class="toc">
+                 <h3>Table of contents</h3>
 
-                    <ul>
-                        <li class="h1"><a href="#three-singapore-start-ups-fighting-the-ugly-side-of-food-waste">Three Singapore Start-Ups Fighting the Ugly Side of Food Waste</a>
-                        </li>
-                        <li class="h2"><a href="#uglyfood-the-ugly-pieces-of-food">UglyFood: The Ugly Pieces of Food</a>
-                        </li>
-                        <li class="h2"><a href="#treatsure-in-the-unwanted-bin-a-treasure-trove">Treatsure: In the Unwanted Bin, a Treasure Trove</a>
-                        </li>
-                        <li class="h2"><a href="#insectta-let-the-bugs-eat-it">Insectta: Let The Bugs Eat It</a>
-                        </li>
-                    </ul>
-                </aside>
-                <script>
-                    window.addEventListener('DOMContentLoaded', () => {
-                      const observer = new IntersectionObserver(entries => {
-                        entries.forEach(entry => {
-                          const id = entry.target.getAttribute('id');
-                          console.log('hello', id);
-                          const elements = document.querySelector(`.toc ul li a[href="#${id}"]`);
-                          console.log('elements', elements);
-                          if (elements) {
-                              if (entry.intersectionRatio > 0) {
-                                elements.parentElement.classList.add('selected');
-                              } else {
-                                elements.parentElement.classList.remove('selected');
-                              }
+                <ul>
+                    <li class="h1"><a href="#three-singapore-start-ups-fighting-the-ugly-side-of-food-waste">Three Singapore Start-Ups Fighting the Ugly Side of Food Waste</a>
+                    </li>
+                    <li class="h2"><a href="#uglyfood-the-ugly-pieces-of-food">UglyFood: The Ugly Pieces of Food</a>
+                    </li>
+                    <li class="h2"><a href="#treatsure-in-the-unwanted-bin-a-treasure-trove">Treatsure: In the Unwanted Bin, a Treasure Trove</a>
+                    </li>
+                    <li class="h2"><a href="#insectta-let-the-bugs-eat-it">Insectta: Let The Bugs Eat It</a>
+                    </li>
+                </ul>
+            </aside>
+            <script>
+                window.addEventListener('DOMContentLoaded', () => {
+                  const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                      const id = entry.target.getAttribute('id');
+                      console.log('hello', id);
+                      const elements = document.querySelector(`.toc ul li a[href="#${id}"]`);
+                      console.log('elements', elements);
+                      if (elements) {
+                          if (entry.intersectionRatio > 0) {
+                            elements.parentElement.classList.add('selected');
+                          } else {
+                            elements.parentElement.classList.remove('selected');
                           }
-                        });
-                      });
-                    
-                      const articles = document.querySelectorAll('article[id]');
-                      if(articles) {
-                        articles.forEach((section) => { observer.observe(section); });
-                      }
-                    
-                      const h1s = document.querySelectorAll('h1[id]');
-                      if(h1s) {
-                        h1s.forEach((section) => { observer.observe(section); });
-                      }
-                      const h2s = document.querySelectorAll('h2[id]');
-                      if(h2s) {
-                        h2s.forEach((section) => { observer.observe(section); });
-                      }
-                      const h3s = document.querySelectorAll('h3[id]');
-                      if(h3s) {
-                        h3s.forEach((section) => { observer.observe(section); });
                       }
                     });
-                </script>
-                <main class="main-content">
-                    <article>
-                        <div class="page-header-outer">
-                            <header class="page-header">
-                                 <h1 id="three-singapore-start-ups-fighting-the-ugly-side-of-food-waste">Three Singapore Start-Ups Fighting the Ugly Side of Food Waste</h1>
+                  });
+                
+                  const articles = document.querySelectorAll('article[id]');
+                  if(articles) {
+                    articles.forEach((section) => { observer.observe(section); });
+                  }
+                
+                  const h1s = document.querySelectorAll('h1[id]');
+                  if(h1s) {
+                    h1s.forEach((section) => { observer.observe(section); });
+                  }
+                  const h2s = document.querySelectorAll('h2[id]');
+                  if(h2s) {
+                    h2s.forEach((section) => { observer.observe(section); });
+                  }
+                  const h3s = document.querySelectorAll('h3[id]');
+                  if(h3s) {
+                    h3s.forEach((section) => { observer.observe(section); });
+                  }
+                });
+            </script>
+            <main class="main-content">
+                <article>
+                    <div class="page-header-outer">
+                        <header class="page-header">
+                             <h1 id="three-singapore-start-ups-fighting-the-ugly-side-of-food-waste">Three Singapore Start-Ups Fighting the Ugly Side of Food Waste</h1>
 
-                                <aside class="meta">
-                                    <div class="author-photo">
-                                        <img alt="The picture of Clara Ortiz" src="https://www.tsingapore.com/assets/images/clara_ortiz_64x64.jpg"
-                                        srcset="https://www.tsingapore.com/assets/images/clara_ortiz_128x128.jpg 2x">
-                                    </div>
-                                    <div class="info"> <span class="author-name">Clara Ortiz</span>
+                            <aside class="meta">
+                                <div class="author-photo">
+                                    <img alt="The picture of Clara Ortiz" src="https://www.tsingapore.com/assets/images/clara_ortiz_64x64.jpg"
+                                    srcset="https://www.tsingapore.com/assets/images/clara_ortiz_128x128.jpg 2x">
+                                </div>
+                                <div class="info"> <span class="author-name">Clara Ortiz</span>
  <span class="published-date">Jan 25th, 2022</span>
 
-                                    </div>
-                                </aside>
-                            </header>
-                        </div>
-                        <div class="post-body-outer">
-                            <div class="post-body">
-                                <div class="post-body-inner">
-                                    <p>It wasn’t until the early 2000s that <strong>climate change</strong> became
-                                        a more pressing issue in the media, and then it was presented as an impending
-                                        doom if we didn’t cut back on our <strong>consumption</strong>. As a precaution,
-                                        we were urged to acquire <strong>healthy habits</strong>, such as shutting
-                                        off electrical appliances that are not in use and recycling soda cans and
-                                        plastic bags.</p>
-                                    <div id="featured-img">
-                                        <aside>
-                                            <figure class="full-width-figure  featured">
-                                                <picture>
-                                                    <source type="image/webp" srcset="
+                                </div>
+                            </aside>
+                        </header>
+                    </div>
+                    <div class="post-body-outer">
+                        <div class="post-body">
+                            <div class="post-body-inner">
+                                <p>It wasn’t until the early 2000s that <strong>climate change</strong> became
+                                    a more pressing issue in the media, and then it was presented as an impending
+                                    doom if we didn’t cut back on our <strong>consumption</strong>. As a precaution,
+                                    we were urged to acquire <strong>healthy habits</strong>, such as shutting
+                                    off electrical appliances that are not in use and recycling soda cans and
+                                    plastic bags.</p>
+                                <div id="featured-img">
+                                    <aside>
+                                        <figure class="full-width-figure  featured">
+                                            <picture>
+                                                <source type="image/webp" srcset="
               /assets/pictures/spoiled-apples-800.webp 800w,
               /assets/pictures/spoiled-apples-1200.webp 1200w,
               /assets/pictures/spoiled-apples-1600.webp 1600w" sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                    <source type="image/jpeg" srcset="
+                                                <source type="image/jpeg" srcset="
               /assets/pictures/spoiled-apples-800.jpg 800w,
               /assets/pictures/spoiled-apples-1200.jpg 1200w,
               /assets/pictures/spoiled-apples-1600.jpg 1600w" sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                    <img src="/assets/pictures/spoiled-apples-800.jpg" alt="A few half rotten apples on the ground"
-                                                    />
-                                                </picture>
-                                                <figcaption>Photo by <a href="https://unsplash.com/@mrthetrain" rel="nofollow">Joshua Hoehne</a> on
-                                                    <a
-                                                    href="https://unsplash.com/" rel="nofollow">Unsplash</a>
-                                                </figcaption>
-                                            </figure>
-                                        </aside>
-                                    </div>
-                                    <p>An ominous <strong>worldwide problem</strong> has developed in a little
-                                        over a decade. There are just too many environmental problems right now
-                                        to name them all.</p>
-                                    <p>According to Singapore’s <a href="https://www.nea.gov.sg/">National Environment Agency</a> (NEA),
-                                        one of the five <strong>most significant forms of trash is food</strong>.
-                                        The Ministry of the Environment and Water Resources (MEWR) launched the
-                                        <a
-                                        href="https://www.towardszerowaste.sg/">Year Towards Zero Waste</a>campaign in 2019 to encourage Singaporeans
-                                            to <strong>adopt practices</strong> that minimize the amount of food they
-                                            throw away. A few of these were requesting less rice or noodles if the
-                                            amount is too much, declining side dishes that would not be eaten, and
-                                            ordering only what can be finished.</p>
-                                    <p>A one-percent rise in the percentage of food waste recycled in 2019 has
-                                        been reported by the NEA’s Waste Statistics and Overall Recycling rates.
-                                        The rest is burned at <strong>waste-to-energy plants</strong> to generate
-                                        electricity. Organic waste, such as food waste, breaks down into methane,
-                                        a greenhouse gas 25 percent more potent than <strong>carbon dioxide</strong> when
-                                        disposed of in landfills. Large-scale incinerators, however, have been
-                                        <a
-                                        href="http://e360.yale.edu/features/incineration_versus_recycling__in_europe_a_debate_over_trash">demonstrated to inhibit recycling</a>and contribute to an increase in
-                                            garbage production.</p>
-                                    <p>Researchers at the National Environment Agency (NEA) are planning to “improve
-                                        our resource efficiency,” “lowering dependence on incineration and landfilling
-                                        while at the same time, maintaining high levels of public health” in 2020
-                                        through a research funding project funded by <strong>SGD 45 million</strong>.
-                                        Research and test-bed innovation solutions such as turning soya bean waste
-                                        into usable items in the food chain are conducted by the NEA and AVA with
-                                        food waste management.</p>
-                                    <p>There is a clear <strong>commitment</strong> from both the government and
-                                        private sector to <strong>improve food waste management</strong> efficiency,
-                                        but what about the typical Singaporean?</p>
-                                    <p>Like other types of environmental deterioration, food waste has a <strong>long-term effect</strong> on
-                                        the ecosystem. Three eco-friendly firms are tackling food waste management
-                                        in Singapore, and this is what they’re doing.</p>
-                                    
+                                                <img src="/assets/pictures/spoiled-apples-800.jpg" alt="A few half rotten apples on the ground"
+                                                />
+                                            </picture>
+                                            <figcaption>Photo by <a href="https://unsplash.com/@mrthetrain" rel="nofollow">Joshua Hoehne</a> on
+                                                <a
+                                                href="https://unsplash.com/" rel="nofollow">Unsplash</a>
+                                            </figcaption>
+                                        </figure>
+                                    </aside>
+                                </div>
+                                <p>An ominous <strong>worldwide problem</strong> has developed in a little
+                                    over a decade. There are just too many environmental problems right now
+                                    to name them all.</p>
+                                <p>According to Singapore’s <a href="https://www.nea.gov.sg/">National Environment Agency</a> (NEA),
+                                    one of the five <strong>most significant forms of trash is food</strong>.
+                                    The Ministry of the Environment and Water Resources (MEWR) launched the
+                                    <a
+                                    href="https://www.towardszerowaste.sg/">Year Towards Zero Waste</a>campaign in 2019 to encourage Singaporeans
+                                        to <strong>adopt practices</strong> that minimize the amount of food they
+                                        throw away. A few of these were requesting less rice or noodles if the
+                                        amount is too much, declining side dishes that would not be eaten, and
+                                        ordering only what can be finished.</p>
+                                <p>A one-percent rise in the percentage of food waste recycled in 2019 has
+                                    been reported by the NEA’s Waste Statistics and Overall Recycling rates.
+                                    The rest is burned at <strong>waste-to-energy plants</strong> to generate
+                                    electricity. Organic waste, such as food waste, breaks down into methane,
+                                    a greenhouse gas 25 percent more potent than <strong>carbon dioxide</strong> when
+                                    disposed of in landfills. Large-scale incinerators, however, have been
+                                    <a
+                                    href="http://e360.yale.edu/features/incineration_versus_recycling__in_europe_a_debate_over_trash">demonstrated to inhibit recycling</a>and contribute to an increase in
+                                        garbage production.</p>
+                                <p>Researchers at the National Environment Agency (NEA) are planning to “improve
+                                    our resource efficiency,” “lowering dependence on incineration and landfilling
+                                    while at the same time, maintaining high levels of public health” in 2020
+                                    through a research funding project funded by <strong>SGD 45 million</strong>.
+                                    Research and test-bed innovation solutions such as turning soya bean waste
+                                    into usable items in the food chain are conducted by the NEA and AVA with
+                                    food waste management.</p>
+                                <p>There is a clear <strong>commitment</strong> from both the government and
+                                    private sector to <strong>improve food waste management</strong> efficiency,
+                                    but what about the typical Singaporean?</p>
+                                <p>Like other types of environmental deterioration, food waste has a <strong>long-term effect</strong> on
+                                    the ecosystem. Three eco-friendly firms are tackling food waste management
+                                    in Singapore, and this is what they’re doing.</p>
+                                
 <h2 id="uglyfood-the-ugly-pieces-of-food">UglyFood: The Ugly Pieces of Food</h2>
 
-                                    <p>It’s critical to <strong>separate</strong> food scraps from other trash.
-                                        According to Yeo Pei Shan, founder, and CEO of Singapore start-up <a href="https://www.uglyfood.com.sg/">UglyFood</a>,
-                                        these challenges are critical since they affect corporations on a far greater
-                                        scale than individuals’ homes. Although Yeo initially set out to address
-                                        the issue of cosmetic filtering — fresh produce that is thrown away because
-                                        of its <strong>unsuitable shape, color, or size</strong> for sale. She has
-                                        since expanded into the field of food management consulting, helping suppliers
-                                        reduce waste and cut losses due to overestimated demand and surplus produce.</p>
-                                    <p>Increasing UglyFood’s spread with <strong>limited resources</strong> is
-                                        Yeo’s most serious difficulty. As a result, says Yeo, “We have to rely
-                                        on third parties for our deliveries since we don’t have the resources to
-                                        establish our own logistics, transport, and distribution staff.” “This
-                                        may be irritating because we want to provide our clients with the greatest
-                                        and most timely delivery,” adds Yeo.</p>
-                                    <p>UglyFood’s brand reputation and <strong>investor trust</strong> have significantly
-                                        been bolstered by government entities. A great deal of our publicity came
-                                        from the NEA’s <a href="https://www.nea.gov.sg/programmes-grants/campaigns/clean-and-green-singapore">Clean and Green Campaign</a>,
-                                        in which we were featured by the organization, thanks to their collaboration
-                                        with us, adds Yeo. They also host environmental-related events, <strong>roadshows, and conferences</strong>,
-                                        to which we are invited to spread the message and connect with other organizations
-                                        in the area.</p>
-                                    <p>When it comes to merchandise placement in supermarkets and grocery stores,
-                                        “Pile it high and watch it fly” has been a common proverb in recent years.
-                                        Singaporeans have a tendency to want “<strong>everything just right</strong>”
-                                        and “<strong>the best value for money</strong>,” according to Yeo, who
-                                        recalls seeing an exhibit of “the fruits that have either fell to the ground
-                                        or have been abused till they don’t look fresh anymore” at a food booth.
-                                        Because many consumers are careless and just squeeze the fruits without
-                                        thinking, fresh fruits quickly devolve into <strong>unsightly food</strong>.</p>
-                                    <p>Cultural views prevalent in Singapore today were shown in the conversation
-                                        between Yeo and Ng. For more than half a century, Singapore expanded fast
-                                        from a fledgling country afflicted by widespread unemployment, housing
-                                        shortages, and a <strong>dearth of land and natural resources</strong> to
-                                        a first-world nation… To compensate for the <strong>lack of resources</strong>,
-                                        many baby boomers nonetheless make sure they have more than enough food
-                                        and the finest of everything, especially when it comes to consuming it.
-                                        More waste is produced because people handle fruits and vegetables to check
-                                        for quality and avoid the final products on shelves like the plague when
-                                        this cultural mindset is extended to purchasing fresh goods.</p>
-                                    <p>The issue of cosmetic filtration has seen significant progress over the
-                                        years, with greater awareness from schools and grassroots efforts, such
-                                        as SG Food Rescue, an organization created in 2018 that frequently visits
-                                        wholesalers and wet markets to source for sellers’ less-than-perfect products.
-                                        Although Yeo believes that <strong>structural changes</strong> at the corporate
-                                        level are the most significant hurdle to a greener Singapore, she intends
-                                        to overcome this problem by educating consumers and corporations. As she
-                                        puts it, “Many businesses have to <strong>preserve their bottom line.</strong>”
-                                        While it may be convenient to toss things away, Greenpeace’s executive
-                                        director Annie Leonard has stated that there is no such thing as ‘away.’”
-                                        Our trash must go somewhere, and do we really want that to happen?”</p>
-                                    <h2
-                                    id="treatsure-in-the-unwanted-bin-a-treasure-trove">Treatsure: In the Unwanted Bin, a Treasure Trove</h2>
-                                        <p>As <a href="/https://treatsure.co/">Treatsure</a> co-founder Preston Wong
-                                            puts it: “Businesses are still fairly <strong>cautious and inactive</strong> when
-                                            it comes to food waste management, while not all customers adhere to the
-                                            sustainability or saving of food message.”</p>
-                                        <p>In 2017, Wong’s start-up created a <strong>smartphone app</strong> to link
-                                            companies and hotels with <strong>leftover food</strong> to customers, tackling
-                                            the issue of food waste. Consumers may <strong>purchase food from hotel buffets</strong> for
-                                            as little as SGD 10 per box using the Treatsure app, which works with hotels,
-                                            including the Grand Hyatt and Hotel Jen in Singapore.
+                                <p>It’s critical to <strong>separate</strong> food scraps from other trash.
+                                    According to Yeo Pei Shan, founder, and CEO of Singapore start-up <a href="https://www.uglyfood.com.sg/">UglyFood</a>,
+                                    these challenges are critical since they affect corporations on a far greater
+                                    scale than individuals’ homes. Although Yeo initially set out to address
+                                    the issue of cosmetic filtering — fresh produce that is thrown away because
+                                    of its <strong>unsuitable shape, color, or size</strong> for sale. She has
+                                    since expanded into the field of food management consulting, helping suppliers
+                                    reduce waste and cut losses due to overestimated demand and surplus produce.</p>
+                                <p>Increasing UglyFood’s spread with <strong>limited resources</strong> is
+                                    Yeo’s most serious difficulty. As a result, says Yeo, “We have to rely
+                                    on third parties for our deliveries since we don’t have the resources to
+                                    establish our own logistics, transport, and distribution staff.” “This
+                                    may be irritating because we want to provide our clients with the greatest
+                                    and most timely delivery,” adds Yeo.</p>
+                                <p>UglyFood’s brand reputation and <strong>investor trust</strong> have significantly
+                                    been bolstered by government entities. A great deal of our publicity came
+                                    from the NEA’s <a href="https://www.nea.gov.sg/programmes-grants/campaigns/clean-and-green-singapore">Clean and Green Campaign</a>,
+                                    in which we were featured by the organization, thanks to their collaboration
+                                    with us, adds Yeo. They also host environmental-related events, <strong>roadshows, and conferences</strong>,
+                                    to which we are invited to spread the message and connect with other organizations
+                                    in the area.</p>
+                                <p>When it comes to merchandise placement in supermarkets and grocery stores,
+                                    “Pile it high and watch it fly” has been a common proverb in recent years.
+                                    Singaporeans have a tendency to want “<strong>everything just right</strong>”
+                                    and “<strong>the best value for money</strong>,” according to Yeo, who
+                                    recalls seeing an exhibit of “the fruits that have either fell to the ground
+                                    or have been abused till they don’t look fresh anymore” at a food booth.
+                                    Because many consumers are careless and just squeeze the fruits without
+                                    thinking, fresh fruits quickly devolve into <strong>unsightly food</strong>.</p>
+                                <p>Cultural views prevalent in Singapore today were shown in the conversation
+                                    between Yeo and Ng. For more than half a century, Singapore expanded fast
+                                    from a fledgling country afflicted by widespread unemployment, housing
+                                    shortages, and a <strong>dearth of land and natural resources</strong> to
+                                    a first-world nation… To compensate for the <strong>lack of resources</strong>,
+                                    many baby boomers nonetheless make sure they have more than enough food
+                                    and the finest of everything, especially when it comes to consuming it.
+                                    More waste is produced because people handle fruits and vegetables to check
+                                    for quality and avoid the final products on shelves like the plague when
+                                    this cultural mindset is extended to purchasing fresh goods.</p>
+                                <p>The issue of cosmetic filtration has seen significant progress over the
+                                    years, with greater awareness from schools and grassroots efforts, such
+                                    as SG Food Rescue, an organization created in 2018 that frequently visits
+                                    wholesalers and wet markets to source for sellers’ less-than-perfect products.
+                                    Although Yeo believes that <strong>structural changes</strong> at the corporate
+                                    level are the most significant hurdle to a greener Singapore, she intends
+                                    to overcome this problem by educating consumers and corporations. As she
+                                    puts it, “Many businesses have to <strong>preserve their bottom line.</strong>”
+                                    While it may be convenient to toss things away, Greenpeace’s executive
+                                    director Annie Leonard has stated that there is no such thing as ‘away.’”
+                                    Our trash must go somewhere, and do we really want that to happen?”</p>
+                                <h2
+                                id="treatsure-in-the-unwanted-bin-a-treasure-trove">Treatsure: In the Unwanted Bin, a Treasure Trove</h2>
+                                    <p>As <a href="/https://treatsure.co/">Treatsure</a> co-founder Preston Wong
+                                        puts it: “Businesses are still fairly <strong>cautious and inactive</strong> when
+                                        it comes to food waste management, while not all customers adhere to the
+                                        sustainability or saving of food message.”</p>
+                                    <p>In 2017, Wong’s start-up created a <strong>smartphone app</strong> to link
+                                        companies and hotels with <strong>leftover food</strong> to customers, tackling
+                                        the issue of food waste. Consumers may <strong>purchase food from hotel buffets</strong> for
+                                        as little as SGD 10 per box using the Treatsure app, which works with hotels,
+                                        including the Grand Hyatt and Hotel Jen in Singapore.
 <strong>UglyFood*, a surplus grocery delivery business run by Yeo, is one of its **partners on the site</strong>.
-                                            Users may purchase perfectly edible excess, expired, or blemished food
-                                            products through the service.</p>
-                                        <p><strong>Reducing, redistributing, and reusing food</strong> is Wong’s preferred
-                                            approach to managing food waste in the country, but he has significant
-                                            obstacles in terms of people and material resources. Treatment was one
-                                            of the 2019 award recipients and used the cash to improve its mobile app
-                                            like Yeo’s UglyFood did. Wong’s start-up also relies on government grants,
-                                            industry partnerships, and PR efforts. In 2019, treatment received one
-                                            of the <strong>Year Towards Zero Waste</strong> grants.</p>
-                                        <p>Many of these programs and projects might use more financing, as well
-                                            as additional resources for pilots and test-beds and resource links, says
-                                            Wong. “More has to be done,” he adds. For enterprises, the NEA may cooperate
-                                            with Enterprise Singapore to co-invest or infuse funds for stock in some
-                                            of these firms, particularly those with a technological edge, to boost
-                                            start-up growth and expedite social impact.” In addition, the government
-                                            may work with additional venture capitalists and accelerators to help support
-                                            sustainable enterprises.</p>
-                                        <p>On the other hand, Wong advocates for conscious consumption in the form
-                                            of actively considering leftover food or zero-waste buying as a feasible
-                                            alternative to other readily available options for customers. Social media
-                                            is a powerful tool for consumers to advocate for change by educating their
-                                            peers about food waste and the possibilities of repurposing leftovers and
-                                            bad foods. “We do see an increasing trend of our users posting on social
-                                            media about what they whip up with surplus items,” says Wong. “Efforts
-                                            to reduce waste should not simply be limited to the tail end of the food
-                                            chain.”</p>
-                                        <p>In Wong’s view, the Year Towards Zero Waste campaign in 2019 focused a
-                                            lot of emphasis on the Resource Sustainability Act legislation regulating
-                                            waste reporting and on-site digestion in bigger retail and culinary locations.
-                                            Still, little attention was paid to the reduction and redistribution routes.
-                                            In addition to engaging with the <a href="https://www.imda.gov.sg/">Infocomm Media Development Authority</a> (IMDA)
-                                            and the media to <strong>make food waste reduction a more lifestyle-friendly</strong> message,
-                                            “I believe more can be done to engage with food stakeholders to co-create
-                                            meaningful long-term agreements in these areas.” Consumers may be <strong>responsible by purchasing</strong> only
-                                            what they need, rather than overbuying, so that shops don’t get erroneous
-                                            signals at the supply chain’s stock procurement and forecasting phases.</p>
-                                        <h2
-                                        id="insectta-let-the-bugs-eat-it">Insectta: Let The Bugs Eat It</h2>
-                                            <p><a href="https://www.insectta.com/">Insectta</a>, situated in Singapore,
-                                                was created in 2017 due to a study into the zero-waste management of black
-                                                army flies. Organic waste is quickly consumed by the larvae of <strong>black soldier flies</strong>,
-                                                which subsequently become <strong>animal feed for livestock</strong>. Fertilizer <strong>may be made from insect excrement</strong>.
-                                                Black soldier fly waste may now be used in the <strong>pharmaceutical and cosmetic</strong> sectors
-                                                and the animal feed industry, thanks to Insectta’s efforts to extract <strong>high-value biomaterials</strong> from
-                                                the waste.</p>
-                                            <p>As described by Chua Kai-Ning, the co-founder and chief marketing director
-                                                of Insectta, pre-consumer waste is trash that comes from the food production
-                                                chain before consumers are involved.
+                                        Users may purchase perfectly edible excess, expired, or blemished food
+                                        products through the service.</p>
+                                    <p><strong>Reducing, redistributing, and reusing food</strong> is Wong’s preferred
+                                        approach to managing food waste in the country, but he has significant
+                                        obstacles in terms of people and material resources. Treatment was one
+                                        of the 2019 award recipients and used the cash to improve its mobile app
+                                        like Yeo’s UglyFood did. Wong’s start-up also relies on government grants,
+                                        industry partnerships, and PR efforts. In 2019, treatment received one
+                                        of the <strong>Year Towards Zero Waste</strong> grants.</p>
+                                    <p>Many of these programs and projects might use more financing, as well
+                                        as additional resources for pilots and test-beds and resource links, says
+                                        Wong. “More has to be done,” he adds. For enterprises, the NEA may cooperate
+                                        with Enterprise Singapore to co-invest or infuse funds for stock in some
+                                        of these firms, particularly those with a technological edge, to boost
+                                        start-up growth and expedite social impact.” In addition, the government
+                                        may work with additional venture capitalists and accelerators to help support
+                                        sustainable enterprises.</p>
+                                    <p>On the other hand, Wong advocates for conscious consumption in the form
+                                        of actively considering leftover food or zero-waste buying as a feasible
+                                        alternative to other readily available options for customers. Social media
+                                        is a powerful tool for consumers to advocate for change by educating their
+                                        peers about food waste and the possibilities of repurposing leftovers and
+                                        bad foods. “We do see an increasing trend of our users posting on social
+                                        media about what they whip up with surplus items,” says Wong. “Efforts
+                                        to reduce waste should not simply be limited to the tail end of the food
+                                        chain.”</p>
+                                    <p>In Wong’s view, the Year Towards Zero Waste campaign in 2019 focused a
+                                        lot of emphasis on the Resource Sustainability Act legislation regulating
+                                        waste reporting and on-site digestion in bigger retail and culinary locations.
+                                        Still, little attention was paid to the reduction and redistribution routes.
+                                        In addition to engaging with the <a href="https://www.imda.gov.sg/">Infocomm Media Development Authority</a> (IMDA)
+                                        and the media to <strong>make food waste reduction a more lifestyle-friendly</strong> message,
+                                        “I believe more can be done to engage with food stakeholders to co-create
+                                        meaningful long-term agreements in these areas.” Consumers may be <strong>responsible by purchasing</strong> only
+                                        what they need, rather than overbuying, so that shops don’t get erroneous
+                                        signals at the supply chain’s stock procurement and forecasting phases.</p>
+                                    <h2
+                                    id="insectta-let-the-bugs-eat-it">Insectta: Let The Bugs Eat It</h2>
+                                        <p><a href="https://www.insectta.com/">Insectta</a>, situated in Singapore,
+                                            was created in 2017 due to a study into the zero-waste management of black
+                                            army flies. Organic waste is quickly consumed by the larvae of <strong>black soldier flies</strong>,
+                                            which subsequently become <strong>animal feed for livestock</strong>. Fertilizer <strong>may be made from insect excrement</strong>.
+                                            Black soldier fly waste may now be used in the <strong>pharmaceutical and cosmetic</strong> sectors
+                                            and the animal feed industry, thanks to Insectta’s efforts to extract <strong>high-value biomaterials</strong> from
+                                            the waste.</p>
+                                        <p>As described by Chua Kai-Ning, the co-founder and chief marketing director
+                                            of Insectta, pre-consumer waste is trash that comes from the food production
+                                            chain before consumers are involved.
 <strong>Byproducts from the food production process</strong>,
-                                                such as soybean pulp, barley, wheat, and malt from brewing beer, are included
-                                                in this category. The <a href="https://www.sfa.gov.sg/">Singapore Food Agency</a> has
-                                                licensed Insectta’s ecosystem of larvae, which assures traceability and
-                                                eliminates contamination of organic materials fed to its larvae before
-                                                they are used as animal feed.</p>
-                                            <p><strong>Larvae devour organic waste</strong> at a rate of up to <strong>four times their own weight</strong> a
-                                                day. In addition, their short life spans as adult flies (which declassifies
-                                                them as pests) make the procedure an efficient means of managing food waste,
-                                                reducing the need to generate animal feed.</p>
-                                            <p>As Chua explains, “Economies of scale are required to be profitable, as
-                                                well as to observe a long-term influence on the supply chain.” Although <strong>insect farming</strong> is
-                                                still in its infancy, it can have a significant influence on <strong>food waste management</strong> because
-                                                of its relatively small size and low production costs.</p>
-                                            <p>“We’re still working up that scale economy to have an influence on the
-                                                supply chain,” adds Chua. “<strong>Market approval</strong> and customer
-                                                acceptance of insect-derived goods are critical for us to get there. This
-                                                sector <strong>will not flourish</strong> as long as people are disgusted
-                                                by insect-derived items.</p>
-                                            <p>For the first time, Singaporeans are receptive to the idea of using insects
-                                                to <strong>control food waste</strong>, according to Insectta’s educational
-                                                and outreach programs that began in October 2019. “There are many individuals
-                                                here who don’t believe that insect farming is something that only occurs
-                                                in other countries. After the beginning, people couldn’t even understand
-                                                the concept. Still, in little over a year of launching Insectta, if you
-                                                google ‘<strong>insect farming in Singapore</strong>,’ you’ll find our
-                                                name, and you’ll see people talking about it on social media. With increasing
-                                                media coverage, it’s <strong>no longer a strange concept</strong> to most
-                                                people.”</p>
-                                            <p>“The misconception many Singaporeans have, firstly, is that the stuff
-                                                you don’t finish on your plate or that you leave behind at restaurants
-                                                or hawker centers,” Chua explains, “makes up the bulk of food waste.” Nonetheless,
-                                                Chua thinks consumers’ efforts are inconsequential in alleviating the <strong>climate ailments</strong>.
-                                                The fact is that this is a tiny proportion of the total amount of food
-                                                that is wasted.</p>
-                                            <p>Instead, the bulk of food waste is created earlier in the supply chain
-                                                rather than at the final destination. For example, Chua says, “When there
-                                                is mismanagement of supplies, or even during the present Covid-19 crisis
-                                                when we suddenly have supply chain interruptions… a lot of food is going
-                                                to waste, and this constitutes the majority of the food waste that is generated
-                                                in the globe..”</p>
-                                            <p>“Unfortunately, <strong>there is no recourse for customers</strong> in this
-                                                situation. “Corporations, regulations, and firms stepping in to do something
-                                                about their supply chain management can decrease this type of waste,” adds
-                                                Chua.</p>
-                                            <p>A global pandemic, for example, can clear the air, restore wildlife and
-                                                reduce global output; yet, as long as efforts are made to keep supply systems
-                                                operating, <strong>waste levels will continue to climb worldwide</strong>.
-                                                On the other hand, Chua sees the “circular economy” as the answer to waste
-                                                management.</p>
-                                            <p>According to Chua, “the concept is that there are no waste products in
-                                                the overall economy.”. In the end, there are just <strong>byproducts that can be repurposed</strong>.
-                                                By supporting firms seeking to take control of the supply chain, customers
-                                                may play a role.</p>
-                                            <p>When it comes to food waste, Chua cites Insectta as an example of how
-                                                it may be <strong>recycled into biomaterials and animal feed fertilizers</strong>.
-                                                Insect-based goods are an excellent example of a food waste-based product
-                                                that can be accepted.” Food waste reduction is possible by encouraging
-                                                the recycling and valorization of leftovers.</p>
-                                </div>
+                                            such as soybean pulp, barley, wheat, and malt from brewing beer, are included
+                                            in this category. The <a href="https://www.sfa.gov.sg/">Singapore Food Agency</a> has
+                                            licensed Insectta’s ecosystem of larvae, which assures traceability and
+                                            eliminates contamination of organic materials fed to its larvae before
+                                            they are used as animal feed.</p>
+                                        <p><strong>Larvae devour organic waste</strong> at a rate of up to <strong>four times their own weight</strong> a
+                                            day. In addition, their short life spans as adult flies (which declassifies
+                                            them as pests) make the procedure an efficient means of managing food waste,
+                                            reducing the need to generate animal feed.</p>
+                                        <p>As Chua explains, “Economies of scale are required to be profitable, as
+                                            well as to observe a long-term influence on the supply chain.” Although <strong>insect farming</strong> is
+                                            still in its infancy, it can have a significant influence on <strong>food waste management</strong> because
+                                            of its relatively small size and low production costs.</p>
+                                        <p>“We’re still working up that scale economy to have an influence on the
+                                            supply chain,” adds Chua. “<strong>Market approval</strong> and customer
+                                            acceptance of insect-derived goods are critical for us to get there. This
+                                            sector <strong>will not flourish</strong> as long as people are disgusted
+                                            by insect-derived items.</p>
+                                        <p>For the first time, Singaporeans are receptive to the idea of using insects
+                                            to <strong>control food waste</strong>, according to Insectta’s educational
+                                            and outreach programs that began in October 2019. “There are many individuals
+                                            here who don’t believe that insect farming is something that only occurs
+                                            in other countries. After the beginning, people couldn’t even understand
+                                            the concept. Still, in little over a year of launching Insectta, if you
+                                            google ‘<strong>insect farming in Singapore</strong>,’ you’ll find our
+                                            name, and you’ll see people talking about it on social media. With increasing
+                                            media coverage, it’s <strong>no longer a strange concept</strong> to most
+                                            people.”</p>
+                                        <p>“The misconception many Singaporeans have, firstly, is that the stuff
+                                            you don’t finish on your plate or that you leave behind at restaurants
+                                            or hawker centers,” Chua explains, “makes up the bulk of food waste.” Nonetheless,
+                                            Chua thinks consumers’ efforts are inconsequential in alleviating the <strong>climate ailments</strong>.
+                                            The fact is that this is a tiny proportion of the total amount of food
+                                            that is wasted.</p>
+                                        <p>Instead, the bulk of food waste is created earlier in the supply chain
+                                            rather than at the final destination. For example, Chua says, “When there
+                                            is mismanagement of supplies, or even during the present Covid-19 crisis
+                                            when we suddenly have supply chain interruptions… a lot of food is going
+                                            to waste, and this constitutes the majority of the food waste that is generated
+                                            in the globe..”</p>
+                                        <p>“Unfortunately, <strong>there is no recourse for customers</strong> in this
+                                            situation. “Corporations, regulations, and firms stepping in to do something
+                                            about their supply chain management can decrease this type of waste,” adds
+                                            Chua.</p>
+                                        <p>A global pandemic, for example, can clear the air, restore wildlife and
+                                            reduce global output; yet, as long as efforts are made to keep supply systems
+                                            operating, <strong>waste levels will continue to climb worldwide</strong>.
+                                            On the other hand, Chua sees the “circular economy” as the answer to waste
+                                            management.</p>
+                                        <p>According to Chua, “the concept is that there are no waste products in
+                                            the overall economy.”. In the end, there are just <strong>byproducts that can be repurposed</strong>.
+                                            By supporting firms seeking to take control of the supply chain, customers
+                                            may play a role.</p>
+                                        <p>When it comes to food waste, Chua cites Insectta as an example of how
+                                            it may be <strong>recycled into biomaterials and animal feed fertilizers</strong>.
+                                            Insect-based goods are an excellent example of a food waste-based product
+                                            that can be accepted.” Food waste reduction is possible by encouraging
+                                            the recycling and valorization of leftovers.</p>
                             </div>
                         </div>
-                    </article>
-                </main>
-                <nav class="post-items">
-                     <h3>Top posts</h3>
+                    </div>
+                </article>
+            </main>
+            <nav class="post-items">
+                 <h3>Top posts</h3>
 
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/5-ways-to-celebrate-womens-history-month/">
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/crypto-trading-in-singapore/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="A gold coin like Bitcoin"
+                         srcset="/assets/pictures/bitcoin-physical-coin-80x80.jpg,
+                                /assets/pictures/bitcoin-physical-coin-160x160.jpg 2x"
+                         src="/assets/pictures/bitcoin-physical-coin-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">FINANCE</h3>
+                        <h4 class="title">Crypto Trading in Singapore</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">10 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/5-ways-to-celebrate-womens-history-month/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt=""
@@ -1393,14 +1487,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">10 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">430 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt=""
@@ -1423,14 +1517,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">346 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">780 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/top-10-gofundme-alternatives/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/top-10-gofundme-alternatives/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A woman's hand is giving money"
@@ -1453,14 +1547,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">206 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">640 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/bag-charm-from-hermes/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/bag-charm-from-hermes/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Photo of a Hermes Kellydoll bag."
@@ -1483,14 +1577,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">94 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">528 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Billie Eilish eyes"
@@ -1513,44 +1607,17 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">738 views - 5 min read</span>
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,172 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/things-to-look-for-in-a-good-online-casino/">
-                <div class="top-post-item featured-post">
-                    <img width="80" height="80" class="thumbnail"
-                         alt="Close-up photo of playing cards"
-                         srcset="/assets/pictures/playing-cards-80x80.jpg,
-                                /assets/pictures/playing-cards-160x160.jpg 2x"
-                         src="/assets/pictures/playing-cards-80x80.jpg"
-                         loading="lazy"
-                    />
-                    <div class="description">
-                        <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Things To Look For In A Good Online Casino</h4>
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                <span class="meta">101 views - 5 min read</span>
-
-                                            </div>
                 </div>
-            </a>
-
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-marshmallow-test/">
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-marshmallow-test/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="White ceramic mug on book, filled with marshmallow."
@@ -1573,25 +1640,28 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">696 views - 5 min read</span>
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,130 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/how-to-cleanse-recharge-your-crystals/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/things-to-look-for-in-a-good-online-casino/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
-                         alt="Macro photography of black ceramic Gautama Buddha miniature"
-                         srcset="/assets/pictures/crystal-consciousness-80x80.jpg,
-                                /assets/pictures/crystal-consciousness-160x160.jpg 2x"
-                         src="/assets/pictures/crystal-consciousness-80x80.jpg"
+                         alt="Close-up photo of playing cards"
+                         srcset="/assets/pictures/playing-cards-80x80.jpg,
+                                /assets/pictures/playing-cards-160x160.jpg 2x"
+                         src="/assets/pictures/playing-cards-80x80.jpg"
                          loading="lazy"
                     />
                     <div class="description">
                         <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Clean and recharge your crystals with these simple steps</h4>
+                        <h4 class="title">Things To Look For In A Good Online Casino</h4>
 
 
 
@@ -1603,44 +1673,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">297 views - 5 min read</span>
-
-                                            </div>
-                </div>
-            </a>
-
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/lauren-tsai-model-artist-netflix-terrace-house-reality-interview-fashion/">
-                <div class="top-post-item featured-post">
-                    <img width="80" height="80" class="thumbnail"
-                         alt="Lauren Tsai is smiling to the camera"
-                         srcset="/assets/pictures/lauren-tsai-80x80.jpg,
-                                /assets/pictures/lauren-tsai-160x160.jpg 2x"
-                         src="/assets/pictures/lauren-tsai-80x80.jpg"
-                         loading="lazy"
-                    />
-                    <div class="description">
-                        <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Lauren Tsai, Model, Artist and Actress of Netflix's Terrace House</h4>
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                <span class="meta">311 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">535 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/discontinued-icons-audemars-piguet-royal-oak-15202st/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/discontinued-icons-audemars-piguet-royal-oak-15202st/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Audemars Piguet Royal Oak Jumbo"
@@ -1663,14 +1703,44 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">318 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">752 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/aura-photograph-new-age-selfie/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/how-to-cleanse-recharge-your-crystals/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Macro photography of black ceramic Gautama Buddha miniature"
+                         srcset="/assets/pictures/crystal-consciousness-80x80.jpg,
+                                /assets/pictures/crystal-consciousness-160x160.jpg 2x"
+                         src="/assets/pictures/crystal-consciousness-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Clean and recharge your crystals with these simple steps</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">731 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/aura-photograph-new-age-selfie/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Yellow and black coated wire"
@@ -1693,14 +1763,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">297 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">731 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/taha-bouqdib-maranda-barnes-husband-wife-duo-built-twg-tea-interview/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/taha-bouqdib-maranda-barnes-husband-wife-duo-built-twg-tea-interview/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Green tea plantation from birds eye view"
@@ -1723,14 +1793,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">325 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">759 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                    <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/iwc-goes-green-with-timbertex/">
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/iwc-goes-green-with-timbertex/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A person's hand with a watch"
@@ -1753,27 +1823,255 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">332 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                    </div>
-                </nav>
-            </div>
-            <aside class="site-footer-outer">
-                <footer class="site-footer">
-                    <div> <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span>
-                        <span
-                        style="font-weight: 700" class="logo-line">|</span>
-                    </div>
-                    <div> <span><a href="https://www.tsingapore.com/sitemap.xml">sitemap</a></span> | <span><a href="mailto:info@tsingapore.com">email</a></span>
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singpost-guardians-singapore-lost-mail/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Letter forced into the post box"
+                         srcset="/assets/pictures/letter-forced-into-the-post-box-80x80.jpg,
+                                /assets/pictures/letter-forced-into-the-post-box-160x160.jpg 2x"
+                         src="/assets/pictures/letter-forced-into-the-post-box-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">STORY</h3>
+                        <h4 class="title">Who Look After Singapore's Undelivered Mail</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-met-operas-musicians-are-struggling/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Photography of people sitting on theater during nighttime"
+                         srcset="/assets/pictures/half-empty-new-york-opera-80x80.jpg,
+                                /assets/pictures/half-empty-new-york-opera-160x160.jpg 2x"
+                         src="/assets/pictures/half-empty-new-york-opera-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Met Opera Musicians Who Have Been Working Without Pay Since April</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/omega-2021-novelties-collection/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Omega seamaster 300 watch on a bronze box"
+                         srcset="/assets/pictures/omega-seamaster-300-80x80.jpg,
+                                /assets/pictures/omega-seamaster-300-160x160.jpg 2x"
+                         src="/assets/pictures/omega-seamaster-300-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">FASHION</h3>
+                        <h4 class="title">Omega Commemorates the Year 2021 with a Bronze Seamaster</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">773 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/mark-chao-actor-interview/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Mark Chao is receiving an award"
+                         srcset="/assets/pictures/mark-chao-80x80.jpg,
+                                /assets/pictures/mark-chao-160x160.jpg 2x"
+                         src="/assets/pictures/mark-chao-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Let's Meet Mark Chao</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,158 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/maisie-williams-pasha-de-cartier-the-new-mutant-xmen-tiktok-interview/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Maisie Williams speaking at the 2019 San Diego Comic Con"
+                         srcset="/assets/pictures/maisie-williams-80x80.jpg,
+                                /assets/pictures/maisie-williams-160x160.jpg 2x"
+                         src="/assets/pictures/maisie-williams-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Maisie Williams On TikTok, and Saving Dolphins</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">710 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-britney-spears-song-is-in-the-works/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Britney Spears singing"
+                         srcset="/assets/pictures/britney-spears-singing-80x80.jpg,
+                                /assets/pictures/britney-spears-singing-160x160.jpg 2x"
+                         src="/assets/pictures/britney-spears-singing-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">GOSSIP</h3>
+                        <h4 class="title">New Britney Spears Song Is In The Works</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">941 views - 4 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+                </div>
+            </nav>
+            <nav class="more-to-read-items">
+                 <h3>More To Read</h3>
+
+                <div class="more-to-read-items-inner">
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/tiffany-co-high-jewellery-colors-of-nature/">
+                <h4 class="title">Tiffany & Co.'s Colors Of Nature High Jewellery Collection</h4>
+            </a>
 
                     </div>
-                </footer>
-            </aside>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-truth-and-myths-of-the-sanpaku-eyes/">
+                <h4 class="title">The Truth and Myths of the Sanpaku Eyes</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/kim-kardashian-the-new-york-times-style-magazine-singapore-october-cover-story/">
+                <h4 class="title">Keeping Up With Kim Kardashian</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/pear-scent-fragrance-louis-vuitton-coeur-battant-jo-malone/">
+                <h4 class="title">The Underrated Fruity Scent of Pear</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/spring-brings-more-colour-to-eyeshadow-palettes/">
+                <h4 class="title">Eyeshadow Palettes Get More Color in the Spring</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-history-of-famous-celebrity-irises-and-their-meaning/">
+                <h4 class="title">The History of Famous Celebrity Irises and Their Meaning</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-letter-t/">
+                <h4 class="title">The Letter T</h4>
+            </a>
+
+                    </div>
+                    <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/what-are-sanpaku-eyes/">
+                <h4 class="title">What Are Sanpaku Eyes?</h4>
+            </a>
+
+                    </div>
+                </div>
+            </nav>
         </div>
+        <aside class="site-footer-outer">
+            <footer class="site-footer">
+                <div> <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span>
+                    <span
+                    style="font-weight: 700" class="logo-line">|</span>
+                </div>
+                <div> <span><a href="https://www.tsingapore.com/sitemap.xml">sitemap</a></span> | <span><a href="mailto:info@tsingapore.com">email</a></span>
+
+                </div>
+            </footer>
+        </aside>
         <script defer src="https://www.tsingapore.com/assets/js/main.js"></script>
     </body>
 

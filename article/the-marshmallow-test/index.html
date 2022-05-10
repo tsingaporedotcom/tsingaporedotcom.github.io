@@ -92,7 +92,7 @@
                 }
                 a {
                   color: #000000;
-                  text-decoration: underline dashed #007aff;
+                  text-decoration: underline solid #007aff;
                 }
                 /*** generic custom stuff */
                 .logo-line,
@@ -118,12 +118,23 @@
                 }
                 
                 /*** post items */
+                .post-items {
+                  padding: 12px 6px;
+                }
                 .post-items a {
                   text-decoration: none;
                 }
+                .post-items h3 {
+                  font-size: 14px;
+                  line-height: 16px;
+                  color: #333333;
+                  font-weight: bold;
+                  margin-top: unset;
+                  margin-bottom: 6px;
+                }
                 .post-items h4 {
                   margin-top: 0px;
-                  margin-bottom: 0px;
+                  margin-bottom: 4px;
                 }
                 .top-post-item {
                   display: flex;
@@ -135,6 +146,12 @@
                   text-decoration: none;
                 }
                 
+                .top-post-item .description .tp-meta {
+                  font-size: 12px;
+                  line-height: 14px;
+                  margin: 0;
+                  color: #818181;
+                }
                 .top-post-item .thumbnail {
                   width: 80px;
                   height: 80px;
@@ -242,6 +259,14 @@
                 .site-navigation nav ul {
                   list-style: none;
                   display: flex;
+                }
+                .site-navigation nav li:nth-child(n+3) {
+                    display: none;
+                }
+                @media (min-width: 420px) {
+                    .site-navigation nav li:nth-child(n+3) {
+                      display: unset;
+                    }
                 }
                 @media (min-width: 800px) {
                     .site-header {
@@ -468,6 +493,50 @@
                 }
                 @media (min-width: 1366px) {
                 }
+                  .more-to-read-items {
+                    padding: 12px 6px;
+                    border-top: 1px solid #C7DFF3;
+                }
+                .more-to-read-items a {
+                    text-decoration: none;
+                }
+                .more-to-read-item-outer {
+                    border-top: 1px solid #C7DFF3;
+                    padding: 12px;
+                }
+                .more-to-read-items h3 {
+                     margin-top: 12px;
+                 }
+                .more-to-read-items h4 {
+                     font-size: 13px;
+                     line-height: 18px;
+                     margin: 0;
+                 }
+                @media (min-width: 800px) {
+                    .more-to-read-items-inner{
+                        display: flex;
+                        flex-flow: wrap;
+                    }
+                    .more-to-read-item-outer {
+                        width: 50%;
+                    }
+                }
+                @media (min-width: 1280px) {
+                    .more-to-read-item-outer {
+                        width: 33.3333%;
+                    }
+                    .more-to-read-items {
+                        width: 100%;
+                        padding: 12px;
+                    }
+                    .more-to-read-items h3 {
+                         margin-top: 24px;
+                         font-size: 18px;
+                         line-height: 22px;
+                     }
+                }
+                @media (min-width: 1366px) {
+                }
                 
                   /*** fonts */
                 h1 {
@@ -647,6 +716,11 @@
                   margin: 0 12px;
                 }
                 /*** meta */
+                .tp-meta {
+                   display: flex;
+                   flex-wrap: wrap;
+                   align-items: center;
+                 }
                 .meta {
                   margin-top: 32px;
                   margin-bottom: 16px;
@@ -758,6 +832,8 @@
                 
                 /*** post items */
                 .toc {
+                  background-color: white;
+                  border-radius: 12px;
                   display: unset;
                   position: sticky;
                   top: 44px;
@@ -818,16 +894,11 @@
                   padding: 12px;
                   padding-left: 24px;
                 }
+                .post-items h4 {
+                  margin-bottom: 0px;
+                }
                 .top-post-item {
                   padding: 0;
-                }
-                .post-items h3 {
-                  font-size: 14px;
-                  line-height: 16px;
-                  color: #333333;
-                  font-weight: bold;
-                  margin-top: unset;
-                  margin-bottom: 6px;
                 }
                 .post-item-outer {
                   padding: 12px 0;
@@ -847,12 +918,6 @@
                   line-height: 15px;
                   height: 45px;
                   text-overflow: ellipsis;
-                }
-                .top-post-item .description .meta {
-                  font-size: 12px;
-                  line-height: 14px;
-                  margin: 0;
-                  color: #818181;
                 }
                 
                 /*** images */
@@ -917,7 +982,7 @@
                   height: 48px;
                   text-overflow: ellipsis;
                 }
-                .top-post-item .description .meta {
+                .top-post-item .description .tp-meta {
                   font-size: 12px;
                   line-height: 14px;
                   margin: 0;
@@ -1026,223 +1091,252 @@
     </head>
     
     <body>
-        <div class="body-inner">
-            <div class="site-header-outer">
-                <header class="site-header">
-                    <div> <a href="https://www.tsingapore.com/">
+        <div class="site-header-outer">
+            <header class="site-header">
+                <div> <a href="https://www.tsingapore.com/">
                 <span style="font-weight: 700">t</span><span style="font-weight: 400">singapore</span><span style="font-weight: 700" class="logo-line">|</span>
             </a>
 
-                    </div>
-                    <div class="site-navigation">
-                        <nav>
-                            <ul>
-                                <li> <a href="https://www.tsingapore.com/culture/"><span>culture</span></a>
+                </div>
+                <div class="site-navigation">
+                    <nav>
+                        <ul>
+                            <li> <a href="https://www.tsingapore.com/culture/"><span>culture</span></a>
 
-                                </li>
-                                <li> <a href="https://www.tsingapore.com/fashion/"><span>fashion</span></a>
+                            </li>
+                            <li> <a href="https://www.tsingapore.com/fashion/"><span>fashion</span></a>
 
-                                </li>
-                                <li> <a href="https://www.tsingapore.com/beauty/"><span>beauty</span></a>
+                            </li>
+                            <li> <a href="https://www.tsingapore.com/beauty/"><span>beauty</span></a>
 
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </header>
-            </div>
-            <div class="main-content-outer">
-                <aside class="toc">
-                     <h3>Table of contents</h3>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        </div>
+        <div class="main-content-outer">
+            <aside class="toc">
+                 <h3>Table of contents</h3>
 
-                    <ul>
-                        <li class="h1"><a href="#who-could-resist-eating-a-marshmallow?">Who Could Resist Eating A Marshmallow?</a>
-                        </li>
-                        <li class="h2"><a href="#stanford-marshmallow-experiment">Stanford Marshmallow Experiment</a>
-                        </li>
-                        <li class="h2"><a href="#how-children-reacted">How Children Reacted</a>
-                        </li>
-                        <li class="h2"><a href="#delayed-gratification-definition">Delayed Gratification Definition</a>
-                        </li>
-                        <li class="h2"><a href="#willpower">Willpower</a>
-                        </li>
-                    </ul>
-                </aside>
-                <script>
-                    window.addEventListener('DOMContentLoaded', () => {
-                      const observer = new IntersectionObserver(entries => {
-                        entries.forEach(entry => {
-                          const id = entry.target.getAttribute('id');
-                          console.log('hello', id);
-                          const elements = document.querySelector(`.toc ul li a[href="#${id}"]`);
-                          console.log('elements', elements);
-                          if (elements) {
-                              if (entry.intersectionRatio > 0) {
-                                elements.parentElement.classList.add('selected');
-                              } else {
-                                elements.parentElement.classList.remove('selected');
-                              }
+                <ul>
+                    <li class="h1"><a href="#who-could-resist-eating-a-marshmallow?">Who Could Resist Eating A Marshmallow?</a>
+                    </li>
+                    <li class="h2"><a href="#stanford-marshmallow-experiment">Stanford Marshmallow Experiment</a>
+                    </li>
+                    <li class="h2"><a href="#how-children-reacted">How Children Reacted</a>
+                    </li>
+                    <li class="h2"><a href="#delayed-gratification-definition">Delayed Gratification Definition</a>
+                    </li>
+                    <li class="h2"><a href="#willpower">Willpower</a>
+                    </li>
+                </ul>
+            </aside>
+            <script>
+                window.addEventListener('DOMContentLoaded', () => {
+                  const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                      const id = entry.target.getAttribute('id');
+                      console.log('hello', id);
+                      const elements = document.querySelector(`.toc ul li a[href="#${id}"]`);
+                      console.log('elements', elements);
+                      if (elements) {
+                          if (entry.intersectionRatio > 0) {
+                            elements.parentElement.classList.add('selected');
+                          } else {
+                            elements.parentElement.classList.remove('selected');
                           }
-                        });
-                      });
-                    
-                      const articles = document.querySelectorAll('article[id]');
-                      if(articles) {
-                        articles.forEach((section) => { observer.observe(section); });
-                      }
-                    
-                      const h1s = document.querySelectorAll('h1[id]');
-                      if(h1s) {
-                        h1s.forEach((section) => { observer.observe(section); });
-                      }
-                      const h2s = document.querySelectorAll('h2[id]');
-                      if(h2s) {
-                        h2s.forEach((section) => { observer.observe(section); });
-                      }
-                      const h3s = document.querySelectorAll('h3[id]');
-                      if(h3s) {
-                        h3s.forEach((section) => { observer.observe(section); });
                       }
                     });
-                </script>
-                <main class="main-content">
-                    <article>
-                        <div class="page-header-outer">
-                            <header class="page-header">
-                                 <h1 id="who-could-resist-eating-a-marshmallow?">Who Could Resist Eating A Marshmallow?</h1>
+                  });
+                
+                  const articles = document.querySelectorAll('article[id]');
+                  if(articles) {
+                    articles.forEach((section) => { observer.observe(section); });
+                  }
+                
+                  const h1s = document.querySelectorAll('h1[id]');
+                  if(h1s) {
+                    h1s.forEach((section) => { observer.observe(section); });
+                  }
+                  const h2s = document.querySelectorAll('h2[id]');
+                  if(h2s) {
+                    h2s.forEach((section) => { observer.observe(section); });
+                  }
+                  const h3s = document.querySelectorAll('h3[id]');
+                  if(h3s) {
+                    h3s.forEach((section) => { observer.observe(section); });
+                  }
+                });
+            </script>
+            <main class="main-content">
+                <article>
+                    <div class="page-header-outer">
+                        <header class="page-header">
+                             <h1 id="who-could-resist-eating-a-marshmallow?">Who Could Resist Eating A Marshmallow?</h1>
 
-                                <aside class="meta">
-                                    <div class="author-photo">
-                                        <img alt="The picture of Clara Ortiz" src="https://www.tsingapore.com/assets/images/clara_ortiz_64x64.jpg"
-                                        srcset="https://www.tsingapore.com/assets/images/clara_ortiz_128x128.jpg 2x">
-                                    </div>
-                                    <div class="info"> <span class="author-name">Clara Ortiz</span>
+                            <aside class="meta">
+                                <div class="author-photo">
+                                    <img alt="The picture of Clara Ortiz" src="https://www.tsingapore.com/assets/images/clara_ortiz_64x64.jpg"
+                                    srcset="https://www.tsingapore.com/assets/images/clara_ortiz_128x128.jpg 2x">
+                                </div>
+                                <div class="info"> <span class="author-name">Clara Ortiz</span>
  <span class="published-date">Nov 30th, 2021</span>
 
-                                    </div>
-                                </aside>
-                            </header>
-                        </div>
-                        <div class="post-body-outer">
-                            <div class="post-body">
-                                <div class="post-body-inner">
-                                    <p>The <strong>marshmallow test</strong> is an experimental framework that
-                                        measures a child’s ability to <strong>delay gratification</strong>. The
-                                        kid is given the option of receiving a marshmallow <strong>immediately or waiting a little longer</strong> to
-                                        get two. The minutes or seconds passed a kid stays for measures their ability
-                                        to delay gratification.</p>
-                                    <div id="featured-img">
-                                        <aside>
-                                            <figure class="full-width-figure  featured">
-                                                <picture>
-                                                    <source type="image/webp" srcset="
+                                </div>
+                            </aside>
+                        </header>
+                    </div>
+                    <div class="post-body-outer">
+                        <div class="post-body">
+                            <div class="post-body-inner">
+                                <p>The <strong>marshmallow test</strong> is an experimental framework that
+                                    measures a child’s ability to <strong>delay gratification</strong>. The
+                                    kid is given the option of receiving a marshmallow <strong>immediately or waiting a little longer</strong> to
+                                    get two. The minutes or seconds passed a kid stays for measures their ability
+                                    to delay gratification.</p>
+                                <div id="featured-img">
+                                    <aside>
+                                        <figure class="full-width-figure  featured">
+                                            <picture>
+                                                <source type="image/webp" srcset="
               /assets/pictures/hot-chocolate-with-marshmallow-800.webp 800w,
               /assets/pictures/hot-chocolate-with-marshmallow-1200.webp 1200w,
               /assets/pictures/hot-chocolate-with-marshmallow-1600.webp 1600w"
-                                                    sizes="
+                                                sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                    <source type="image/jpeg" srcset="
+                                                <source type="image/jpeg" srcset="
               /assets/pictures/hot-chocolate-with-marshmallow-800.jpg 800w,
               /assets/pictures/hot-chocolate-with-marshmallow-1200.jpg 1200w,
               /assets/pictures/hot-chocolate-with-marshmallow-1600.jpg 1600w"
-                                                    sizes="
+                                                sizes="
               (max-width: 800px) 100vw,
               800px" />
-                                                    <img src="/assets/pictures/hot-chocolate-with-marshmallow-800.jpg" alt="White ceramic mug on book, filled with marshmallow."
-                                                    />
-                                                </picture>
-                                                <figcaption>Photo by <a href="https://unsplash.com/@alisaanton" rel="nofollow">Alisa Anton</a> on
-                                                    <a
-                                                    href="https://unsplash.com/" rel="nofollow">Unsplash</a>
-                                                </figcaption>
-                                            </figure>
-                                        </aside>
-                                    </div>
-                                    <p>The American psychologist Walter Michel and his colleagues designed the
-                                        conditions that promote delay of gratifying. They’ve built an experimental
-                                        framework, <a href="https://www.marshmallowchallenge.com/blog/marshmallow-test/">the marshmallow test</a>,
-                                        in which a kid has to choose between eating a single piece of marshmallow <strong>immediately or waiting</strong> 15
-                                        minutes to receive two pieces.</p>
-                                    
+                                                <img src="/assets/pictures/hot-chocolate-with-marshmallow-800.jpg" alt="White ceramic mug on book, filled with marshmallow."
+                                                />
+                                            </picture>
+                                            <figcaption>Photo by <a href="https://unsplash.com/@alisaanton" rel="nofollow">Alisa Anton</a> on
+                                                <a
+                                                href="https://unsplash.com/" rel="nofollow">Unsplash</a>
+                                            </figcaption>
+                                        </figure>
+                                    </aside>
+                                </div>
+                                <p>The American psychologist Walter Michel and his colleagues designed the
+                                    conditions that promote delay of gratifying. They’ve built an experimental
+                                    framework, <a href="https://www.marshmallowchallenge.com/blog/marshmallow-test/">the marshmallow test</a>,
+                                    in which a kid has to choose between eating a single piece of marshmallow <strong>immediately or waiting</strong> 15
+                                    minutes to receive two pieces.</p>
+                                
 <h2 id="stanford-marshmallow-experiment">Stanford Marshmallow Experiment</h2>
 
-                                    <p>In 1970 at Stanford University, Walter Michel, a professor of psychology,
-                                        and his graduate student, Ebbe Ebbesen, have <a href="https://en.wikipedia.org/wiki/Stanford_marshmallow_experiment">designed and ran the experiment</a> with
-                                        32 preschoolers. At the time of the experiment, the <strong>main result</strong> was
-                                        that they found the preschoolers could wait longer for the two marshmallows
-                                        if they were <strong>visible during the exercise</strong>. The children
-                                        who couldn’t see the two marshmallows, only heard the researcher’s promise,
-                                        were not able to wait that long.</p>
-                                    <p>The study has shown that gratification delay is involved in <strong>suppressing</strong> rather
-                                        than enhancing attention to achieve rewards. For instance, some kids who
-                                        waited with insight would just look at a mirror, close their eyes, or talk
-                                        to themselves rather than stare at the marshmallow.</p>
-                                    <p>As a <a href="https://www.apa.org/monitor/2014/12/marshmallow-test">follow-up study</a>,
-                                        the same researchers contacted the kids 10 years later and found that the
-                                        kids who could resist eating the marshmallow as preschool students had
-                                        better school grades.</p>
-                                    
+                                <p>In 1970 at Stanford University, Walter Michel, a professor of psychology,
+                                    and his graduate student, Ebbe Ebbesen, have <a href="https://en.wikipedia.org/wiki/Stanford_marshmallow_experiment">designed and ran the experiment</a> with
+                                    32 preschoolers. At the time of the experiment, the <strong>main result</strong> was
+                                    that they found the preschoolers could wait longer for the two marshmallows
+                                    if they were <strong>visible during the exercise</strong>. The children
+                                    who couldn’t see the two marshmallows, only heard the researcher’s promise,
+                                    were not able to wait that long.</p>
+                                <p>The study has shown that gratification delay is involved in <strong>suppressing</strong> rather
+                                    than enhancing attention to achieve rewards. For instance, some kids who
+                                    waited with insight would just look at a mirror, close their eyes, or talk
+                                    to themselves rather than stare at the marshmallow.</p>
+                                <p>As a <a href="https://www.apa.org/monitor/2014/12/marshmallow-test">follow-up study</a>,
+                                    the same researchers contacted the kids 10 years later and found that the
+                                    kids who could resist eating the marshmallow as preschool students had
+                                    better school grades.</p>
+                                
 <h2 id="how-children-reacted">How Children Reacted</h2>
 
-                                    <p>The experiment started by bringing each kid into a <strong>separate room</strong>,
-                                        sitting them down on a chair, and <strong>placing the single marshmallow on the desk</strong> in
-                                        front of them.</p>
-                                    <p>At this point, the experimenter makes a deal with the kid. They told them
-                                        that he would leave the room and that if the kid could wait until his return <strong>without eating</strong> the
-                                        marshmallow while he was away, they would give the kid an <strong>additional marshmallow</strong>.
-                                        However, if the kid planned to eat the first one before the experimenter
-                                        returned, the kid would not get a second marshmallow. So the choice was
-                                        simple:</p>
-                                    <p><strong>One thing right now or two things after some time</strong>.</p>
-                                    <p>Next, the experimenter left the room for 10 to 15 minutes. The kids looked
-                                        very funny, waiting alone in the room, staring at the marshmallow. <strong>Some kids couldn’t wait at all</strong>.
-                                        They ate the marshmallow immediately as the experimenter closed the door.
-                                        Others wiggled and bounced in scooted in their chairs as they tried to
-                                        stop themselves, but eventually, they couldn’t resist the temptation any
-                                        longer. And finally, <strong>a few kids did manage to wait</strong> the entire
-                                        time and received their reward.</p>
-                                    
+                                <p>The experiment started by bringing each kid into a <strong>separate room</strong>,
+                                    sitting them down on a chair, and <strong>placing the single marshmallow on the desk</strong> in
+                                    front of them.</p>
+                                <p>At this point, the experimenter makes a deal with the kid. They told them
+                                    that he would leave the room and that if the kid could wait until his return <strong>without eating</strong> the
+                                    marshmallow while he was away, they would give the kid an <strong>additional marshmallow</strong>.
+                                    However, if the kid planned to eat the first one before the experimenter
+                                    returned, the kid would not get a second marshmallow. So the choice was
+                                    simple:</p>
+                                <p><strong>One thing right now or two things after some time</strong>.</p>
+                                <p>Next, the experimenter left the room for 10 to 15 minutes. The kids looked
+                                    very funny, waiting alone in the room, staring at the marshmallow. <strong>Some kids couldn’t wait at all</strong>.
+                                    They ate the marshmallow immediately as the experimenter closed the door.
+                                    Others wiggled and bounced in scooted in their chairs as they tried to
+                                    stop themselves, but eventually, they couldn’t resist the temptation any
+                                    longer. And finally, <strong>a few kids did manage to wait</strong> the entire
+                                    time and received their reward.</p>
+                                
 <h2 id="delayed-gratification-definition">Delayed Gratification Definition</h2>
 
-                                    <p><strong>Success is achieved by accepting the pain over the ease of distraction, which is all about delayed gratification.</strong>
-                                    </p>
-                                    <p>The ability to resist an impulse to take the immediately available reward,
-                                        hoping to obtain a more valued reward in the future and delay gratification
-                                        is essential to self-control. This highlights an interesting question:</p>
-                                    <div
-                                    class="important-box">
-                                        <p>Did some kids naturally have more self-control, and thus we are destined
-                                            for success? Or can you learn to build this critical quality?</p>
-                                </div>
-                                <p>The skill to delay gratification is probably the most <strong>difficult challenge we face in life</strong>.
-                                    Every action has many outcomes, doing or waiting for a little more before
-                                    we do it.</p>
-                                <p>The <strong>standard definition</strong> of delayed gratification is <strong>the power to delay an impulse for a sudden reward or receive a better prize later</strong>.
-                                    Studies have shown that the strength to delay reward is available in <strong>highly successful people</strong>.</p>
-                                <h2
-                                id="willpower">Willpower</h2>
-                                    <p>Willpower is the ability to control or resist yourself to <strong>achieve a particular goal</strong>.</p>
-                                    <p>American Psychological Association phrase that an integral portion of
-                                        this is using the operation to <strong>better understand unwanted thoughts and feelings</strong>.
-                                        <a
-                                        href="https://www.apa.org/topics/personality/willpower">Willpower</a>involves being able to intentionally <strong>manage yourself when required</strong>.
-                                            Delayed gratification is another key to willpower.</p>
-                                    <p>It is the ability to <strong>resist short-term desire to achieve the long-term reward</strong>.
-                                        When a larger long-term reward is at stake, it can serve as the motivation
-                                        needed to avoid temptations.</p>
-                                    <p><strong>Willpower is not unlimited</strong>, though, and it can be consumed
-                                        when it’s overused. A <strong>demanding lifestyle can quickly destroy</strong> even
-                                        those with the most will.</p>
+                                <p><strong>Success is achieved by accepting the pain over the ease of distraction, which is all about delayed gratification.</strong>
+                                </p>
+                                <p>The ability to resist an impulse to take the immediately available reward,
+                                    hoping to obtain a more valued reward in the future and delay gratification
+                                    is essential to self-control. This highlights an interesting question:</p>
+                                <div
+                                class="important-box">
+                                    <p>Did some kids naturally have more self-control, and thus we are destined
+                                        for success? Or can you learn to build this critical quality?</p>
                             </div>
+                            <p>The skill to delay gratification is probably the most <strong>difficult challenge we face in life</strong>.
+                                Every action has many outcomes, doing or waiting for a little more before
+                                we do it.</p>
+                            <p>The <strong>standard definition</strong> of delayed gratification is <strong>the power to delay an impulse for a sudden reward or receive a better prize later</strong>.
+                                Studies have shown that the strength to delay reward is available in <strong>highly successful people</strong>.</p>
+                            <h2
+                            id="willpower">Willpower</h2>
+                                <p>Willpower is the ability to control or resist yourself to <strong>achieve a particular goal</strong>.</p>
+                                <p>American Psychological Association phrase that an integral portion of
+                                    this is using the operation to <strong>better understand unwanted thoughts and feelings</strong>.
+                                    <a
+                                    href="https://www.apa.org/topics/personality/willpower">Willpower</a>involves being able to intentionally <strong>manage yourself when required</strong>.
+                                        Delayed gratification is another key to willpower.</p>
+                                <p>It is the ability to <strong>resist short-term desire to achieve the long-term reward</strong>.
+                                    When a larger long-term reward is at stake, it can serve as the motivation
+                                    needed to avoid temptations.</p>
+                                <p><strong>Willpower is not unlimited</strong>, though, and it can be consumed
+                                    when it’s overused. A <strong>demanding lifestyle can quickly destroy</strong> even
+                                    those with the most will.</p>
                         </div>
-            </div>
-            </article>
-            </main>
-            <nav class="post-items">
-                 <h3>Top posts</h3>
+                    </div>
+        </div>
+        </article>
+        </main>
+        <nav class="post-items">
+             <h3>Top posts</h3>
 
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/5-ways-to-celebrate-womens-history-month/">
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/crypto-trading-in-singapore/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="A gold coin like Bitcoin"
+                         srcset="/assets/pictures/bitcoin-physical-coin-80x80.jpg,
+                                /assets/pictures/bitcoin-physical-coin-160x160.jpg 2x"
+                         src="/assets/pictures/bitcoin-physical-coin-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">FINANCE</h3>
+                        <h4 class="title">Crypto Trading in Singapore</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">10 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/5-ways-to-celebrate-womens-history-month/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt=""
@@ -1265,14 +1359,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">10 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">430 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-brickman-lego-exhibition-in-singapore/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt=""
@@ -1295,14 +1389,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">346 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">780 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/top-10-gofundme-alternatives/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/top-10-gofundme-alternatives/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A woman's hand is giving money"
@@ -1325,14 +1419,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">206 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">640 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/bag-charm-from-hermes/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/bag-charm-from-hermes/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Photo of a Hermes Kellydoll bag."
@@ -1355,14 +1449,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">94 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">528 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/sanpaku-eyes-marilyn-monroe-billie-eilish/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Billie Eilish eyes"
@@ -1385,14 +1479,17 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">738 views - 5 min read</span>
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,172 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/things-to-look-for-in-a-good-online-casino/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/things-to-look-for-in-a-good-online-casino/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Close-up photo of playing cards"
@@ -1415,74 +1512,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">101 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">535 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/how-to-cleanse-recharge-your-crystals/">
-                <div class="top-post-item featured-post">
-                    <img width="80" height="80" class="thumbnail"
-                         alt="Macro photography of black ceramic Gautama Buddha miniature"
-                         srcset="/assets/pictures/crystal-consciousness-80x80.jpg,
-                                /assets/pictures/crystal-consciousness-160x160.jpg 2x"
-                         src="/assets/pictures/crystal-consciousness-80x80.jpg"
-                         loading="lazy"
-                    />
-                    <div class="description">
-                        <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Clean and recharge your crystals with these simple steps</h4>
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                <span class="meta">297 views - 5 min read</span>
-
-                                            </div>
-                </div>
-            </a>
-
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/lauren-tsai-model-artist-netflix-terrace-house-reality-interview-fashion/">
-                <div class="top-post-item featured-post">
-                    <img width="80" height="80" class="thumbnail"
-                         alt="Lauren Tsai is smiling to the camera"
-                         srcset="/assets/pictures/lauren-tsai-80x80.jpg,
-                                /assets/pictures/lauren-tsai-160x160.jpg 2x"
-                         src="/assets/pictures/lauren-tsai-80x80.jpg"
-                         loading="lazy"
-                    />
-                    <div class="description">
-                        <h3 class="category">CULTURE</h3>
-                        <h4 class="title">Lauren Tsai, Model, Artist and Actress of Netflix's Terrace House</h4>
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                <span class="meta">311 views - 5 min read</span>
-
-                                            </div>
-                </div>
-            </a>
-
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/discontinued-icons-audemars-piguet-royal-oak-15202st/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/discontinued-icons-audemars-piguet-royal-oak-15202st/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Audemars Piguet Royal Oak Jumbo"
@@ -1505,14 +1542,44 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">318 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">752 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/how-to-cleanse-recharge-your-crystals/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Macro photography of black ceramic Gautama Buddha miniature"
+                         srcset="/assets/pictures/crystal-consciousness-80x80.jpg,
+                                /assets/pictures/crystal-consciousness-160x160.jpg 2x"
+                         src="/assets/pictures/crystal-consciousness-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Clean and recharge your crystals with these simple steps</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">731 views - 5 min read</span>
+
+                                            </div>
                 </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singapore-food-waste-uglyfood-treatsure-insectta/">
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singapore-food-waste-uglyfood-treatsure-insectta/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A few half rotten apples on the ground"
@@ -1535,14 +1602,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">304 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">738 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/aura-photograph-new-age-selfie/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/aura-photograph-new-age-selfie/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Yellow and black coated wire"
@@ -1565,14 +1632,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">297 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">731 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/taha-bouqdib-maranda-barnes-husband-wife-duo-built-twg-tea-interview/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/taha-bouqdib-maranda-barnes-husband-wife-duo-built-twg-tea-interview/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="Green tea plantation from birds eye view"
@@ -1595,14 +1662,14 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">325 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">759 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
-                </div>
-                <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/iwc-goes-green-with-timbertex/">
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/iwc-goes-green-with-timbertex/">
                 <div class="top-post-item featured-post">
                     <img width="80" height="80" class="thumbnail"
                          alt="A person's hand with a watch"
@@ -1625,14 +1692,243 @@
 
 
 
-                                                                                                                                                                                                <span class="meta">332 views - 5 min read</span>
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
 
                                             </div>
                 </div>
             </a>
 
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/singpost-guardians-singapore-lost-mail/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Letter forced into the post box"
+                         srcset="/assets/pictures/letter-forced-into-the-post-box-80x80.jpg,
+                                /assets/pictures/letter-forced-into-the-post-box-160x160.jpg 2x"
+                         src="/assets/pictures/letter-forced-into-the-post-box-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">STORY</h3>
+                        <h4 class="title">Who Look After Singapore's Undelivered Mail</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
+
+                                            </div>
                 </div>
-            </nav>
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/the-met-operas-musicians-are-struggling/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Photography of people sitting on theater during nighttime"
+                         srcset="/assets/pictures/half-empty-new-york-opera-80x80.jpg,
+                                /assets/pictures/half-empty-new-york-opera-160x160.jpg 2x"
+                         src="/assets/pictures/half-empty-new-york-opera-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Met Opera Musicians Who Have Been Working Without Pay Since April</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">766 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/omega-2021-novelties-collection/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Omega seamaster 300 watch on a bronze box"
+                         srcset="/assets/pictures/omega-seamaster-300-80x80.jpg,
+                                /assets/pictures/omega-seamaster-300-160x160.jpg 2x"
+                         src="/assets/pictures/omega-seamaster-300-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">FASHION</h3>
+                        <h4 class="title">Omega Commemorates the Year 2021 with a Bronze Seamaster</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">773 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/mark-chao-actor-interview/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Mark Chao is receiving an award"
+                         srcset="/assets/pictures/mark-chao-80x80.jpg,
+                                /assets/pictures/mark-chao-160x160.jpg 2x"
+                         src="/assets/pictures/mark-chao-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Let's Meet Mark Chao</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                        <span class="tp-meta">1,158 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/maisie-williams-pasha-de-cartier-the-new-mutant-xmen-tiktok-interview/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Maisie Williams speaking at the 2019 San Diego Comic Con"
+                         srcset="/assets/pictures/maisie-williams-80x80.jpg,
+                                /assets/pictures/maisie-williams-160x160.jpg 2x"
+                         src="/assets/pictures/maisie-williams-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">CULTURE</h3>
+                        <h4 class="title">Maisie Williams On TikTok, and Saving Dolphins</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">710 views - 5 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+            </div>
+            <div class="post-item-outer"> <a href="https://www.tsingapore.com/article/new-britney-spears-song-is-in-the-works/">
+                <div class="top-post-item featured-post">
+                    <img width="80" height="80" class="thumbnail"
+                         alt="Britney Spears singing"
+                         srcset="/assets/pictures/britney-spears-singing-80x80.jpg,
+                                /assets/pictures/britney-spears-singing-160x160.jpg 2x"
+                         src="/assets/pictures/britney-spears-singing-80x80.jpg"
+                         loading="lazy"
+                    />
+                    <div class="description">
+                        <h3 class="category">GOSSIP</h3>
+                        <h4 class="title">New Britney Spears Song Is In The Works</h4>
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                <span class="tp-meta">941 views - 4 min read</span>
+
+                                            </div>
+                </div>
+            </a>
+
+            </div>
+        </nav>
+        <nav class="more-to-read-items">
+             <h3>More To Read</h3>
+
+            <div class="more-to-read-items-inner">
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/tiffany-co-high-jewellery-colors-of-nature/">
+                <h4 class="title">Tiffany & Co.'s Colors Of Nature High Jewellery Collection</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-truth-and-myths-of-the-sanpaku-eyes/">
+                <h4 class="title">The Truth and Myths of the Sanpaku Eyes</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/kim-kardashian-the-new-york-times-style-magazine-singapore-october-cover-story/">
+                <h4 class="title">Keeping Up With Kim Kardashian</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/pear-scent-fragrance-louis-vuitton-coeur-battant-jo-malone/">
+                <h4 class="title">The Underrated Fruity Scent of Pear</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/spring-brings-more-colour-to-eyeshadow-palettes/">
+                <h4 class="title">Eyeshadow Palettes Get More Color in the Spring</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-history-of-famous-celebrity-irises-and-their-meaning/">
+                <h4 class="title">The History of Famous Celebrity Irises and Their Meaning</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/the-letter-t/">
+                <h4 class="title">The Letter T</h4>
+            </a>
+
+                </div>
+                <div class="more-to-read-item-outer"> <a href="https://www.tsingapore.com/article/what-are-sanpaku-eyes/">
+                <h4 class="title">What Are Sanpaku Eyes?</h4>
+            </a>
+
+                </div>
+            </div>
+        </nav>
         </div>
         <aside class="site-footer-outer">
             <footer class="site-footer">
@@ -1645,7 +1941,6 @@
                 </div>
             </footer>
         </aside>
-        </div>
         <script defer src="https://www.tsingapore.com/assets/js/main.js"></script>
     </body>
 
